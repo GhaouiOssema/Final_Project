@@ -1,16 +1,6 @@
 const router = require("express").Router();
 const controllers = require("../controllers");
 
-<<<<<<< HEAD
-=======
-// login
-/**
- * @route POST /login
- * @description Logs in a user
- * @access public
- */
-
->>>>>>> af6748ee0d4b61024b4190447f9f073d6ddc7ad0
 // Admin APIs
 /**
  * @route POST /administration/createroom
