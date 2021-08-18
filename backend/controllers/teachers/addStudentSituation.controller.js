@@ -3,13 +3,7 @@ const Situation = require("../../models/Situation");
 module.exports = {
     async AddSituation(req, res) {
         try {
-            const { student, addedBy, date, situation } = req.body;
-            const student_situation = await Situation.create({
-                student,
-                addedBy,
-                date,
-                situation,
-            });
+            const student_situation = await Situation.insertMany([...req.body]);
             res.status(201).json({
                 status: true,
                 message: "Situation added succefully",
