@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const controllers = require("../controllers");
 
+
 // login
 /**
  * @route GET /login
@@ -8,6 +9,8 @@ const controllers = require("../controllers");
  * @access public
  */
 router.get("/login", controllers.login.login);
+
+
 
 // Admin APIs
 /**
