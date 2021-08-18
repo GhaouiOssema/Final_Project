@@ -1,19 +1,30 @@
 const router = require("express").Router();
 const controllers = require("../controllers");
 
+
+// login
+/**
+ * @route GET /login
+ * @description Logs in a user
+ * @access public
+ */
+router.get("/login", controllers.login.login);
+
+
+
 // Admin APIs
 /**
- * @route POST /administration/createroom
+ * @route POST /administration/createclass
  * @description Create a new Class
  * @access private
  */
 router.post(
-    "/administration/createroom",
+    "/administration/createclass",
     controllers.admin.createClass.AddClass
 );
 
 /**
- * @route POST /administration/addClass
+ * @route PUT /administration/addClass
  * @description Add Class To Teacher
  * @access private
  */
@@ -22,7 +33,15 @@ router.put(
     controllers.admin.updateClassTeacher.AddClassToTeacher
 );
 
-router.get("/login", controllers.login.login);
+/**
+ * @route PUT /administration/updateClass
+ * @description Add Class To Student
+ * @access private
+ */
+router.put(
+    "/administration/updateClass/:id",
+    controllers.admin.updateClassStudent.AddClassToStudents
+);
 
 // STUDENTS  APIs
 /**
@@ -31,14 +50,37 @@ router.get("/login", controllers.login.login);
  * @access public
  */
 router.post("/student/register", controllers.students.register.CreateStudents);
+
+/**
+ * @route GET /student/profile
+ * @description Consult Student Profile
+ * @access private
+ */
 router.get("/student/profile", controllers.students.consultProfile.profile);
 
 // TEACHERS APIs
 /**
  * @route POST /teacher/register
  * @description Create a new Teacher
- * @access public
+ * @access private
  */
 router.post("/teacher/register", controllers.teachers.register.CreateTeacher);
 
+/**
+ * @route GET /teacher/getClass
+ * @description Get class that teacher teaches
+ * @access private
+ */
+
+router.get("/teacher/getClass", controllers.teachers.getClassroom.getClassroom);
+
+/**
+ * @route GET /teacher/addSituation
+ * @description Add students situation
+ * @access private
+ */
+router.post(
+    "/teacher/addSituation",
+    controllers.teachers.situation.AddSituation
+);
 module.exports = router;

@@ -7,4 +7,4 @@ const classRoom = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("classroom", classRoom);
+module.exports = mongoose.model("classrooms", classRoom);
