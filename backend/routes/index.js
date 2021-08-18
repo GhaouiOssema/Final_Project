@@ -77,7 +77,7 @@ router.post("/teacher/register", controllers.teachers.register.CreateTeacher);
 router.get("/teacher/getClass", controllers.teachers.getClassroom.getClassroom);
 
 /**
- * @route GET /teacher/addSituation
+ * @route post /teacher/addSituation
  * @description Add students situation
  * @access private
  */
@@ -85,4 +85,11 @@ router.post(
     "/teacher/addSituation",
     controllers.teachers.situation.AddSituation
 );
+/**
+ * @route post /teacher/addscore
+ * @description Add students Score
+ * @access private
+ */
+router.post("/teacher/addscore", controllers.teachers.score.Score);
+
 module.exports = router;
