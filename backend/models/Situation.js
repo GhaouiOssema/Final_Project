@@ -9,6 +9,10 @@ const SituationSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "teacher",
     },
+    subject: {
+        type: mongoose.Schema.Types.String,
+        ref: "teacher",
+    },
     date: {
         type: String,
         required: true,
