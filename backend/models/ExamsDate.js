@@ -9,8 +9,7 @@ const ExamsDateSchema = new mongoose.Schema({
         ref: "teacher",
     },
     classroom: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "classroom",
+        type: String,
     },
     from: {
         type: Date,
