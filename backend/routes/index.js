@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const controllers = require("../controllers");
+const { verifyToken } = require("../middleware/verifyToken");
 
 // login
 /**
@@ -59,7 +60,18 @@ router.get("/student/profile", controllers.students.consultProfile.profile);
  * @description Consult Student absence
  * @access private
  */
-router.get("/student/absence", controllers.students.consultAbsence.Absence);
+
+router.get(
+    "/student/absence",
+    verifyToken,
+    controllers.students.consultAbsence.Absence
+);
+/**
+ * @route GET /student/note
+ * @description Consult Student note
+ * @access private
+ */
+// router.get("/student/note", controllers.students);
 // TEACHERS APIs
 /**
  * @route POST /teacher/register
