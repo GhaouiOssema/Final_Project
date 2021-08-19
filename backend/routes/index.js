@@ -40,7 +40,15 @@ router.put(
     "/administration/updateClass/:id",
     controllers.admin.updateClassStudent.AddClassToStudents
 );
-
+/**
+ * @route PUT /administration/updatestudentinformation/:id
+ * @description update students information
+ * @access private
+ */
+router.put(
+    "/administration/updatestudentinformation/:id",
+    controllers.admin.updateStudentInfo.UpdateInfo
+);
 // STUDENTS  APIs
 /**
  * @route POST /student/register
