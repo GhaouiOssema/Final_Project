@@ -6,7 +6,10 @@ module.exports = {
         try {
             const data = await Situation.find({
                 student: res.decoded.id,
-            });
+            })
+                .populate("addedBy", "firstName subject")
+                .populate("student", "firstName lastName -_id");
+
             res.status(200).json({ status: true, data });
         } catch (err) {
             console.log(err);
