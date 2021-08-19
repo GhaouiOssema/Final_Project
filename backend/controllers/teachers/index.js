@@ -3,4 +3,5 @@ module.exports = {
     getClassroom: require("./consultClassroom.controller"),
     situation: require("./addStudentSituation.controller"),
     score: require("./addStudentScore.controller"),
+    updateProfile: require("./updateProfile.controller"),
 };

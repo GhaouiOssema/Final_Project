@@ -103,5 +103,15 @@ router.post(
  * @access private
  */
 router.post("/teacher/addscore", controllers.teachers.score.Score);
+/**
+ * @route PUT /teacher/profile/update
+ * @description update teacher profile
+ * @access private
+ */
+router.put(
+    "/teacher/profile/update",
+    verifyToken,
+    controllers.teachers.updateProfile.Update
+);
 
 module.exports = router;
