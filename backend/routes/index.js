@@ -41,12 +41,12 @@ router.put(
     controllers.admin.updateClassStudent.AddClassToStudents
 );
 /**
- * @route PUT /administration/updatestudentinformation/:id
+ * @route PUT /administration/updateStudent
  * @description update students information
  * @access private
  */
 router.put(
-    "/administration/updatestudentinformation/:id",
+    "/administration/updateS/:id",
     controllers.admin.updateStudentInfo.UpdateInfo
 );
 // STUDENTS  APIs
@@ -79,7 +79,21 @@ router.get(
  * @description Consult Student note
  * @access private
  */
-// router.get("/student/note", controllers.students);
+router.get(
+    "/student/note",
+    verifyToken,
+    controllers.students.consultNote.GetNote
+);
+/**
+ * @route GET /student/getExamDate
+ * @description Consult exam date
+ * @access private
+ */
+router.get(
+    "/student/getExamDate",
+    verifyToken,
+    controllers.students.consultExamDate.getExamDate
+);
 // TEACHERS APIs
 /**
  * @route POST /teacher/register
@@ -123,11 +137,15 @@ router.put(
 );
 
 /**
- * @route POST /teacher/exam/date
+ * @route POST /teacher/addExamDate
  * @description add date exam
  * @access public
  */
-router.post("/teacher/exam/date", controllers.teachers.addExamDate.addExDate);
+router.post(
+    "/teacher/addExamDate",
+    verifyToken,
+    controllers.teachers.addExamDate.addExDate
+);
 
 // *********
 

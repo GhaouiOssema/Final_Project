@@ -3,7 +3,8 @@ const ExamsDateSchema = require("../../models/ExamsDate");
 module.exports = {
     async addExDate(req, res) {
         try {
-            const { title, addedBy, classroom, from, to } = req.body;
+            let addedBy = res.decoded.id;
+            const { title, classroom, from, to } = req.body;
             const exam = await ExamsDateSchema.create({
                 addedBy,
                 title,
