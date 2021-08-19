@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const ExamsDateSchema = new mongoose.Schema({
+    title: {
+        type: String,
+    },
     addedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "teacher",
@@ -9,9 +12,11 @@ const ExamsDateSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "classroom",
     },
-    date: {
+    from: {
         type: Date,
-        required: true,
+    },
+    to: {
+        type: Date,
     },
 });
 module.exports = mongoose.model("examdate", ExamsDateSchema);

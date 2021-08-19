@@ -122,4 +122,13 @@ router.put(
     controllers.teachers.updateProfile.Update
 );
 
+/**
+ * @route POST /teacher/exam/date
+ * @description add date exam
+ * @access public
+ */
+router.post("/teacher/exam/date", controllers.teachers.addExamDate.addExDate);
+
+// *********
+
 module.exports = router;
