@@ -6,7 +6,7 @@ const noteSchema = new mongoose.Schema({
         ref: "student",
     },
     subject: {
-        type: mongoose.Schema.Types.String,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "teacher",
     },
     note: {
