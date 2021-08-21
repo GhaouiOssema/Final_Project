@@ -5,4 +5,6 @@ module.exports = {
     score: require("./addStudentScore.controller"),
     updateProfile: require("./updateProfile.controller"),
     addExamDate: require("./addExamDate.controller"),
+    ImportStudent: require("./GetStudents.controller"),
+    EditSituation: require("./EditSituation.controller"),
 };
