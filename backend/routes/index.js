@@ -41,6 +41,16 @@ router.put(
     controllers.admin.updateClassStudent.AddClassToStudents
 );
 /**
+ * @route GET /administation/AllStudents
+ * @description Get All Students from database
+ * @access private
+ */
+router.get(
+    "/administation/AllStudents",
+    controllers.admin.ImportAllStudents.GetAllStudents
+);
+
+/**
  * @route PUT /administration/updateStudent
  * @description update students information
  * @access private
@@ -48,6 +58,75 @@ router.put(
 router.put(
     "/administration/updateS/:id",
     controllers.admin.updateStudentInfo.UpdateInfo
+);
+
+/**
+ * @route DELETE /administation/deleteStudent/:id
+ * @description Delete Student from database
+ * @access private
+ */
+router.delete(
+    "/administation/deleteStudent/:id",
+    controllers.admin.DeleteStudent.DeleteStudent
+);
+/**
+ * @route GET /administration/GetAllExamsScore
+ * @description Import All Students Exams Score
+ * @access private
+ */
+router.get(
+    "/administration/GetAllExamsScore",
+    controllers.admin.ImportAllExamScore.GetExamsScore
+);
+/**
+ * @route GET /administration/GetAllExamsDate
+ * @description Import All Students Exams Date
+ * @access private
+ */
+router.get(
+    "/GetAllExamsDate",
+    controllers.admin.ImportExamsDate.GetAllExamDate
+);
+
+/**
+ * @route GET /administration/GetAllSituation
+ * @description Import All Students Situation
+ * @access private
+ */
+
+router.get(
+    "/administration/GetAllSituation",
+    controllers.admin.ImportSituations.GetSituation
+);
+
+/**
+ * @route GET /administration/GetAllClass
+ * @description Import All class
+ * @access private
+ */
+
+router.get(
+    "/administration/GetAllClass",
+    controllers.admin.ImportAllClass.GetAllClassroom
+);
+/**
+ * @route DELETE /administration/Class/:id
+ * @description DELETE Class
+ * @access private
+ */
+
+router.delete(
+    "/administration/Class/:id",
+    controllers.admin.DeleteClass.DeleteClass
+);
+/**
+ * @route PUT  /administration/editClass/:id
+ * @description Edit Class
+ * @access private
+ */
+router.put(
+    "/administration/editClass/:id",
+    controllers.admin.EditClass.EditClass
 );
 // STUDENTS  APIs
 /**
@@ -62,7 +141,11 @@ router.post("/student/register", controllers.students.register.CreateStudents);
  * @description Consult Student Profile
  * @access private
  */
-router.get("/student/profile", controllers.students.consultProfile.profile);
+router.get(
+    "/student/profile",
+    verifyToken,
+    controllers.students.consultProfile.profile
+);
 /**
  * @route GET /student/absence
  * @description Consult Student absence
@@ -108,7 +191,23 @@ router.post("/teacher/register", controllers.teachers.register.CreateTeacher);
  * @access private
  */
 
-router.get("/teacher/getClass", controllers.teachers.getClassroom.getClassroom);
+router.get(
+    "/teacher/getClass",
+    verifyToken,
+    controllers.teachers.getClassroom.getClassroom
+);
+
+/**
+ * @route GET /teacher/getStudents
+ * @description Import Students Name
+ * @access private
+ */
+
+router.get(
+    "/teacher/getStudents",
+    verifyToken,
+    controllers.teachers.ImportStudent.GetStudents
+);
 
 /**
  * @route post /teacher/addSituation
@@ -117,6 +216,7 @@ router.get("/teacher/getClass", controllers.teachers.getClassroom.getClassroom);
  */
 router.post(
     "/teacher/addSituation",
+    verifyToken,
     controllers.teachers.situation.AddSituation
 );
 /**
@@ -124,7 +224,7 @@ router.post(
  * @description Add students Score
  * @access private
  */
-router.post("/teacher/addscore", controllers.teachers.score.Score);
+router.post("/teacher/addscore", verifyToken, controllers.teachers.score.Score);
 /**
  * @route PUT /teacher/profile/update
  * @description update teacher profile
@@ -147,6 +247,16 @@ router.post(
     controllers.teachers.addExamDate.addExDate
 );
 
+/**
+ * @route PUT /teacher/EditSituation
+ * @description Edit Students Situation
+ * @access public
+ */
+router.put(
+    "/teacher/EditSituation/:id",
+    verifyToken,
+    controllers.teachers.EditSituation.EditSituation
+);
 // *********
 
 module.exports = router;

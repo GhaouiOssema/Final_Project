@@ -3,7 +3,7 @@ const Classroom = require("../../models/Teachers");
 module.exports = {
     async getClassroom(req, res) {
         try {
-            const { email } = req.body;
+            let email = res.decoded.email;
             const teacher_classroom = await Classroom.findOne({ email });
             res.status(200).json({
                 status: true,
