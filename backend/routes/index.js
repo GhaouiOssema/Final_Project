@@ -2,6 +2,13 @@ const router = require("express").Router();
 const controllers = require("../controllers");
 const { verifyToken } = require("../middleware/verifyToken");
 
+// image uploader ( Single )
+/**
+ * @route POST / uploadimage
+ * @description upload the user profile image
+ * @access private
+ */
+router.post("/profile/", verifyToken, controllers.imageUploader.upload);
 // login
 /**
  * @route GET /login

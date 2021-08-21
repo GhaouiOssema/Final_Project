@@ -16,6 +16,9 @@ app.use(express.json());
 // Routing is Here
 app.use(require("./routes"));
 
+// public folder for inserting the images uploader
+app.use(express.static(__dirname + "/public/imagesUploader"));
+
 // PORT
 const PORT = process.env.PORT || 5000;
 
