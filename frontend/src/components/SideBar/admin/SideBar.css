@@ -38,8 +38,24 @@
     margin-right: 5px;
 }
 .sidebar-nav-item {
-    padding: 20px 0 20px 20px;
+    padding: 10px 0 10px 10px;
 }
-.sidebar-nav-item > i {
+/* .sidebar-nav-item > i {
     margin-right: 5px;
+} */
+.nav-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.nav-link .title {
+    color: black;
+    margin-left: 5px;
+}
+.nav-link i {
+    color: rgb(12, 11, 11);
+}
+
+.sidebar-nav-item:hover {
+    background: #e6e0e0;
+    color: black;
 }
