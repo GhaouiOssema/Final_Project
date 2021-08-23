@@ -1,0 +1,45 @@
+.sidebar {
+    width: 17%;
+    background: #fff;
+}
+.sidebar-content {
+    padding-top: 20px;
+    overflow: hidden;
+    width: auto;
+    height: 597px;
+}
+.user-panel {
+    display: flex;
+    justify-content: space-evenly;
+    width: 85%;
+    margin-bottom: 20px;
+}
+
+.user-img-circle {
+    background: #fff;
+    border: 1px solid rgba(52, 73, 94, 0.44);
+    padding: 2px;
+    border-radius: 50%;
+}
+.user-panel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.user-panel-info > p {
+    margin-bottom: -15px;
+}
+.txtOnline {
+    font-size: 12px;
+}
+.user-online {
+    color: #26c281;
+    font-size: 12px;
+    margin-right: 5px;
+}
+.sidebar-nav-item {
+    padding: 20px 0 20px 20px;
+}
+.sidebar-nav-item > i {
+    margin-right: 5px;
+}

@@ -1,13 +1,15 @@
 import "./App.css";
-import NavBar from "./components/navBar/NavBar";
+import Navigation from "./components/Navigation/Navigation";
 import Student from "./interfaces/student/Student";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import { Switch, Route } from "react-router-dom";
+import SideBar from "./components/SideBar/admin/SideBar";
 
 function App() {
     return (
         <div className="App">
-            <NavBar />
+            <Navigation />
+            <SideBar />
             <Footer />
         </div>
     );

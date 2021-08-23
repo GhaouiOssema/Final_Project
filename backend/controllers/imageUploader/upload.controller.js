@@ -36,7 +36,7 @@ module.exports = {
                 });
                 res.status(200).json({
                     status: true,
-                    message: "Teacher profile picture was uploaded",
+                    message: "Student profile picture was uploaded",
                     data: StudentAvatar,
                 });
             } else if (ID == IsTeacher) {
