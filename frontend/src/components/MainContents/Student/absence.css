@@ -1,0 +1,62 @@
+.absente-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 80px;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+.icons > div {
+    margin-left: 10px;
+}
+.green {
+    color: rgb(29, 221, 29);
+    font-size: 12px;
+    margin-right: 3px;
+}
+.red {
+    color: #f01;
+    margin-right: 3px;
+    font-size: 12px;
+    height: 100%;
+}
+.yellow {
+    color: rgb(255, 238, 0);
+    margin-right: 3px;
+    font-size: 12px;
+}
+
+.no-absente {
+    padding: 120px;
+    color: #3d4eff;
+}
+.absente-content i {
+    font-size: 100px;
+    color: #3d4eff;
+}
+.table-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.table-responsive label {
+    margin-top: 40px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.table {
+    margin: 40px;
+}
+.center {
+    width: 200px;
+}
