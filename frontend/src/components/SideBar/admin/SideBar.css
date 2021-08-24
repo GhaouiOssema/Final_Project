@@ -1,15 +1,7 @@
-/* .sidebar {
-    width: 17%;
-    background: #fff;
-}
-.sidebar-content {
-    padding-top: 20px;
-    overflow: hidden;
-    width: auto;
-    height: 597px;
-} */
 .user-panel {
     margin-left: 5px;
+    display: flex;
+
 }
 
 .user-img-circle {
@@ -33,29 +25,7 @@
     color: #26c281;
     font-size: 12px;
     margin-right: 5px;
-} /*
-.sidebar-nav-item {
-    padding: 10px 0 10px 10px;
 }
-.sidebar-nav-item > i {
-    margin-right: 5px;
-}
-.nav-link {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-.nav-link .title {
-    color: black;
-    margin-left: 5px;
-}
-.nav-link i {
-    color: rgb(12, 11, 11);
-}
-
-.sidebar-nav-item:hover {
-    background: #e6e0e0;
-    color: black;
-} */
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 * {
@@ -85,29 +55,6 @@ ul {
     padding: 20px 0;
     transition: all 0.5s ease;
 }
-
-/* .sidebar .profile {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.sidebar .profile img {
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto;
-}
-
-.sidebar .profile h3 {
-    color: #ffffff;
-    margin: 10px 0 5px;
-}
-
-.sidebar .profile p {
-    color: rgb(206, 240, 253);
-    font-size: 14px;
-} */
 
 .sidebar ul li .nav-link {
     display: flex;

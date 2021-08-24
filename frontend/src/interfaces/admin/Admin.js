@@ -14,23 +14,22 @@ import ExamScore from "../../components/MainContents/Admin/ExamScore";
 
 const Admin = () => {
     return (
-        <div className="admin">
+        <div>
             <Navigation />
-            {/* <SideBar /> */}
             <Router>
-                <Route path="/admin/dashboard" component={SideBar} />
+                <div className="admin">
+                    <SideBar />
+                    <Switch>
+                        {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
+                        <Route path="/admin/exam" component={Exam} />
+                        {/* <Route path="/admin/teachers" component={Teacher} /> */}
+                        {/* <Route path="/admin/students" component={Student} /> */}
+                        {/* <Route path="/admin/absences" component={Absence} /> */}
+                        {/* <Route path="/admin/classes" component={Classes} /> */}
+                        {/* <Route path="/admin/examScores" component={ExamScore} /> */}
+                    </Switch>
+                </div>
             </Router>
-            {/* <Router>
-                <Switch>
-                    <Route path="/admin/dashboard" component={Dashboard} />
-                    <Route path="/admin/exam" component={Exam} />
-                    <Route path="/admin/teachers" component={Teacher} />
-                    <Route path="/admin/students" component={Student} />
-                    <Route path="/admin/absences" component={Absence} />
-                    <Route path="/admin/classes" component={Classes} />
-                    <Route path="/admin/examScores" component={ExamScore} />
-                </Switch>
-            </Router> */}
         </div>
     );
 };

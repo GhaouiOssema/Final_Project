@@ -4,7 +4,6 @@ import "./Student.css";
 
 // components
 import SideBar from "../../components/SideBar/student/SideBar";
-import Profile from "../../components/MainContents/Student/Profile";
 import Navigation from "../../components/Navigation/Navigation";
 import Dashboard from "../../components/MainContents/Student/Dashboard";
 import Exam from "../../components/MainContents/Student/Exam";
@@ -16,7 +15,7 @@ const Student = () => {
         <div>
             <Navigation />
             <Router>
-                <div style={{ display: "flex" }}>
+                <div className="page-content">
                     <SideBar />
                     <Switch>
                         <Route
@@ -24,7 +23,6 @@ const Student = () => {
                             component={Dashboard}
                         />
                         <Route path="/student/exam" component={Exam} />
-                        <Route path="/student/profile" component={Profile} />
                         <Route path="/student/absence" component={Absence} />
                         <Route path="/student/note" component={Note} />
                     </Switch>
