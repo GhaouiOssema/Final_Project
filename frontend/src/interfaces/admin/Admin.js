@@ -20,7 +20,7 @@ const Admin = () => {
                 <SideBar />
                 <div className="admin">
                     <Switch>
-                        <div style={{ margin: "auto" }}>
+                        <div style={{ marginLeft: "13%" }}>
                             <Route
                                 path="/admin/dashboard"
                                 component={Dashboard}
