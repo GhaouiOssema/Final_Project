@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
-import "./admin.css";
+import "../../components/SideBar/admin/SideBar.css";
 // components
 import SideBar from "../../components/SideBar/admin/SideBar";
 import Navigation from "../../components/Navigation/Navigation";
@@ -17,16 +17,16 @@ const Admin = () => {
         <div>
             <Navigation />
             <Router>
+                <SideBar />
                 <div className="admin">
-                    <SideBar />
                     <Switch>
-                        {/* <Route path="/admin/dashboard" component={Dashboard} /> */}
-                        <Route path="/admin/exam" component={Exam} />
-                        {/* <Route path="/admin/teachers" component={Teacher} /> */}
-                        {/* <Route path="/admin/students" component={Student} /> */}
-                        {/* <Route path="/admin/absences" component={Absence} /> */}
-                        {/* <Route path="/admin/classes" component={Classes} /> */}
-                        {/* <Route path="/admin/examScores" component={ExamScore} /> */}
+                        <div style={{ margin: "auto" }}>
+                            <Route
+                                path="/admin/dashboard"
+                                component={Dashboard}
+                            />
+                            <Route path="/admin/exam" component={Exam} />
+                        </div>
                     </Switch>
                 </div>
             </Router>
