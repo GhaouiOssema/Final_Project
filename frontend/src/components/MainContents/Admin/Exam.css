@@ -1,0 +1,11 @@
+.calendar {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    width: 800px;
+}
+.dayCell {
+    height: 50px !important;
+    /* width: 50px !important; */
+}
