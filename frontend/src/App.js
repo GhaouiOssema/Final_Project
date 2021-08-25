@@ -5,7 +5,7 @@ import Admin from "./interfaces/admin/Admin";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-    const role = 0;
+    const role = 2;
     return (
         <Router>
             <div className="App">

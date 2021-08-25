@@ -1,0 +1,62 @@
+.profile-section {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 17.5%;
+    padding: 80px 0 0 10px;
+    height: 100vh;
+    background-color: #eaeef3;
+}
+.profile-section h1 {
+    text-align: center;
+    padding: 1px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #666;
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
+.profile-section .section-top {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 68rem;
+    height: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.profile-card {
+    margin-left: -10%;
+    padding: 10px;
+}
+.profile-title .profile-name {
+    text-align: center;
+}
+.list-items {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
+.profile-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+    padding: 3px;
+}
+.profile-img {
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid rgb(100, 97, 97);
+}
+.aboute-card {
+    padding-left: 10px;
+    height: 43vh;
+    width: 350px;
+}
+.aboute-card header {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
