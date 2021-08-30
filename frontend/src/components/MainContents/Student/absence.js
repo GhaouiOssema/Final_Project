@@ -11,7 +11,7 @@ const Absence = () => {
                 <div className="icons">
                     <div>
                         <i className="fa fa-circle green"></i>
-                        <span className="txtOnline">Prente</span>
+                        <span className="txtOnline">Presente</span>
                     </div>{" "}
                     <div>
                         <i className="fas fa-circle red"></i>
@@ -64,7 +64,7 @@ const Table = () => {
                         <td className="center">
                             <div>
                                 <i className="fa fa-circle green"></i>
-                                <span className="txtOnline">Prente</span>
+                                <span className="txtOnline">Presente</span>
                             </div>
                         </td>
                     </tr>

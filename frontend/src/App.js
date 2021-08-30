@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
     const role = 3;
+
     return (
         <Router>
             <div className="App">
