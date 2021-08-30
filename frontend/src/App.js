@@ -1,6 +1,4 @@
 import Student from "./interfaces/student/Student";
-import Footer from "./components/Footer/Footer";
-import SideBar from "./components/SideBar/student/SideBar";
 import Admin from "./interfaces/admin/Admin";
 import Teacher from "./interfaces/teacher/Teacher";
 
@@ -23,7 +21,9 @@ function App() {
                     <Route path="/Student">
                         <Student />
                     </Route>
-                ) : null}
+                ) : (
+                    <Register path="/register" />
+                )}
             </div>
         </Router>
     );

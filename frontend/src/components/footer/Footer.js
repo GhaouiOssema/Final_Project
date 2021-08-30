@@ -6,10 +6,8 @@ const Footer = () => {
         <div className="page-footer">
             <div className="page-footer-inner">
                 {" "}
-                2017 © Smart University Theme By
-                <a href="#" target="_top" className="makerCss">
-                    Redstar Theme
-                </a>
+                2021 © Smart School Theme By
+                <span> GoMyCode Team</span>
             </div>
         </div>
     );

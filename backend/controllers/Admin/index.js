@@ -10,5 +10,7 @@ module.exports = {
     DeleteClass: require("./DeleteClass.controller"),
     EditClass: require("./EditClass.controller"),
     DeleteStudent: require("./DeleteStudent.controller"),
+    DeleteTeacher: require("./DeleteTeacher.controller"),
     ImportAllStudents: require("./GetAllStudents.controller"),
+    ImportAllTeachers: require("./GetAllTeachers.controller"),
 };

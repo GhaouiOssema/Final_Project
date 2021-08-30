@@ -1,1 +1,8 @@
- 
+.admin {
+    margin-left: 17%;
+    padding: 80px 0 12px 20px;
+    /* height: 100%; */
+    /* width: 100%; */
+    min-height: 600px;
+    background-color: #eaeef3;
+}

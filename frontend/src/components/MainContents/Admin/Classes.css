@@ -1,0 +1,54 @@
+.Class-content {
+    text-align: center;
+}
+
+.no-class {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    color: #3d4eff;
+}
+.Class-content i {
+    font-size: 100px;
+    color: #3d4eff;
+}
+.btn-primary {
+    margin-left: 350px;
+}
+.classes {
+    padding-top: 10px;
+    margin-left: -20px;
+    width: 900px;
+    /* min-height: 500px; */
+}
+.modal-content {
+    margin-top: 130px;
+    margin-left: 100px;
+    width: 600px !important;
+}
+.affichage-class {
+    border: 1px solid #fff;
+    padding: 20px;
+    background-color: #fff;
+    min-height: 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.affichage-class span {
+    color: #fff;
+    font-weight: 600;
+    background-color: #e91e63;
+    border: 1px solid #e91e63;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#class-btn {
+    margin-bottom: 35px;
+}
+button {
+    background: none;
+    border: none;
+}
