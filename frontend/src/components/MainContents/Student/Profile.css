@@ -8,8 +8,8 @@
     background-color: #eaeef3;
 }
 .profile-section h1 {
-    text-align: center;
-    padding: 1px;
+    padding: 10px 0 0 0;
+    margin-left: 1%;
     letter-spacing: 1px;
     font-weight: bold;
     color: #666;
@@ -17,22 +17,29 @@
     font-family: Poppins, sans-serif;
     font-weight: 600;
 }
+.profile-section .container {
+    margin-top: 1%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 1100px;
+    margin-right: 12px;
+    height: 63vh;
+}
 .profile-section .section-top {
     display: flex;
     justify-content: space-around;
-    background-color: #fff;
+    align-items: center;
     border-radius: 15px;
     width: 68rem;
+    margin-top: -40px;
     height: 50%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .profile-card {
     margin-left: -10%;
+    margin-top: 100px;
     padding: 10px;
-}
-.profile-title .profile-name {
-    text-align: center;
 }
 .list-items {
     display: flex;
@@ -43,20 +50,21 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2%;
-    padding: 3px;
+    padding: 30px 0 0 0;
 }
 .profile-img {
-    width: 80px;
-    border-radius: 50%;
-    border: 3px solid rgb(100, 97, 97);
+    width: 130px;
+    padding: 3px;
+    border: 3px solid rgb(210, 214, 222);
+    border-radius: 50% 50% 50% 50%;
 }
 .aboute-card {
     padding-left: 10px;
-    height: 43vh;
+    margin-top: 30px;
+    height: 10vh;
     width: 350px;
 }
 .aboute-card header {
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
 }

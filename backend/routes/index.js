@@ -149,8 +149,8 @@ router.post("/student/register", controllers.students.register.CreateStudents);
  * @access private
  */
 router.get(
-    "/student/profile",
-    verifyToken,
+    "/student/profile/:id",
+    // verifyToken,
     controllers.students.consultProfile.profile
 );
 /**
@@ -160,8 +160,8 @@ router.get(
  */
 
 router.get(
-    "/student/absence",
-    verifyToken,
+    "/student/absence/:id",
+    // verifyToken,
     controllers.students.consultAbsence.Absence
 );
 /**
@@ -170,8 +170,8 @@ router.get(
  * @access private
  */
 router.get(
-    "/student/note",
-    verifyToken,
+    "/student/note/:id",
+    // verifyToken,
     controllers.students.consultNote.GetNote
 );
 /**

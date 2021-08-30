@@ -1,0 +1,16 @@
+.teacher-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #eaeef3;
+}
+.teacher-dashboard h1 {
+    padding: 10px 0 0 0;
+    margin-left: 1%;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #6673fc;
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
