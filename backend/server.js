@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const morgan = require("morgan");
+var cors = require("cors");
 
 const app = express();
 
@@ -9,6 +10,8 @@ const app = express();
 const connectDB = require("./config/DataBase");
 
 connectDB();
+
+app.use(cors({ origin: true, credentials: true }));
 
 app.use(express.json());
 // app.use(morgan());

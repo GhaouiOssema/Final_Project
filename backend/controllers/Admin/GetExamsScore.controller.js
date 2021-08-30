@@ -4,7 +4,7 @@ module.exports = {
         try {
             const AllExamScore = await Note.find({})
                 .populate("subject", "firstName lastName -_id subject")
-                .populate("student", "firstName lastName -_id");
+                .populate("student", "firstName lastName ");
             res.status(200).json({
                 status: true,
                 message: "All Exams Score Imported",

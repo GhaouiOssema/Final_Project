@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./absence.css";
 
 const Absence = () => {
+    // eslint-disable-next-line
     const [absente, setAbsente] = useState(true);
     return (
         <div className="table-responsive">
@@ -55,6 +56,7 @@ const Table = () => {
                     <tr className="">
                         <td className="center">Math</td>
                         <td className="center">
+                            {/* eslint-disable-next-line */}
                             <a href="#"> Rajesh </a>
                         </td>
                         <td className="center">12/05/2016</td>

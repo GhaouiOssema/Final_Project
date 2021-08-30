@@ -39,6 +39,10 @@ const teacherSchema = new mongoose.Schema({
     role: {
         type: Number,
     },
+    showSelect: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 const teacher = mongoose.model("teacher", teacherSchema);

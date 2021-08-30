@@ -3,7 +3,10 @@ module.exports = {
     async GetSituation(req, res) {
         try {
             const AllSituations = await Situation.find({})
-                .populate("student", "firstName lastName classRoom -_id  ")
+                .populate(
+                    "student",
+                    "firstName lastName avatar classRoom -_id  "
+                )
                 .populate("addedBy", "firstName lastName subject -_id");
             res.status(200).json({
                 status: true,

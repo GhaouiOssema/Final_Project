@@ -24,6 +24,7 @@ const Navigation = () => {
                             src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
                             width="29px"
                             height="29px"
+                            alt="profile"
                         />
                         <Navbar align="end" expand="lg">
                             <Container fluid>
