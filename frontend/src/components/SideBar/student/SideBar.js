@@ -11,7 +11,7 @@ const SideBar = () => {
                     <img
                         src="https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
                         className="user-img-circle"
-                        alt="User Image"
+                        alt="User_Image"
                         width="75px"
                         height="75px"
                     />

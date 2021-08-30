@@ -56,6 +56,15 @@ router.get(
     "/administation/AllStudents",
     controllers.admin.ImportAllStudents.GetAllStudents
 );
+/**
+ * @route GET /administation/AllTeachers
+ * @description Get All Teachers from database
+ * @access private
+ */
+router.get(
+    "/administation/AllTeachers",
+    controllers.admin.ImportAllTeachers.GetAllTeachers
+);
 
 /**
  * @route PUT /administration/updateStudent
@@ -77,6 +86,15 @@ router.delete(
     controllers.admin.DeleteStudent.DeleteStudent
 );
 /**
+ * @route DELETE /administation/deleteTeacher/:id
+ * @description Delete Teacher from database
+ * @access private
+ */
+router.delete(
+    "/administation/deleteTeacher/:id",
+    controllers.admin.DeleteTeacher.DeleteTeacher
+);
+/**
  * @route GET /administration/GetAllExamsScore
  * @description Import All Students Exams Score
  * @access private
@@ -91,7 +109,7 @@ router.get(
  * @access private
  */
 router.get(
-    "/GetAllExamsDate",
+    "/administration/GetAllExamsDate",
     controllers.admin.ImportExamsDate.GetAllExamDate
 );
 

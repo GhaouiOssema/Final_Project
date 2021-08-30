@@ -1,11 +1,11 @@
 import Student from "./interfaces/student/Student";
-import Footer from "./components/Footer/Footer";
-import SideBar from "./components/SideBar/student/SideBar";
 import Admin from "./interfaces/admin/Admin";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Register from "./interfaces/register/Register";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-    const role = 2;
+    const role = 3;
+
     return (
         <Router>
             <div className="App">
@@ -17,7 +17,9 @@ function App() {
                     <Route path="/Student">
                         <Student />
                     </Route>
-                ) : null}
+                ) : (
+                    <Register path="/register" />
+                )}
             </div>
         </Router>
     );

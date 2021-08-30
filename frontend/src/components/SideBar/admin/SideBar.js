@@ -9,7 +9,7 @@ const SideBar = () => {
                     <img
                         src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
                         className="user-img-circle"
-                        alt="User Image"
+                        alt="User_Image"
                         width="75px"
                         height="75px"
                     />
@@ -69,14 +69,6 @@ const SideBar = () => {
                             <i class="fas fa-chart-line"></i>
                         </span>
                         <span class="item">Classes</span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink className="nav-link" to="/admin/examScores">
-                        <span class="icon">
-                            <i class="far fa-clipboard"></i>
-                        </span>
-                        <span class="item">Exam Scores</span>
                     </NavLink>
                 </li>
             </ul>

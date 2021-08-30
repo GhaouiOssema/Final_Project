@@ -1,0 +1,10 @@
+.page-footer {
+    padding: 19px 5px;
+    font-size: 13px;
+    background-color: #222c3c;
+    margin-left: 17%;
+    text-align: right;
+}
+.page-footer .page-footer-inner {
+    color: #98a6ba;
+}

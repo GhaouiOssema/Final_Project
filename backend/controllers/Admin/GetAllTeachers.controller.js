@@ -1,13 +1,13 @@
-const Classroom = require("../../models/Classroom");
+const Teachers = require("../../models/Teachers");
 module.exports = {
-    async GetAllClassroom(req, res) {
+    async GetAllTeachers(req, res) {
         try {
-            const data = await Classroom.find({});
+            const AllTeachers = await Teachers.find({});
 
             res.status(200).json({
                 status: true,
-                message: "All Classroom Imported",
-                data,
+                message: "All Teachers Imported",
+                data: AllTeachers,
             });
         } catch (err) {
             console.log(err);
