@@ -3,12 +3,11 @@ const Note = require("./../../models/note");
 module.exports = {
     async GetNote(req, res) {
         try {
-            const { id } = req.params;
             const data = await Note.find({
-                student: id,
+                student: res.decoded.id,
             })
                 .populate("subject", "subject")
-                .populate("student", "firstName lastName ");
+                .populate("student", "firstName lastName -_id");
 
             res.status(200).json({ status: true, data });
         } catch (err) {

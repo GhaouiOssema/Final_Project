@@ -9,6 +9,7 @@ import Dashboard from "../../components/MainContents/Student/Dashboard";
 import Exam from "../../components/MainContents/Student/Exam";
 import Absence from "../../components/MainContents/Student/absence";
 import Note from "../../components/MainContents/Student/Note";
+import Footer from "../../components/Footer/Footer";
 
 const Student = () => {
     return (
@@ -24,6 +25,7 @@ const Student = () => {
                         <Route path="/student/note" component={Note} />
                     </Switch>
                 </div>
+                 <Footer />
             </Router>
         </div>
     );

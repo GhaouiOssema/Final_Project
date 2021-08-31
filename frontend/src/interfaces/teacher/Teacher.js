@@ -22,10 +22,7 @@ const Teacher = () => {
                     <SideBar />
                     <div className="someMargin">
                         <Switch>
-                            <Route
-                                path="/teacher/dashboard"
-                                component={Dashboard}
-                            />
+                            <Route path="/dashboard" component={Dashboard} />
                             <Route
                                 path="/teacher/ExamsDate"
                                 component={ExamsDate}

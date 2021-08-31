@@ -26,13 +26,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-<<<<<<< HEAD
                     <NavLink className="nav-link " to="/dashboard">
-=======
-                    <NavLink
-                        className="nav-link active"
-                        to="/student/dashboard">
->>>>>>> 070e00f0a9d007bd8b2d89a6b7839b7a6e658194
                         <span class="icon">
                             <i class="fas fa-desktop"></i>
                         </span>

@@ -1,6 +1,13 @@
 import "./Navigation.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 const Navigation = () => {
+    const history = useHistory();
+    const logOut = () => {
+        localStorage.clear();
+        history.push("/");
+        history.go(0);
+    };
     return (
         <div className="top-header">
             <div className="top-header-logo">
@@ -37,13 +44,7 @@ const Navigation = () => {
                                         >
                                             <NavDropdown.Item href="# ">
                                                 <i className="far fa-user"></i>
-<<<<<<< HEAD
                                                 Profile
-=======
-                                                <NavLink to="/teacher/profile">
-                                                    Profile
-                                                </NavLink>
->>>>>>> 070e00f0a9d007bd8b2d89a6b7839b7a6e658194
                                             </NavDropdown.Item>
                                             <NavDropdown.Item href="# ">
                                                 <i className="fas fa-cog"></i>
@@ -55,8 +56,10 @@ const Navigation = () => {
                                             </NavDropdown.Item>
 
                                             <NavDropdown.Item href="# ">
-                                                <i className="fas fa-sign-out-alt"></i>
-                                                Logout
+                                                <button onClick={logOut}>
+                                                    <i className="fas fa-sign-out-alt"></i>
+                                                    Logout
+                                                </button>
                                             </NavDropdown.Item>
                                         </NavDropdown>
                                     </Nav>

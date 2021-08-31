@@ -64,14 +64,10 @@
     background-color: #fff;
 }
 .table-responsive {
-<<<<<<< HEAD
-    margin-left: 20%;
-=======
     width: 1120px;
     margin-left: 17.5%;
     height: 100vh;
     background-color: #eaeef3;
->>>>>>> 070e00f0a9d007bd8b2d89a6b7839b7a6e658194
 }
 .table-responsive label {
     margin-top: 40px;
@@ -82,9 +78,6 @@
     margin: 40px;
 }
 .center {
-<<<<<<< HEAD
-    width: 150px;
-=======
     width: 200px;
     text-align: center;
     margin-top: 5%;
@@ -111,5 +104,4 @@
 .indcate {
     display: flex;
     justify-content: center;
->>>>>>> 070e00f0a9d007bd8b2d89a6b7839b7a6e658194
 }

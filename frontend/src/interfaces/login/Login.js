@@ -17,7 +17,7 @@ const Login = () => {
                 history.push("/dashboard");
                 history.go(0);
             })
-            .catch((err) => console.log("error from login", err));
+            .catch((err) => alert("Invalid Email or Password", err));
     };
     return (
         <div className="background-login">
