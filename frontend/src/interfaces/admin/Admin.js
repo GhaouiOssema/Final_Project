@@ -23,10 +23,7 @@ const Admin = () => {
                 <div className="admin">
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
-                            <Route
-                                path="/admin/dashboard"
-                                component={Dashboard}
-                            />
+                            <Route path="/dashboard" component={Dashboard} />
                             <Route path="/admin/exam">
                                 <Exam />
                             </Route>

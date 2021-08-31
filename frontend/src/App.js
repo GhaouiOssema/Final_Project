@@ -2,32 +2,86 @@ import Student from "./interfaces/student/Student";
 import Admin from "./interfaces/admin/Admin";
 import Teacher from "./interfaces/teacher/Teacher";
 import Register from "./interfaces/register/Register";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import Login from "./interfaces/login/Login";
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+    Redirect,
+} from "react-router-dom";
+import jwt from "jwt-decode";
 function App() {
-    const role = 1;
+    const token = localStorage.getItem("JWT");
+    const getrole = () => {
+        if (token !== null) {
+            const decoded_token = jwt(token);
+            console.log(decoded_token);
+            return decoded_token.role;
+        }
+    };
+    const isLoggedIn = () => {
+        if (localStorage.getItem("JWT")) {
+            return true;
+        }
+        return false;
+    };
+    const role = getrole();
     return (
         <Router>
             <div className="App">
-                {role === 0 ? (
-                    <Route path="/admin">
-                        <Admin />
-                    </Route>
-                ) : role === 1 ? (
-                    <Route path="/teacher">
-                        <Teacher />
-                    </Route>
-                ) : role === 2 ? (
-                    <Route path="/Student">
-                        <Student />
-                    </Route>
-                ) : (
-                    <Register path="/register" />
-                )}
-            </div>
-        </Router>
-    );
-}
+                <Route path="/">
+                    {isLoggedIn() && role === 0 ? (
+                        <>
+                            <Redirect to="/dashboard" />
+                            <Route to="/dashboard">
+                                <Admin />
+                            </Route>
+                        </>
+                    ) : isLoggedIn() && role === 1 ? (
+                        <>
+                            <Redirect to="/dashboard" />
+                            {/* <Teacher /> */}
+                            <h1>teacher</h1>
+                        </>
+                    ) : isLoggedIn() && role === 2 ? (
+                        <>
+                            <Redirect to="/dashboard" />
+                            <Student />
+                        </>
+                    ) : (
+                        <>
+                            {<Route exact path="/dashboard"></Route> ? (
+                                <Route>
+                                    <Redirect to="/" />
+                                    <Switch>
+                                        <>
+                                            <Route path="/register">
+                                                <Register />
+                                            </Route>
+                                            <Route path="/">
+                                                <Login />
+                                            </Route>
+                                        </>
+                                    </Switch>
+                                </Route>
+                            ) : null}
+                        </>
+                    )}
+                </Route>
+                {/* {isLoggedIn() ? (
+                    <>
+                        {role === 0 ? (
+                            <Route path="/dashboard">
+                                <Admin />
+                            </Route>
+                        ) : role === 1 ? (
+                            <h1>teacher</h1>
+                        ) : (
+                            <Route path="/dashboard">
+                                <Student />
+                            </Route>
+                        )}
+                    </>
+ 
 
 export default App;
