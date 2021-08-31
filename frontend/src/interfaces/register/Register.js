@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./Register.css";
 import { Form } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
     const history = useHistory();
@@ -14,6 +14,7 @@ const Register = () => {
         parentsPhone: "",
         email: "",
         password: "",
+        code: "",
         role: 2,
     });
     const [teacher, setTeacher] = useState({
@@ -22,6 +23,7 @@ const Register = () => {
         subject: "",
         email: "",
         password: "",
+        code: "",
         role: 1,
     });
     //******************* */
@@ -36,42 +38,86 @@ const Register = () => {
     };
     const handleRegisterStudent = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value });
+
         console.log(student);
     };
+    function validateEmail(email) {
+        const re =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
     const handleSubmitRegisterStudent = (e) => {
-        axios
-            .post("http://localhost:5000/student/register", student)
-            .then((res) => {
-                console.log("Status: ", res.status);
-                console.log("Data: ", res.data);
-                history.push("/login");
-            })
-            .catch((err) => {
-                console.log("Error in Create Student!", err);
-            });
+        if (student.code === "School2021") {
+            if (student.age < 12) {
+                alert("You Are Not Be Able To Register ");
+            } else if (student.adress === "") {
+                alert("There's Empty Field !! ");
+            } else if (student.parentsPhone.length !== 8) {
+                alert("Please Put a correct Phone Number");
+            } else if (student.password.length < 8) {
+                alert("Password must be at least 8 characters  ");
+            } else if (student.firstName.length < 3) {
+                alert("First Name And Last Name must be at least 3 characters");
+            } else if (student.lastName.length < 3) {
+                alert("Last Name And Last Name must be at least 3 characters");
+            } else if (!validateEmail(student.email)) {
+                alert("Wrong Email .. ");
+            } else {
+                axios
+                    .post("http://localhost:5000/student/register", student)
+                    .then((res) => {
+                        console.log("Status: ", res.status);
+                        console.log("Data: ", res.data);
+                        history.push("/");
+                    })
+                    .catch((err) => {
+                        console.log("Error in Create Student!", err);
+                    });
+            }
+        } else {
+            alert(
+                "Sorry Your Activation Invalid Or Expired Check Your School Please ! "
+            );
+        }
     };
     const handleRegisterTeacher = (e) => {
         setTeacher({ ...teacher, [e.target.name]: e.target.value });
     };
     const handleSubmitRegisterTeacher = (e) => {
-        axios
-            .post("http://localhost:5000/teacher/register", teacher)
-            .then((res) => {
-                console.log("Status : ", res.status);
-                console.log("Data : ", res.data);
-                history.push("/login");
-            })
-            .catch((err) => {
-                console.log("Error in Create Teacher! ", err);
-            });
+        if (teacher.code === "SchoolTeacher2021") {
+            if (teacher.subject == "") {
+                alert("You can't Register with Empty Field");
+            } else if (teacher.password.length < 8) {
+                alert("Password must be at least 8 characters  ");
+            } else if (teacher.firstName.length < 3) {
+                alert("First Name And Last Name must be at least 3 characters");
+            } else if (teacher.lastName.length < 3) {
+                alert("Last Name And Last Name must be at least 3 characters");
+            } else if (!validateEmail(teacher.email)) {
+                alert("Wrong Email .. ");
+            } else {
+                axios
+                    .post("http://localhost:5000/teacher/register", teacher)
+                    .then((res) => {
+                        console.log("Status : ", res.status);
+                        console.log("Data : ", res.data);
+                        history.push("/");
+                    })
+                    .catch((err) => {
+                        console.log("Error in Create Teacher! ", err);
+                    });
+            }
+        } else
+            alert(
+                "Sorry Your Activation Code Invalid Check Your School Please ! "
+            );
     };
     return (
         <div className="lg">
             <div class="contaiiner" id="contaiiner">
                 <div class="form-contaiiner sign-up-contaiiner">
                     <div className="form-teacher">
-                        <h1 className="title">Sign Up As Teacher</h1>
-
+                        <h1 className="sign-up-header">Sign Up As Teacher</h1>
                         <input
                             className="input"
                             type="text"
@@ -112,15 +158,31 @@ const Register = () => {
                             placeholder="Password"
                             onChange={handleRegisterTeacher}
                         />
-
-                        <button onClick={handleSubmitRegisterTeacher}>
+                        <input
+                            className="input"
+                            type="text"
+                            name="code"
+                            id="exampleInputcode"
+                            title="You Get This Code from your School/College"
+                            placeholder="Code Activation"
+                            onChange={handleRegisterTeacher}
+                        />
+                        <button
+                            className="sign-up-button"
+                            onClick={handleSubmitRegisterTeacher}
+                        >
                             Sign Up
+                        </button>
+                        <button className="to-login">
+                            <NavLink to="/">
+                                <span>Already Have Account !</span>{" "}
+                            </NavLink>
                         </button>
                     </div>
                 </div>
                 <div class="form-contaiiner sign-in-contaiiner">
                     <div className="form-student">
-                        <h1 className="title">Sign Up As Student</h1>
+                        <h1 className="sign-up-header">Sign Up As Student</h1>
 
                         <div className="fullname">
                             <input
@@ -183,12 +245,25 @@ const Register = () => {
                             placeholder="Password"
                             onChange={handleRegisterStudent}
                         />
-
+                        <input
+                            className="input"
+                            type="text"
+                            name="code"
+                            id="exampleInputcode"
+                            title="You Get This Code from your School/College"
+                            placeholder="Code Activation"
+                            onChange={handleRegisterStudent}
+                        />
                         <button
+                            className="sign-up-button"
                             onClick={handleSubmitRegisterStudent}
-                            className="signup-valid-btn"
                         >
                             Sign Up
+                        </button>
+                        <button className="to-login">
+                            <NavLink to="/">
+                                <span>Already Have Account !</span>{" "}
+                            </NavLink>
                         </button>
                     </div>
                 </div>
@@ -198,12 +273,11 @@ const Register = () => {
                             <h1 style={{ fontWeight: "bold" }}>
                                 Welcome Student !
                             </h1>
-                            <p>
+                            <p className="sign-up-text-p">
                                 To Sign Up Here please enter your personal info
                             </p>
                             <button
-                                class="ghost"
-                                id="signIn"
+                                className="sign-up-button ghost"
                                 onClick={signinButton}
                             >
                                 Sign Up As Student
@@ -213,10 +287,11 @@ const Register = () => {
                             <h1 style={{ fontWeight: "bold" }}>
                                 Hello, Teacher!
                             </h1>
-                            <p>Enter your personal details and start with us</p>
+                            <p className="sign-up-text-p">
+                                Enter your personal details and start with us
+                            </p>
                             <button
-                                class="ghost"
-                                id="signUp"
+                                className="sign-up-button ghost"
                                 onClick={signupButton}
                             >
                                 Sign Up As Teacher

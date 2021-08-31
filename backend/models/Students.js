@@ -6,6 +6,11 @@ const studentSchema = new mongoose.Schema({
         default:
             "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",
     },
+    ref: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     firstName: {
         type: String,
         required: true,
