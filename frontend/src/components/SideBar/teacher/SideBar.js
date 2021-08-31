@@ -26,13 +26,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-<<<<<<< HEAD
-                    <NavLink className="nav-link " to="/dashboard">
-=======
-                    <NavLink
-                        className="nav-link active"
-                        to="/student/dashboard">
->>>>>>> 070e00f0a9d007bd8b2d89a6b7839b7a6e658194
+                    <NavLink className="nav-link " to="/teacher/dashboard">
                         <span class="icon">
                             <i class="fas fa-desktop"></i>
                         </span>
@@ -40,28 +34,36 @@ const SideBar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav-link" to="/student/exam">
+                    <NavLink className="nav-link" to="/teacher/ExamsDate">
                         <span class="icon">
                             <i class="fas fa-calendar-week"></i>
                         </span>
                         <span class="item">Date Of Exams</span>
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink className="nav-link" to="/student/absence">
-                        <span class="icon">
-                            <i class="fas fa-user-check"></i>
-                        </span>
-                        <span class="item">Absence</span>
-                    </NavLink>
-                </li>
 
                 <li>
-                    <NavLink className="nav-link" to="/student/note">
+                    <NavLink className="nav-link" to="/teacher/students">
                         <span class="icon">
-                            <i class="far fa-clipboard"></i>
+                            <i class="fas fa-user-friends"></i>
                         </span>
-                        <span class="item">Exam Scores</span>
+                        <span class="item">Students</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className="nav-link" to="/teacher/absencesHistory">
+                        <span class="icon">
+                            <i class="fas fa-history"></i>{" "}
+                        </span>
+                        <span class="item">Absences History</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className="nav-link" to="/teacher/score">
+                        <span class="icon">
+                            <i class="far fa-sticky-note"></i>
+                        </span>
+                        <span class="item">Score</span>
                     </NavLink>
                 </li>
             </ul>
