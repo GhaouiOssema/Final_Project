@@ -1,4 +1,8 @@
-.students-exams {
-    margin-top: 6%;
-    width: 800px;
+.calendar-student {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fff;
+    width: 1000px;
+    margin-left: -10%;
 }

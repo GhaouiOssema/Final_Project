@@ -11,19 +11,17 @@ const Exam = () => {
     const events = [];
 
     return (
-        <div className="students-exams">
-            <div className="page-header-left">
-                <FullCalendar
-                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                    headerToolbar={{
-                        left: "prev,next today",
-                        center: "title",
-                        right: "dayGridMonth,timeGridDay",
-                    }}
-                    initialView="dayGridMonth"
-                    events={events}
-                />
-            </div>
+        <div className="calendar-student">
+            <FullCalendar
+                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                headerToolbar={{
+                    left: "prev,next today",
+                    center: "title",
+                    right: "dayGridMonth,timeGridDay",
+                }}
+                initialView="dayGridMonth"
+                events={events}
+            />
         </div>
     );
 };

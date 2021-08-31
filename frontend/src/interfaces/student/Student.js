@@ -16,16 +16,25 @@ const Student = () => {
         <div>
             <Navigation />
             <Router>
-                <div className="page-content">
-                    <SideBar />
+                <SideBar />
+                <div className="admin">
                     <Switch>
-                        <Route path="/dashboard" component={Dashboard} />
-                        <Route path="/student/exam" component={Exam} />
-                        <Route path="/student/absence" component={Absence} />
-                        <Route path="/student/note" component={Note} />
+                        <div style={{ marginLeft: "13%" }}>
+                            <Route path="/dashboard" component={Dashboard} />
+                            <Route path="/student/exam">
+                                <Exam />
+                            </Route>
+
+                            <Route path="/student/absence">
+                                <Absence />
+                            </Route>
+                            <Route path="student/note">
+                                <Note />
+                            </Route>
+                        </div>
                     </Switch>
                 </div>
-                 <Footer />
+                <Footer />
             </Router>
         </div>
     );
