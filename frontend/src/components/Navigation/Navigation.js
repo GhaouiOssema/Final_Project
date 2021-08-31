@@ -1,7 +1,13 @@
 import "./Navigation.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const Navigation = () => {
+    const history = useHistory();
+    const logOut = () => {
+        localStorage.clear();
+        history.push("/");
+        history.go(0);
+    };
     return (
         <div className="top-header">
             <div className="top-header-logo">
@@ -34,12 +40,11 @@ const Navigation = () => {
                                     <Nav>
                                         <NavDropdown
                                             id="nav-dropdown-dark-example"
-                                            title="Hatem Kthiri">
+                                            title="Hatem Kthiri"
+                                        >
                                             <NavDropdown.Item href="# ">
                                                 <i className="far fa-user"></i>
-                                                <NavLink to="/teacher/profile">
-                                                    Profile
-                                                </NavLink>
+                                                Profile
                                             </NavDropdown.Item>
                                             <NavDropdown.Item href="# ">
                                                 <i className="fas fa-cog"></i>
@@ -51,8 +56,10 @@ const Navigation = () => {
                                             </NavDropdown.Item>
 
                                             <NavDropdown.Item href="# ">
-                                                <i className="fas fa-sign-out-alt"></i>
-                                                Logout
+                                                <button onClick={logOut}>
+                                                    <i className="fas fa-sign-out-alt"></i>
+                                                    Logout
+                                                </button>
                                             </NavDropdown.Item>
                                         </NavDropdown>
                                     </Nav>

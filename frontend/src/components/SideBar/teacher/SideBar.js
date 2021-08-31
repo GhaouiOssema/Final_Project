@@ -26,7 +26,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <NavLink className="nav-link " to="/teacher/dashboard">
+                    <NavLink className="nav-link " to="/dashboard">
                         <span class="icon">
                             <i class="fas fa-desktop"></i>
                         </span>

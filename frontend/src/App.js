@@ -40,29 +40,33 @@ function App() {
                     ) : isLoggedIn() && role === 1 ? (
                         <>
                             <Redirect to="/dashboard" />
-                            {/* <Teacher /> */}
-                            <h1>teacher</h1>
+                            <Route to="/dashboard">
+                                <Teacher />
+                            </Route>
                         </>
                     ) : isLoggedIn() && role === 2 ? (
                         <>
                             <Redirect to="/dashboard" />
-                            <Student />
+                            <Route to="/dashboard">
+                                <Student />
+                            </Route>
                         </>
                     ) : (
                         <>
                             {<Route exact path="/dashboard"></Route> ? (
                                 <Route>
                                     <Redirect to="/" />
-                                    <Switch>
-                                        <>
+
+                                    <>
+                                        <Switch>
                                             <Route path="/register">
                                                 <Register />
                                             </Route>
                                             <Route path="/">
                                                 <Login />
                                             </Route>
-                                        </>
-                                    </Switch>
+                                        </Switch>
+                                    </>
                                 </Route>
                             ) : null}
                         </>
@@ -82,6 +86,22 @@ function App() {
                             </Route>
                         )}
                     </>
- 
+                ) : (
+                    <>
+                        <Switch>
+                            <Route path="/register">
+                                <Register />
+                            </Route>
+
+                            <Route path="/">
+                                <Login />
+                            </Route>
+                        </Switch>
+                    </>
+                )} */}
+            </div>
+        </Router>
+    );
+}
 
 export default App;

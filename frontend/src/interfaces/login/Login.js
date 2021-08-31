@@ -13,11 +13,11 @@ const Login = () => {
         axios
             .post("http://localhost:5000/login", user)
             .then((res) => {
-                localStorage.setItem("JWT", res.data.token);
+                localStorage.setItem("JWT", res.data.data);
                 history.push("/dashboard");
                 history.go(0);
             })
-            .catch((err) => console.log("error from login", err));
+            .catch((err) => alert("Invalid Email or Password", err));
     };
     return (
         <div className="background-login">

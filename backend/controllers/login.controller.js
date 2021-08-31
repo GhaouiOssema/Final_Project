@@ -3,14 +3,14 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Student = require("../models/Students");
 const Teacher = require("../models/Teachers");
-
+const Admin = require("../models/Admin");
 module.exports = {
     async login(req, res) {
         try {
             const { email, password } = req.body;
             const student = await Student.findOne({ email });
             const teacher = await Teacher.findOne({ email });
-
+            const admin = await Admin.findOne({ email });
             if (student) {
                 bcrypt.compare(
                     password,
@@ -23,7 +23,7 @@ module.exports = {
                             });
                         } else if (result) {
                             const token = jwt.sign(
-                                { id: student._id, email },
+                                { id: student._id, email, role: student.role },
                                 process.env.SECRET_TOKEN,
                                 {
                                     expiresIn: "7d",
@@ -32,6 +32,37 @@ module.exports = {
                             res.status(200).json({
                                 status: true,
                                 message: "you are logged in as student",
+                                data: token,
+                            });
+                        } else {
+                            res.status(401).json({
+                                staus: false,
+                                message: "invalid credentials",
+                            });
+                        }
+                    }
+                );
+            } else if (admin) {
+                bcrypt.compare(
+                    password,
+                    admin.password,
+                    async (err, result) => {
+                        if (err) {
+                            res.status(500).json({
+                                status: false,
+                                message: err,
+                            });
+                        } else if (result) {
+                            const token = jwt.sign(
+                                { id: admin._id, role: admin.role, email },
+                                process.env.SECRET_TOKEN,
+                                {
+                                    expiresIn: "7d",
+                                }
+                            );
+                            res.status(200).json({
+                                status: true,
+                                message: "you are logged in as Admin",
                                 data: token,
                             });
                         } else {
@@ -54,7 +85,7 @@ module.exports = {
                             });
                         } else if (result) {
                             const token = jwt.sign(
-                                { id: teacher._id, email },
+                                { id: teacher._id, email, role: teacher.role },
                                 process.env.SECRET_TOKEN,
                                 {
                                     expiresIn: "7d",

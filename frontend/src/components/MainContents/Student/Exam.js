@@ -1,4 +1,4 @@
-import Calendar from "react-awesome-calendar";
+// import Calendar from "react-awesome-calendar";
 import "./Exam.css";
 
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
