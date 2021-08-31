@@ -14,8 +14,9 @@
 .icons {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    margin-top: 40px;
+    padding-bottom: 10px;
 }
 .icons > div {
     margin-left: 10px;
@@ -45,15 +46,27 @@
     font-size: 100px;
     color: #3d4eff;
 }
+.table-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-left: 5%;
+    width: 1020px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
 .table-header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 978px !important;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
 .table-responsive {
     width: 1120px;
     margin-left: 17.5%;
-    /* padding: 10px 0 0 10px; */
     height: 100vh;
     background-color: #eaeef3;
 }
@@ -65,4 +78,29 @@
 }
 .center {
     width: 200px;
+    text-align: center;
+    margin-top: 5%;
+}
+.centerImg {
+    width: 200px;
+    text-align: center;
+}
+
+.center-field {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profImg {
+    width: 35px;
+    border-radius: 50%;
+}
+.center:hover {
+    color: #4680ff;
+    cursor: pointer;
+}
+.indcate {
+    display: flex;
+    justify-content: center;
 }

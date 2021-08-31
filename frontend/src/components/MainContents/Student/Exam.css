@@ -1,11 +1,4 @@
-.calendar {
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
-    background: #fff;
-    width: 10px;
-}
-.dayCell {
-    height: 50px !important;
-    /* width: 50px !important; */
+.students-exams {
+    margin-top: 6%;
+    width: 800px;
 }

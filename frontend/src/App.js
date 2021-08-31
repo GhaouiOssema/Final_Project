@@ -1,5 +1,6 @@
 import Student from "./interfaces/student/Student";
 import Admin from "./interfaces/admin/Admin";
+import Teacher from "./interfaces/teacher/Teacher";
 import Register from "./interfaces/register/Register";
 import Login from "./interfaces/login/Login";
 import {
@@ -81,22 +82,6 @@ function App() {
                             </Route>
                         )}
                     </>
-                ) : (
-                    <>
-                        <Switch>
-                            <Route path="/register">
-                                <Register />
-                            </Route>
-
-                            <Route path="/">
-                                <Login />
-                            </Route>
-                        </Switch>
-                    </>
-                )} */}
-            </div>
-        </Router>
-    );
-}
+ 
 
 export default App;

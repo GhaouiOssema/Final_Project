@@ -1,0 +1,89 @@
+.exams-page-content {
+    background-color: #eaeef3;
+    display: flex;
+    flex-direction: column;
+}
+.exams-page-content h1 {
+    padding: 5px 0 0 0;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #6673fc;
+    margin-left: 2%;
+    font-size: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
+.page-container {
+    margin-left: -1%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    height: 100%;
+    background-color: #eaeef3;
+}
+.page-header-left {
+    width: 35rem;
+    background-color: #fff;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+    padding: 20px;
+}
+
+.page-header-left .calandar-left {
+    width: 100%;
+    height: 100%;
+    padding: 7% 0 0 0;
+    border: none;
+}
+
+.page-header-rigth {
+    display: flex;
+    flex-direction: column;
+    height: 75.5vh;
+    padding: 40px 5px 5px 10px;
+    background-color: #fff;
+    width: 30rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+}
+.page-header-rigth span {
+    margin-top: -3%;
+    margin-left: 1%;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #ff3e52;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.BTNmargin {
+    margin-left: 180px;
+    background: #ff495c;
+    color: aliceblue;
+    margin-top: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+}
+.BTNmargin:hover {
+    background: #fa293e;
+    font-family: Poppins, sans-serif;
+}
+
+.text-field {
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ff3e52;
+    padding-left: 2px;
+}
+.someBorder {
+    border: 1px solid #ced4da !important;
+    width: 465px !important;
+}

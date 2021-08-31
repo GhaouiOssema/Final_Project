@@ -37,7 +37,7 @@ const Navigation = () => {
                                             title="Hatem Kthiri">
                                             <NavDropdown.Item href="# ">
                                                 <i className="far fa-user"></i>
-                                                <NavLink to="/student/profile/hatem kthiri">
+                                                <NavLink to="/teacher/profile">
                                                     Profile
                                                 </NavLink>
                                             </NavDropdown.Item>
