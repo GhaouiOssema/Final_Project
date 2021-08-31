@@ -1,6 +1,5 @@
 import "./Navigation.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 const Navigation = () => {
     return (
         <div className="top-header">
@@ -34,12 +33,11 @@ const Navigation = () => {
                                     <Nav>
                                         <NavDropdown
                                             id="nav-dropdown-dark-example"
-                                            title="Hatem Kthiri">
+                                            title="Hatem Kthiri"
+                                        >
                                             <NavDropdown.Item href="# ">
                                                 <i className="far fa-user"></i>
-                                                <NavLink to="/student/profile/hatem kthiri">
-                                                    Profile
-                                                </NavLink>
+                                                Profile
                                             </NavDropdown.Item>
                                             <NavDropdown.Item href="# ">
                                                 <i className="fas fa-cog"></i>

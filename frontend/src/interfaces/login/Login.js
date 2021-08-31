@@ -13,7 +13,7 @@ const Login = () => {
         axios
             .post("http://localhost:5000/login", user)
             .then((res) => {
-                localStorage.setItem("JWT", res.data.token);
+                localStorage.setItem("JWT", res.data.data);
                 history.push("/dashboard");
                 history.go(0);
             })

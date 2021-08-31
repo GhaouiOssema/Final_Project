@@ -15,14 +15,17 @@ router.post("/profile/", verifyToken, controllers.imageUploader.upload);
  * @description Logs in a user
  * @access public
  */
-router.get("/login", controllers.login.login);
+router.post("/login", controllers.login.login);
 
 // Admin APIs
+router.post("/register", controllers.admin.register.CreateAdmin);
+
 /**
  * @route POST /administration/createclass
  * @description Create a new Class
  * @access private
  */
+
 router.post(
     "/administration/createclass",
     controllers.admin.createClass.AddClass

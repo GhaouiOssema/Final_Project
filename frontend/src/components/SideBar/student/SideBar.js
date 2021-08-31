@@ -9,7 +9,7 @@ const SideBar = () => {
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src="https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
+                        src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
@@ -26,7 +26,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <NavLink className="nav-link active" to="/admin/dashboard">
+                    <NavLink className="nav-link " to="/dashboard">
                         <span class="icon">
                             <i class="fas fa-desktop"></i>
                         </span>

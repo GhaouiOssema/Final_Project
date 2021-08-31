@@ -38,8 +38,6 @@ const Register = () => {
     };
     const handleRegisterStudent = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value });
-
-        console.log(student);
     };
     function validateEmail(email) {
         const re =
