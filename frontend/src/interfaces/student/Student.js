@@ -9,12 +9,13 @@ import Dashboard from "../../components/MainContents/Student/Dashboard";
 import Exam from "../../components/MainContents/Student/Exam";
 import Absence from "../../components/MainContents/Student/absence";
 import Note from "../../components/MainContents/Student/Note";
+import Profile from "../../components/MainContents/Student/Profile";
 
 const Student = () => {
     return (
         <div>
-            <Navigation />
             <Router>
+                <Navigation />
                 <div className="page-content">
                     <SideBar />
                     <Switch>
@@ -25,6 +26,7 @@ const Student = () => {
                         <Route path="/student/exam" component={Exam} />
                         <Route path="/student/absence" component={Absence} />
                         <Route path="/student/note" component={Note} />
+                        <Route path="/student/profile" component={Profile} />
                     </Switch>
                 </div>
             </Router>

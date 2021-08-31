@@ -9,7 +9,7 @@ const SideBar = () => {
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
+                        src="https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png"
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
