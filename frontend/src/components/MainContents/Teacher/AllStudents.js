@@ -2,6 +2,7 @@ import { MDBDataTable } from "mdbreact";
 import axios from "axios";
 import { Modal, Button, Form, FormControl } from "react-bootstrap";
 import { useState, useEffect } from "react";
+
 import "./AllStudents.css";
 
 const AllStudents = () => {
@@ -177,7 +178,7 @@ const AllStudents = () => {
                 </div>
                 {/* Component DataTable */}
 
-                <Form>  
+                <Form>
                     <MDBDataTable
                         entriesOptions={[10, 20, 30]}
                         entries={10}

@@ -187,8 +187,7 @@ const Teacher = () => {
                     <button
                         value={teacher._id}
                         className="close-circle"
-                        onClick={handleDelete}
-                    >
+                        onClick={handleDelete}>
                         <i class="far fa-times-circle"></i>
                     </button>
                 ) : null}
@@ -211,8 +210,7 @@ const Teacher = () => {
                                     marginBottom: "10px",
                                 }}
                                 onChange={selectChange}
-                                aria-label="Default select example"
-                            >
+                                aria-label="Default select example">
                                 <option>Select Class</option>
                                 {classList}
                             </Form.Select>
@@ -237,16 +235,14 @@ const Teacher = () => {
                             value={teacher._id}
                             variant="success"
                             className="btn-submit"
-                            onClick={handleSubmit}
-                        >
+                            onClick={handleSubmit}>
                             Submit
                         </Button>
                     ) : (
                         <Button
                             variant="danger"
                             value={teacher._id}
-                            onClick={showSelect}
-                        >
+                            onClick={showSelect}>
                             Edit
                         </Button>
                     )}

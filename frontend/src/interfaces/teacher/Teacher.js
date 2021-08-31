@@ -10,7 +10,8 @@ import ExamsDate from "../../components/MainContents/Teacher/ExamsDate";
 import Score from "../../components/MainContents/Teacher/Score";
 import StudentsAbsences from "../../components/MainContents/Teacher/StudentsAbsences";
 import AllStudents from "../../components/MainContents/Teacher/AllStudents";
-import Profile from "../../components/MainContents/Teacher/Prifile";
+import Profile from "../../components/MainContents/Teacher/Profile";
+import Footer from "../../components/Footer/Footer";
 
 const Teacher = () => {
     return (

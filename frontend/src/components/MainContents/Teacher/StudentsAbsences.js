@@ -131,7 +131,7 @@ const StudentsAbsences = () => {
                                 display: "flex",
                                 justifyContent: "space-evenly",
                             }}>
-                            <button onClick={handleShow}>
+                            <button onClick={handleShow} className="cc">
                                 <i class="fas fa-edit"></i>
                             </button>
                         </div>

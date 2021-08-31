@@ -1,6 +1,7 @@
 import Student from "./interfaces/student/Student";
 import Admin from "./interfaces/admin/Admin";
 import Teacher from "./interfaces/teacher/Teacher";
+import Register from "./interfaces/register/Register";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

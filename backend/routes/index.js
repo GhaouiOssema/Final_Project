@@ -271,7 +271,16 @@ router.post(
     verifyToken,
     controllers.teachers.addExamDate.addExDate
 );
-
+/**
+ * @route GET /teacher/profile
+ * @description consult teacher profile
+ * @access private
+ */
+router.post(
+    "/teacher/profile",
+    verifyToken,
+    controllers.teachers.TeacherProfile.GetTeacherInfo
+);
 /**
  * @route PUT /teacher/EditSituation
  * @description Edit Students Situation
