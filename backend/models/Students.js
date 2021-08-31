@@ -4,7 +4,7 @@ const studentSchema = new mongoose.Schema({
     avatar: {
         type: String,
         default:
-            "https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png",
+            "https://www.shareicon.net/data/2016/05/26/771198_man_512x512.png",
     },
     firstName: {
         type: String,
