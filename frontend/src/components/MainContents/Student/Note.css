@@ -5,20 +5,13 @@
     width: 1115px;
     margin-left: -17%;
     padding: 20px 0 0 1px;
-    height: 100vh;
+    height: 100%;
     background-color: #eaeef3;
 }
 .table-bordered {
     margin-left: 4%;
 }
-.header {
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: #666;
-    font-size: 30px;
-    font-family: Poppins, sans-serif;
-    font-weight: 600;
-}
+
 .exams-container {
     padding: 20px;
     width: 1050px;
@@ -49,4 +42,17 @@
 .table-body:hover {
     color: #4680ff;
     cursor: pointer;
+}
+.exmas-t-body {
+    color: #333;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 2px;
+    font-family: Poppins, sans-serif;
+}
+.EX-center-field {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 17px;
 }

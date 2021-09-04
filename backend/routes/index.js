@@ -8,7 +8,7 @@ const { verifyToken } = require("../middleware/verifyToken");
  * @description upload the user profile image
  * @access private
  */
-router.post("/profile/", verifyToken, controllers.imageUploader.upload);
+router.post("/profile/", controllers.imageUploader.upload);
 // login
 /**
  * @route GET /login
@@ -170,8 +170,8 @@ router.post("/student/register", controllers.students.register.CreateStudents);
  * @access private
  */
 router.get(
-    "/student/profile",
-    verifyToken,
+    "/student/profile/:id",
+    // verifyToken,
     controllers.students.consultProfile.profile
 );
 /**
@@ -181,8 +181,8 @@ router.get(
  */
 
 router.get(
-    "/student/absence",
-    verifyToken,
+    "/student/absence/:id",
+    // verifyToken,
     controllers.students.consultAbsence.Absence
 );
 /**
@@ -192,7 +192,7 @@ router.get(
  */
 router.get(
     "/student/note/:id",
-    verifyToken,
+    // verifyToken,
     controllers.students.consultNote.GetNote
 );
 /**
@@ -201,8 +201,8 @@ router.get(
  * @access private
  */
 router.get(
-    "/student/getExamDate",
-    verifyToken,
+    "/student/getExamDate/:id",
+    // verifyToken,
     controllers.students.consultExamDate.getExamDate
 );
 // TEACHERS APIs
