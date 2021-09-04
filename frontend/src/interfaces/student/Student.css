@@ -3,3 +3,9 @@
     flex-direction: row;
     justify-content: center;
 }
+.min-admin {
+    padding-top: 5%;
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
+}

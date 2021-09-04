@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useSate } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./SideBar.css";
@@ -27,35 +27,42 @@ const SideBar = () => {
             <ul>
                 <li>
                     <NavLink className="nav-link " to="/dashboard">
-                        <span class="icon">
-                            <i class="fas fa-desktop"></i>
+                        <span className="icon">
+                            <i className="fas fa-desktop"></i>
                         </span>
-                        <span class="item">Dashboard</span>
+                        <span className="item">Dashboard</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className="nav-link" to="/student/exam">
-                        <span class="icon">
-                            <i class="fas fa-calendar-week"></i>
+                        <span className="icon">
+                            <i className="fas fa-calendar-week"></i>
                         </span>
-                        <span class="item">Date Of Exams</span>
+                        <span className="item">Date Of Exams</span>
                     </NavLink>
                 </li>
                 <li>
                     <NavLink className="nav-link" to="/student/absence">
-                        <span class="icon">
-                            <i class="fas fa-user-check"></i>
+                        <span className="icon">
+                            <i className="fas fa-user-check"></i>
                         </span>
-                        <span class="item">Absence</span>
+                        <span className="item">Absence</span>
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink className="nav-link" to="/student/note">
-                        <span class="icon">
-                            <i class="far fa-clipboard"></i>
+                        <span className="icon">
+                            <i className="far fa-clipboard"></i>
                         </span>
-                        <span class="item">Exam Scores</span>
+                        <span className="item">Exam Scores</span>
+                    </NavLink>
+                </li>{" "}
+                <li>
+                    <NavLink className="nav-link" to="/student/profile">
+                        <span className="icon">
+                            <i className="far fa-clipboard"></i>
+                        </span>
+                        <span className="item">Profile</span>
                     </NavLink>
                 </li>
             </ul>

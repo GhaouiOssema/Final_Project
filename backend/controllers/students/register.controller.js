@@ -6,6 +6,7 @@ module.exports = {
         try {
             const {
                 avatar,
+ 
                 firstName,
                 lastName,
                 age,
@@ -22,6 +23,7 @@ module.exports = {
                 } else if (hash) {
                     const student = await Student.create({
                         avatar,
+ 
                         firstName,
                         classRoom,
                         lastName,

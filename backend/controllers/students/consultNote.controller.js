@@ -7,7 +7,7 @@ module.exports = {
             const data = await Note.find({
                 student: id,
             })
-                .populate("subject", "subject")
+                .populate("subject", "avatar subject firstName lastName")
                 .populate("student", "firstName lastName -_id");
 
             res.status(200).json({ status: true, data });

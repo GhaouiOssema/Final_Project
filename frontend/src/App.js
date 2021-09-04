@@ -3,6 +3,7 @@ import Admin from "./interfaces/admin/Admin";
 import Teacher from "./interfaces/teacher/Teacher";
 import Register from "./interfaces/register/Register";
 import Login from "./interfaces/login/Login";
+import Home from "./interfaces/home/Home";
 import {
     BrowserRouter as Router,
     Route,
@@ -92,7 +93,6 @@ function App() {
                             <Route path="/register">
                                 <Register />
                             </Route>
-
                             <Route path="/">
                                 <Login />
                             </Route>
