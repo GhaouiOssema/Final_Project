@@ -17,6 +17,10 @@ const SituationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    select: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 module.exports = mongoose.model("situation", SituationSchema);

@@ -1,34 +1,29 @@
 import "./Score.css";
-
 import { MDBDataTable } from "mdbreact";
 import axios from "axios";
-import { Modal, Button, Form, FormControl } from "react-bootstrap";
+import { Form, FormControl } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-
+import jwt from "jwt-decode";
 const Score = () => {
+    const token = localStorage.getItem("JWT");
+    const decoded_token = jwt(token);
+    const teacher_id = decoded_token.id;
     //Hooks For All Students List
     const [allStudents, setAllStudents] = useState([]);
 
     //Hooks For All Classes List
-    const [studentsclass, setStudentsClass] = useState({ classes: [] });
+    const [teacherClass, setTeacherClass] = useState([]);
 
-    //Hooks For Adding Class to Student
-    const [addClass, setAddClass] = useState();
+    const [classfilter, setClassFilter] = useState([]);
 
-    // Hooks For Edit Modal
-    /*************************************/
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+    const [notes, setNotes] = useState([]);
     // Function Axios Get All Classes
     /************************************/
-    const getAllClass = async () => {
+    const getTeacherClass = async () => {
         const Classes = await axios.get(
-            "http://localhost:5000/administration/GetAllClass"
+            `http://localhost:5000/teacher/getClass/${teacher_id}`
         );
-        setStudentsClass({ classes: Classes.data.data });
+        setTeacherClass(Classes.data.data);
     };
     /*************************************/
 
@@ -41,51 +36,25 @@ const Score = () => {
         setAllStudents(Students.data.data);
     };
     /*************************************/
-    const history = useHistory();
     useEffect(() => {
         getAllStudents();
-        getAllClass();
+        getTeacherClass();
+        // eslint-disable-next-line
     }, []);
-    const handleSave = (e) => {
-        e.preventDefault();
-        console.log(addClass);
-        console.log(e.target.value);
-        const id = e.target.value;
-        // setStudentsClass([...allStudents, newClass]);
-        axios
-            .put(`http://localhost:5000/administration/updateClass/${id}`, {
-                classRoom: addClass,
-            })
-            .then((res) => {
-                console.log("Status: ", res.status);
-                console.log("Data: ", res.data);
-                history.go(0);
-            })
-            .catch((err) => {
-                console.log("Error in adding class !", err);
-            });
-        setShow(false);
-    };
-    /*************************************/
-    // Map All Classes Array
-    /**********************************************/
-
-    const classes = studentsclass.classes.map((classe, index) => {
-        return (
-            <option key={index} value={classe.name}>
-                {classe.name}
-            </option>
+    useEffect(() => {
+        setClassFilter(
+            allStudents.filter((el) => el.classRoom === teacherClass[0].name)
         );
-    });
-
-    /**********************************************/
+        // eslint-disable-next-line
+    }, [teacherClass]);
 
     // AllStudents Array Map To Shows In DataTable
     /**********************************************/
-    const data_table = allStudents.map((student, index) => {
+    const data_table = classfilter.map((student, index) => {
         const firstName = student.firstName;
         const lastName = student.lastName;
         const classRoom = student.classRoom;
+        const select = student.select;
         const Data = {
             photo: (
                 <img
@@ -93,11 +62,12 @@ const Score = () => {
                     width="50px"
                     height="50px"
                     style={{ borderRadius: "50%" }}
+                    alt="profile_img"
                 />
             ),
             firstname: firstName,
             lastname: lastName,
-            class: classRoom === "" ? "Without Class " : classRoom,
+            class: classRoom,
             option: (
                 <div>
                     <div
@@ -105,12 +75,41 @@ const Score = () => {
                             width: "90px",
                             display: "flex",
                             justifyContent: "space-evenly",
-                        }}>
-                        <FormControl
-                            type="text"
-                            placeholder="Note"
-                            className="input-text-field"
-                        />
+                        }}
+                    >
+                        {select ? (
+                            <FormControl
+                                type="text"
+                                placeholder="Note"
+                                className="input-text-field"
+                                // onBlur={(e) => setStudentNote(e.target.value)}
+                                onBlur={(e) => {
+                                    // setStudentNote(e.target.value);
+                                    console.log(typeof Number(e.target.value));
+                                    setNotes([
+                                        ...notes,
+                                        {
+                                            student: student._id,
+                                            subject: teacher_id,
+                                            note: Number(e.target.value),
+                                        },
+                                    ]);
+                                    setClassFilter(
+                                        classfilter.map((filter) => {
+                                            if (filter._id === student._id) {
+                                                return {
+                                                    ...filter,
+                                                    select: false,
+                                                };
+                                            }
+                                            return filter;
+                                        })
+                                    );
+                                }}
+                            />
+                        ) : (
+                            <p>Saved</p>
+                        )}
                     </div>
                 </div>
             ),
@@ -156,15 +155,45 @@ const Score = () => {
         rows,
     };
     /**********************************************/
+    const selectChange = (e) => {
+        console.log(e.target.value);
+        const classChoosen = e.target.value;
+        setClassFilter(
+            allStudents.filter((el) => el.classRoom === classChoosen)
+        );
+    };
+
+    const classes = teacherClass.map((classe, index) => {
+        return (
+            <option key={index} value={classe.name}>
+                {classe.name}
+            </option>
+        );
+    });
+    console.log(notes);
+    const submitNote = (e) => {
+        e.preventDefault();
+        axios
+            .post("http://localhost:5000/teacher/addscore", notes)
+            .then((res) => {
+                console.log("status", res.status);
+                console.log("data", res.data);
+            })
+            .catch((err) =>
+                console.log("Error from Adding Note To Students ", err)
+            );
+    };
 
     return (
         <div className="score-page-content">
-            <div className="students">
+            <div className="Teacher-Score">
                 <div className="card-head">
                     <header>All Students Exams Score</header>
                 </div>
-                {/* Component DataTable */}
-
+                <select onChange={selectChange}>
+                    <option value="">- Choose Class -</option>
+                    {classes}
+                </select>
                 <Form>
                     <MDBDataTable
                         entriesOptions={[10, 20, 30]}
@@ -172,7 +201,11 @@ const Score = () => {
                         hover
                         data={DataTable}
                     />
-                    <button type="submit" className="BTNStyle">
+                    <button
+                        type="submit"
+                        className="BTNStyle"
+                        onClick={submitNote}
+                    >
                         <i class="far fa-share-square"></i>
                         <span>Submit</span>
                     </button>

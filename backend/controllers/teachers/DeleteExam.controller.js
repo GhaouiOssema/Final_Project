@@ -1,14 +1,13 @@
-const Classroom = require("../../models/Teachers");
-
+const Exam = require("../../models/ExamsDate");
 module.exports = {
-    async getClassroom(req, res) {
+    async DeleteExam(req, res) {
         try {
-            // let email = res.decoded.email;
             const { id } = req.params;
-            const teacher_classroom = await Classroom.findById(id);
+            const data = await Exam.findByIdAndDelete(id);
             res.status(200).json({
                 status: true,
-                data: teacher_classroom.classToStudy,
+                message: "Exam Deleted .. !",
+                data,
             });
         } catch (err) {
             console.log(err);

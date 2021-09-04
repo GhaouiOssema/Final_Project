@@ -32,21 +32,21 @@ function App() {
                 <Route path="/">
                     {isLoggedIn() && role === 0 ? (
                         <>
-                            <Redirect to="/dashboard" />
+                            {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
                                 <Admin />
                             </Route>
                         </>
                     ) : isLoggedIn() && role === 1 ? (
                         <>
-                            <Redirect to="/dashboard" />
+                            {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
                                 <Teacher />
                             </Route>
                         </>
                     ) : isLoggedIn() && role === 2 ? (
                         <>
-                            <Redirect to="/dashboard" />
+                            {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
                                 <Student />
                             </Route>

@@ -1,126 +1,152 @@
 import { MDBDataTable } from "mdbreact";
 import axios from "axios";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-
+import jwt from "jwt-decode";
 import "./StudentsAbsences.css";
 const StudentsAbsences = () => {
-    //Hooks For All Students List
-    const [allStudents, setAllStudents] = useState([]);
+    //Get Token from LocalStorage
+    /******************************************************/
+    const token = localStorage.getItem("JWT");
+    const decoded_token = jwt(token);
+    const teacher_id = decoded_token.id;
+    /******************************************************/
+    //Hooks For Sutdents situation's That Teacher Teach
+    const [allSituation, setAllSituation] = useState([]);
 
-    //Hooks For All Classes List
-    const [studentsclass, setStudentsClass] = useState({ classes: [] });
-
-    //Hooks For Adding Class to Student
-    const [addClass, setAddClass] = useState();
-    const [situation, setSituation] = useState();
-
-    // Hooks For Edit Modal
-    /*************************************/
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    // Function Axios Get All Classes
-    /************************************/
-    const getAllClass = async () => {
-        const Classes = await axios.get(
-            "http://localhost:5000/administration/GetAllClass"
+    // Function Axios Sutdents situation's That Teacher Teach
+    /*********************************************************/
+    const GetStudentSituation = async () => {
+        const Situations = await axios.get(
+            `http://localhost:5000/teacher/studentSituations/${teacher_id}`
         );
-        setStudentsClass({ classes: Classes.data.data });
+        setAllSituation(Situations.data.data);
     };
-    /*************************************/
-
-    // Function Axios Get All Students
-    /*************************************/
-    const getAllStudents = async () => {
-        const Students = await axios.get(
-            "http://localhost:5000/administation/AllStudents"
-        );
-        setAllStudents(Students.data.data);
-    };
-    /*************************************/
-    const history = useHistory();
+    /*********************************************************/
     useEffect(() => {
-        getAllStudents();
-        getAllClass();
+        GetStudentSituation();
+        // eslint-disable-next-line
     }, []);
-    const handleSave = (e) => {
+
+    //OnClick For Show Select And Save
+    /*********************************************************/
+    const handleShow = (e) => {
         e.preventDefault();
-        console.log(addClass);
-        console.log(e.target.value);
-        const id = e.target.value;
-        // setStudentsClass([...allStudents, newClass]);
-        axios
-            .put(`http://localhost:5000/administration/updateClass/${id}`, {
-                classRoom: addClass,
+        const id = e.currentTarget.value;
+        console.log(id);
+        setAllSituation(
+            allSituation.map((situation) => {
+                if (situation._id === id) {
+                    return { ...situation, select: true };
+                }
+                return situation;
             })
-            .then((res) => {
-                console.log("Status: ", res.status);
-                console.log("Data: ", res.data);
-                history.go(0);
-            })
-            .catch((err) => {
-                console.log("Error in adding class !", err);
-            });
-        setShow(false);
-    };
-    /*************************************/
-    // Map All Classes Array
-    /**********************************************/
-
-    const classes = studentsclass.classes.map((classe, index) => {
-        return (
-            <option key={index} value={classe.name}>
-                {classe.name}
-            </option>
         );
-    });
+    };
+    /*********************************************************/
+    // Hooks For new Situation
+    const [newSituation, setNewSituation] = useState("");
+    // onChange To set newSituation
+    /****************************************************/
+    const handleSituation = (e) => {
+        setNewSituation(e.target.value);
+    };
+    //onClick To update Student Situation
+    /****************************************************/
+    const updateStudent = (e) => {
+        e.preventDefault();
 
-    /**********************************************/
-
-    // AllStudents Array Map To Shows In DataTable
-    /**********************************************/
-    const data_table = allStudents.map((student, index) => {
-        const firstName = student.firstName;
-        const lastName = student.lastName;
-        const classRoom = student.classRoom;
+        const id = e.target.value;
+        if (
+            newSituation === "Absente" ||
+            newSituation === "Excluded" ||
+            newSituation === "Presente"
+        ) {
+            setAllSituation(
+                allSituation.map((situation) => {
+                    if (situation._id === id) {
+                        return {
+                            ...situation,
+                            select: false,
+                            situation: newSituation,
+                        };
+                    }
+                    return situation;
+                })
+            );
+            axios
+                .put(`http://localhost:5000/teacher/EditSituation/${id}`, {
+                    situation: newSituation,
+                })
+                .then((res) => {
+                    console.log("Status: ", res.status);
+                    console.log("Data: ", res.data);
+                })
+                .catch((err) => {
+                    console.log("Error in Update Situation !", err);
+                });
+        } else {
+            setAllSituation(
+                allSituation.map((situation) => {
+                    if (situation._id === id) {
+                        return {
+                            ...situation,
+                            select: false,
+                        };
+                    }
+                    return situation;
+                })
+            );
+        }
+    };
+    //Map To Show Situation in DataTable
+    /***********************************************************/
+    const data_table = allSituation.map((student, index) => {
+        const firstName = student.student.firstName;
+        const lastName = student.student.lastName;
+        const classRoom = student.student.classRoom;
+        const situation = student.situation;
+        const Date = student.date;
         const Data = {
             photo: (
                 <img
-                    src={student.avatar}
+                    src={student.student.avatar}
                     width="50px"
                     height="50px"
                     style={{ borderRadius: "50%" }}
+                    alt="profile_img"
                 />
             ),
-            firstname: firstName,
-            lastname: lastName,
+            fullname: `${firstName} ${lastName}`,
+            date: Date,
+            situation: situation,
             class: classRoom === "" ? "Without Class " : classRoom,
-            option: (
+            edit: (
                 <div>
-                    {show ? (
+                    {student.select ? (
                         <div
                             key={index}
                             style={{
                                 width: "90px",
                                 display: "flex",
                                 justifyContent: "space-evenly",
-                            }}>
+                            }}
+                        >
                             <Form.Select
-                                style={{ width: "80px", marginRight: "5px" }}
+                                style={{ width: "120px", marginRight: "5px" }}
                                 aria-label="Default select example"
-                                onChange={(e) => setSituation(e.target.value)}>
+                                onChange={handleSituation}
+                            >
+                                <option>Situation</option>
                                 <option>Absente</option>
-                                <option>Excluted</option>
+                                <option>Excluded</option>
                                 <option>Presente</option>
-                                {classes}
                             </Form.Select>
                             <button
                                 value={student._id}
                                 variant="primary"
-                                onClick={handleSave}>
+                                onClick={updateStudent}
+                            >
                                 Save
                             </button>
                         </div>
@@ -130,15 +156,15 @@ const StudentsAbsences = () => {
                                 width: "90px",
                                 display: "flex",
                                 justifyContent: "space-evenly",
-                            }}>
-                            <button onClick={handleShow} className="cc">
+                            }}
+                        >
+                            <button value={student._id} onClick={handleShow}>
                                 <i class="fas fa-edit"></i>
                             </button>
                         </div>
                     )}
                 </div>
             ),
-            absentHistory: <div>fff</div>,
         };
 
         return Data;
@@ -153,18 +179,24 @@ const StudentsAbsences = () => {
                 sort: "disabled",
             },
             {
-                label: "First Name",
-                field: "firstname",
+                label: "Full Name",
+                field: "fullname",
                 sort: "disabled",
                 width: 150,
             },
-            {
-                label: "Last Name",
-                field: "lastname",
-                sort: "disabled",
-                width: 270,
-            },
 
+            {
+                label: "Date",
+                field: "date",
+                sort: "disabled",
+                width: 100,
+            },
+            {
+                label: "Situation",
+                field: "situation",
+                sort: "disabled",
+                width: 100,
+            },
             {
                 label: "Student Class",
                 field: "class",
@@ -172,39 +204,33 @@ const StudentsAbsences = () => {
                 width: 100,
             },
             {
-                label: "Stuation",
-                field: "absentHistory",
-                sort: "disabled",
-                width: 100,
-            },
-            {
-                label: "Attending",
-                field: "option",
+                label: "Edit",
+                field: "edit",
                 sort: "disabled",
                 width: 100,
             },
         ],
         rows,
     };
-    /**********************************************/
+    /***********************************************************/
 
     return (
         <>
-            <div className="students">
+            <div className="teacher-history-absence">
                 <div className="card-head">
-                    <header>All Students Absences List</header>
+                    <header>All Students List</header>
                 </div>
-                {/* Component DataTable */}
 
-                <MDBDataTable
-                    entriesOptions={[10, 20, 30]}
-                    entries={10}
-                    hover
-                    data={DataTable}
-                />
+                <Form>
+                    <MDBDataTable
+                        entriesOptions={[10, 20, 30]}
+                        entries={10}
+                        hover
+                        data={DataTable}
+                    />
+                </Form>
             </div>
         </>
     );
 };
-
 export default StudentsAbsences;

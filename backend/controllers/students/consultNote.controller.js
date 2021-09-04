@@ -3,8 +3,9 @@ const Note = require("./../../models/note");
 module.exports = {
     async GetNote(req, res) {
         try {
+            const { id } = req.params;
             const data = await Note.find({
-                student: res.decoded.id,
+                student: id,
             })
                 .populate("subject", "subject")
                 .populate("student", "firstName lastName -_id");

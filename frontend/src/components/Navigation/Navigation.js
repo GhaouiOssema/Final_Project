@@ -1,7 +1,12 @@
 import "./Navigation.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
+import jwt from "jwt-decode";
 const Navigation = () => {
+    const token = localStorage.getItem("JWT");
+    const decoded_token = jwt(token);
+    const role = decoded_token.role;
+
     const history = useHistory();
     const logOut = () => {
         localStorage.clear();
@@ -9,7 +14,7 @@ const Navigation = () => {
         history.go(0);
     };
     return (
-        <div className="top-header">
+        <div id="topheader" className="top-header">
             <div className="top-header-logo">
                 <i className="fas fa-graduation-cap fa-rotate-45"></i>
                 <span> Smart </span>
@@ -43,8 +48,17 @@ const Navigation = () => {
                                             title="Hatem Kthiri"
                                         >
                                             <NavDropdown.Item href="# ">
-                                                <i className="far fa-user"></i>
-                                                Profile
+                                                {role === 1 ? (
+                                                    <NavLink to="/teacher/profile">
+                                                        <i className="far fa-user"></i>
+                                                        Profile
+                                                    </NavLink>
+                                                ) : role === 2 ? (
+                                                    <NavLink to="/student/profile">
+                                                        <i className="far fa-user"></i>
+                                                        Profile
+                                                    </NavLink>
+                                                ) : null}
                                             </NavDropdown.Item>
                                             <NavDropdown.Item href="# ">
                                                 <i className="fas fa-cog"></i>

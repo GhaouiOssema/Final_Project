@@ -20,7 +20,7 @@ const Teacher = () => {
                 <Navigation />
                 <div className="teacher-page-content">
                     <SideBar />
-                    <div className="someMargin">
+                    <div id="teacher" className="teacher">
                         <Switch>
                             <Route path="/dashboard" component={Dashboard} />
                             <Route
@@ -43,6 +43,7 @@ const Teacher = () => {
                         </Switch>
                     </div>
                 </div>
+                <Footer />
             </Router>
         </div>
     );

@@ -46,6 +46,10 @@ const studentSchema = new mongoose.Schema({
     role: {
         type: Number,
     },
+    select: {
+        type: Boolean,
+        default: true,
+    },
 });
 
 const student = mongoose.model("student", studentSchema);

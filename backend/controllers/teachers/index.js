@@ -7,4 +7,9 @@ module.exports = {
     addExamDate: require("./addExamDate.controller"),
     ImportStudent: require("./GetStudents.controller"),
     EditSituation: require("./EditSituation.controller"),
+    GetExamDate: require("./GetExamDate.controller"),
+    GetStudentsSituation: require("./GetStudentsSituation.controller"),
+    getProfile: require("./consultTeacherProfile.controller"),
+    EditExam: require("./EditExam.controller"),
+    deleteExam: require("./DeleteExam.controller"),
 };

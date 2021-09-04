@@ -101,7 +101,8 @@
     margin: 8px 0;
     width: 375px !important;
 }
-input[type="text"] {
+.form-teacher input[type="text"],
+.form-student input[type="text"] {
     height: 48px !important;
 }
 .fullname {
@@ -266,4 +267,3 @@ input[type="text"] {
 .to-login span {
     color: #fff;
 }
-  

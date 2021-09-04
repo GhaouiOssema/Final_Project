@@ -1,33 +1,39 @@
 import { MDBDataTable } from "mdbreact";
 import axios from "axios";
-import { Modal, Button, Form, FormControl } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
-
+import jwt from "jwt-decode";
 import "./AllStudents.css";
 
 const AllStudents = () => {
+    const token = localStorage.getItem("JWT");
+    const decoded_token = jwt(token);
+    const teacher_id = decoded_token.id;
     //Hooks For All Students List
     const [allStudents, setAllStudents] = useState([]);
 
     //Hooks For All Classes List
-    const [studentsclass, setStudentsClass] = useState({ classes: [] });
+    const [teacherClass, setTeacherClass] = useState([]);
 
-    //Hooks For Adding Class to Student
-    const [addClass, setAddClass] = useState();
+    const [classfilter, setClassFilter] = useState([]);
+
+    useEffect(() => {
+        setClassFilter(
+            allStudents.filter((el) => el.classRoom === teacherClass[0].name)
+        );
+        // eslint-disable-next-line
+    }, [teacherClass]);
 
     // Hooks For Edit Modal
     /*************************************/
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     // Function Axios Get All Classes
     /************************************/
-    const getAllClass = async () => {
+    const getTeacherClass = async () => {
         const Classes = await axios.get(
-            "http://localhost:5000/administration/GetAllClass"
+            `http://localhost:5000/teacher/getClass/${teacher_id}`
         );
-        setStudentsClass({ classes: Classes.data.data });
+        setTeacherClass(Classes.data.data);
     };
     /*************************************/
 
@@ -42,44 +48,79 @@ const AllStudents = () => {
     /*************************************/
     useEffect(() => {
         getAllStudents();
-        getAllClass();
+        getTeacherClass();
+        // eslint-disable-next-line
     }, []);
-    const handleSave = (e) => {
-        e.preventDefault();
-        console.log(addClass);
-        console.log(e.target.value);
-        const id = e.target.value;
-        // setStudentsClass([...allStudents, newClass]);
-        axios
-            .put(`http://localhost:5000/administration/updateClass/${id}`, {
-                classRoom: addClass,
-            })
-            .then((res) => {
-                console.log("Status: ", res.status);
-                console.log("Data: ", res.data);
-            })
-            .catch((err) => {
-                console.log("Error in adding class !", err);
-            });
-        setShow(false);
-    };
+
     /*************************************/
     // Map All Classes Array
     /**********************************************/
+    const [absence, setAbsence] = useState();
+    const absenceSelect = (e) => {
+        setAbsence(e.target.value);
+    };
+    // const [id, setId] = useState();
+    const [allSituation, setAllSituation] = useState([]);
 
-    const classes = studentsclass.classes.map((classe, index) => {
-        return (
-            <option key={index} value={classe.name}>
-                {classe.name}
-            </option>
-        );
-    });
-
+    const submitAll = (e) => {
+        e.preventDefault();
+        axios
+            .post("http://localhost:5000/teacher/addSituation", allSituation)
+            .then((res) => {
+                console.log("Data", res.data);
+                alert("Submit Succefull");
+            })
+            .catch((err) => {
+                console.log("error from submit Situations", err);
+            });
+    };
     /**********************************************/
 
     // AllStudents Array Map To Shows In DataTable
     /**********************************************/
-    const data_table = allStudents.map((student, index) => {
+
+    const selectChange = (e) => {
+        const classChoosen = e.target.value;
+        setClassFilter(
+            allStudents.filter((el) => el.classRoom === classChoosen)
+        );
+    };
+    const submitStudent = (e) => {
+        e.preventDefault();
+        var today = new Date();
+        var date =
+            today.getFullYear() +
+            "-" +
+            (today.getMonth() + 1) +
+            "-" +
+            today.getDate();
+        var time =
+            today.getHours() +
+            ":" +
+            today.getMinutes() +
+            ":" +
+            today.getSeconds();
+        var dateTime = date + " " + time;
+        const id = e.target.value;
+        setClassFilter((students) =>
+            students.map((student) => {
+                if (student._id === id) {
+                    return { ...student, select: false };
+                }
+                return student;
+            })
+        );
+        setAllSituation([
+            ...allSituation,
+            {
+                situation: absence,
+                student: e.target.value,
+                date: dateTime,
+                addedBy: teacher_id,
+            },
+        ]);
+    };
+    const data_table = classfilter.map((student, index) => {
         const firstName = student.firstName;
         const lastName = student.lastName;
         const age = student.age;
@@ -92,6 +133,7 @@ const AllStudents = () => {
                     width="50px"
                     height="50px"
                     style={{ borderRadius: "50%" }}
+                    alt="profile_img"
                 />
             ),
             firstname: firstName,
@@ -101,19 +143,36 @@ const AllStudents = () => {
             class: classRoom === "" ? "Without Class " : classRoom,
             Attending: (
                 <div style={{ width: "90px" }}>
-                    <Form>
-                        <div className="table-rows-design">
-                            <span>
-                                <Form.Check type="checkbox" label="ABS" />
-                            </span>
-                            <span>
-                                <Form.Check type="checkbox" label=" ECT" />
-                            </span>
-                            <span>
-                                <Form.Check type="checkbox" label=" PRE" />
-                            </span>
-                        </div>
-                    </Form>
+                    <div className="table-rows-design">
+                        {student.select ? (
+                            <>
+                                <Form.Select
+                                    style={{
+                                        width: "115px",
+                                        marginRight: "5px",
+                                        marginLeft: "-20px",
+                                    }}
+                                    aria-label="Default select example"
+                                    onChange={absenceSelect}
+                                    id="selectFilter"
+                                >
+                                    <option>Absente</option>
+                                    <option>Excluded</option>
+                                    <option>Present</option>
+                                </Form.Select>
+
+                                <button
+                                    value={student._id}
+                                    variant="primary"
+                                    onClick={submitStudent}
+                                >
+                                    Save
+                                </button>
+                            </>
+                        ) : (
+                            <p>Saved</p>
+                        )}
+                    </div>
                 </div>
             ),
         };
@@ -121,6 +180,14 @@ const AllStudents = () => {
         return Data;
     });
     const rows = data_table;
+
+    const classes = teacherClass.map((classe, index) => {
+        return (
+            <option key={index} value={classe.name}>
+                {classe.name}
+            </option>
+        );
+    });
 
     const DataTable = {
         columns: [
@@ -172,12 +239,15 @@ const AllStudents = () => {
 
     return (
         <>
-            <div className="students">
+            <div className="Teacher-AllStudents">
                 <div className="card-head">
                     <header>All Students List</header>
                 </div>
                 {/* Component DataTable */}
-
+                <select onChange={selectChange}>
+                    <option value="">- Choose Class -</option>
+                    {classes}
+                </select>
                 <Form>
                     <MDBDataTable
                         entriesOptions={[10, 20, 30]}
@@ -185,7 +255,11 @@ const AllStudents = () => {
                         hover
                         data={DataTable}
                     />
-                    <button type="submit" className="BTNStyle">
+                    <button
+                        type="submit"
+                        className="BTNStyle"
+                        onClick={submitAll}
+                    >
                         <i class="far fa-share-square"></i>
                         <span>Submit</span>
                     </button>

@@ -191,7 +191,7 @@ router.get(
  * @access private
  */
 router.get(
-    "/student/note",
+    "/student/note/:id",
     verifyToken,
     controllers.students.consultNote.GetNote
 );
@@ -220,11 +220,21 @@ router.post("/teacher/register", controllers.teachers.register.CreateTeacher);
  */
 
 router.get(
-    "/teacher/getClass",
-    verifyToken,
+    "/teacher/getClass/:id",
+    // verifyToken,
     controllers.teachers.getClassroom.getClassroom
 );
+/**
+ * @route GET /teacher/profile/id
+ * @description Get ses informations
+ * @access private
+ */
 
+router.get(
+    "/teacher/profile/:id",
+    // verifyToken,
+    controllers.teachers.getProfile.GetTeacherInfo
+);
 /**
  * @route GET /teacher/getStudents
  * @description Import Students Name
@@ -236,7 +246,16 @@ router.get(
     verifyToken,
     controllers.teachers.ImportStudent.GetStudents
 );
-
+/**
+ * @route get /teacher/studentSituations
+ * @description get students situation
+ * @access private
+ */
+router.get(
+    "/teacher/studentSituations/:id",
+    // verifyToken,
+    controllers.teachers.GetStudentsSituation.importSituations
+);
 /**
  * @route post /teacher/addSituation
  * @description Add students situation
@@ -244,7 +263,7 @@ router.get(
  */
 router.post(
     "/teacher/addSituation",
-    verifyToken,
+    // verifyToken,
     controllers.teachers.situation.AddSituation
 );
 /**
@@ -252,16 +271,36 @@ router.post(
  * @description Add students Score
  * @access private
  */
-router.post("/teacher/addscore", verifyToken, controllers.teachers.score.Score);
+router.post("/teacher/addscore", controllers.teachers.score.Score);
 /**
  * @route PUT /teacher/profile/update
  * @description update teacher profile
  * @access private
  */
 router.put(
-    "/teacher/profile/update",
-    verifyToken,
+    "/teacher/profileUpdate/:id",
+    // verifyToken,
     controllers.teachers.updateProfile.Update
+);
+/**
+ * @route PUT /teacher/editExam
+ * @description update Exam date
+ * @access private
+ */
+router.put(
+    "/teacher/editExam/:id",
+    // verifyToken,
+    controllers.teachers.EditExam.EditExam
+);
+/**
+ * @route PUT /teacher/deleteExam
+ * @description delete Exam date
+ * @access private
+ */
+router.delete(
+    "/teacher/deleteExam/:id",
+    // verifyToken,
+    controllers.teachers.deleteExam.DeleteExam
 );
 
 /**
@@ -271,7 +310,7 @@ router.put(
  */
 router.post(
     "/teacher/addExamDate",
-    verifyToken,
+    // verifyToken,
     controllers.teachers.addExamDate.addExDate
 );
 
@@ -282,8 +321,19 @@ router.post(
  */
 router.put(
     "/teacher/EditSituation/:id",
-    verifyToken,
+    // verifyToken,
     controllers.teachers.EditSituation.EditSituation
+);
+
+/**
+ * @route GET /teacher/getExamsDate
+ * @description Get exams date
+ * @access public
+ */
+router.get(
+    "/teacher/getExamsDate/:id",
+    // verifyToken,
+    controllers.teachers.GetExamDate.GetExamsDate
 );
 // *********
 
