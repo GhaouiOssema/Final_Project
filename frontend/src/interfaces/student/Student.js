@@ -10,13 +10,18 @@ import Exam from "../../components/MainContents/Student/Exam";
 import Absence from "../../components/MainContents/Student/absence";
 import Note from "../../components/MainContents/Student/Note";
 import Footer from "../../components/Footer/Footer";
+import Profile from "../../components/MainContents/Student/Profile";
 
-const Student = () => {
+const Student = ({ showSideBar, setShowSideBar }) => {
+    console.log(showSideBar);
     return (
         <div>
-            <Navigation />
+            <Navigation
+                showSideBar={showSideBar}
+                setShowSideBar={setShowSideBar}
+            />
             <Router>
-                <SideBar />
+                <SideBar showSideBar={showSideBar} />
                 <div className="admin">
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
@@ -24,12 +29,14 @@ const Student = () => {
                             <Route path="/student/exam">
                                 <Exam />
                             </Route>
-
                             <Route path="/student/absence">
                                 <Absence />
                             </Route>
-                            <Route path="student/note">
+                            <Route path="/student/note">
                                 <Note />
+                            </Route>
+                            <Route path="/student/profile">
+                                <Profile />
                             </Route>
                         </div>
                     </Switch>

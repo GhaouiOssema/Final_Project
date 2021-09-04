@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     margin-left: 80px;
+    height: 100%;
 }
 .header {
     display: flex;
@@ -66,7 +67,7 @@
 .table-responsive {
     width: 1120px;
     margin-left: -17%;
-    height: 100vh;
+    height: 100%;
     background-color: #eaeef3;
 }
 .table-responsive label {
@@ -91,11 +92,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 17px;
 }
 
 .profImg {
-    width: 35px;
-    border-radius: 50%;
+    width: 50px;
+    padding: 3px;
+    border: 3px solid rgb(210, 214, 222);
+    border-radius: 50% 50% 50% 50%;
 }
 .center:hover {
     color: #4680ff;
@@ -104,4 +108,19 @@
 .indcate {
     display: flex;
     justify-content: center;
+}
+
+.absences-t-body {
+    color: #333;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 2px;
+    font-family: Poppins, sans-serif;
+}
+.Color {
+    font-family: sans-serif;
+    text-align: center;
+    color: #6673fc;
+    font-weight: 800;
+    cursor: pointer;
 }

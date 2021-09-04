@@ -31,7 +31,7 @@
     width: 360px;
     height: 15vh;
     margin-left: 30px;
-    background: linear-gradient(45deg, #ff5370, #ff869a);
+    background: linear-gradient(60deg, #e67d21, #ffb370);
     box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
 }
 .card-content > i {
@@ -71,7 +71,7 @@
 }
 
 .card-content:nth-child(2) {
-    background: linear-gradient(45deg, #4099ff, #73b4ff);
+    background: linear-gradient(60deg, #8e44ad, #d286f3);
 }
 
 .header-right {
@@ -112,12 +112,11 @@
     margin-top: -1%;
     letter-spacing: 3px;
     font-weight: bold;
-    color: #eaeef3;
-    background: linear-gradient(45deg, #4099ff, #ff5370);
+    background: linear-gradient(60deg, #ffb370, #d286f3);
+    color: #010911;
     font-size: 20px;
     font-family: Poppins, sans-serif;
     font-weight: 600;
-    background-color: black;
     padding: 5px;
     border-radius: 13px;
 }
