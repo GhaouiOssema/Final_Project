@@ -12,16 +12,12 @@ import Note from "../../components/MainContents/Student/Note";
 import Footer from "../../components/Footer/Footer";
 import Profile from "../../components/MainContents/Student/Profile";
 
-const Student = ({ showSideBar, setShowSideBar }) => {
-    console.log(showSideBar);
+const Student = () => {
     return (
         <div>
-            <Navigation
-                showSideBar={showSideBar}
-                setShowSideBar={setShowSideBar}
-            />
             <Router>
-                <SideBar showSideBar={showSideBar} />
+                <Navigation />
+                <SideBar />
                 <div className="admin">
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
