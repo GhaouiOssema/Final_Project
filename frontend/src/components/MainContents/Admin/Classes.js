@@ -77,7 +77,10 @@ const Classes = () => {
         setShow(false);
     };
     //****************************************/
-
+    const [appear, setAppear] = useState(true);
+    setTimeout(() => {
+        setAppear(false);
+    }, 9000);
     return (
         <>
             {studentsclass.length > 0 ? (
@@ -108,7 +111,7 @@ const Classes = () => {
                             </Modal.Header>
 
                             <Form.Control
-                                style={{ margin: "20px 0 20px 38px" }}
+                                style={{ margin: "20px 0 20px 0px" }}
                                 type="text"
                                 name="name"
                                 placeholder="Enter Name of Class .. "
@@ -129,7 +132,7 @@ const Classes = () => {
                         </Modal>
                     </div>{" "}
                 </>
-            ) : (
+            ) : appear ? (
                 <div className="loader">
                     <Loader
                         type="ThreeDots"
@@ -138,6 +141,58 @@ const Classes = () => {
                         width={150}
                     />
                 </div>
+            ) : (
+                <>
+                    <Button variant="primary" onClick={handleShow}>
+                        Create New Class
+                    </Button>
+                    <div className="classes">
+                        {studentsclass.length === 0 ? (
+                            <div className="Class-content">
+                                <h1 className="no-class">
+                                    You Don't Have Any Class Yet ...
+                                </h1>
+                                <i className="far fa-thumbs-up"></i>
+                            </div>
+                        ) : (
+                            <div
+                                className="affichage-class"
+                                title="Click To Delete"
+                            >
+                                {Affichage}
+                            </div>
+                        )}
+
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Create Class</Modal.Title>
+                            </Modal.Header>
+
+                            <Form.Control
+                                style={{
+                                    margin: "20px 0 20px 0px",
+                                    width: "90%",
+                                }}
+                                type="text"
+                                name="name"
+                                placeholder="Enter Name of Class .. "
+                                onChange={(e) =>
+                                    setNewClass({
+                                        [e.target.name]: e.target.value,
+                                    })
+                                }
+                            />
+                            <Modal.Footer>
+                                <Button
+                                    variant="primary"
+                                    onClick={handleSubmit}
+                                >
+                                    Submit
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </div>
+                </>
             )}
         </>
     );

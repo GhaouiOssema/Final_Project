@@ -3,12 +3,17 @@
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
+    margin-left: 1.2%;
 }
 .teacher-container {
-    width: 1070px !important;
+    width: 97% !important;
+    min-height: 350px;
+    padding: 2%;
 }
 .form-profile {
-    padding-top: 3%;
+    /* padding-top: 7%; */
+    /* padding-bottom: 5%; */
+    border: 1px solid #ccc;
 }
 .profile-img {
     text-align: center;
@@ -27,7 +32,7 @@
     color: #0062cc;
 }
 .profile-edit-btn {
-    border: none;
+    border: 1px solid #6c757d;
     border-radius: 1.5rem;
     width: 70%;
     padding: 2%;
@@ -91,4 +96,28 @@
 
 .fix {
     padding-left: 25px !important;
+}
+.col-md-6 .tab-pane {
+    margin-top: -70px;
+    margin-left: 15px;
+}
+.profile-head {
+    margin-top: 40px;
+}
+
+.teacher-under-image > * {
+    text-align: center;
+}
+.header-teacher-profile {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+    font-size: 28px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+.tab-pane input {
+    margin-bottom: 12px;
+    padding: 2px 5px;
 }

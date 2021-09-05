@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 const Dashboard = () => {
     return (
-        <div>
+        <div className="Alldashboard-admin">
             <div className="all-cards">
                 <div className="one-card" id="card-color-1">
                     <div className="card-icon">

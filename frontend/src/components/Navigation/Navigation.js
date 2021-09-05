@@ -1,8 +1,8 @@
 import "./Navigation.css";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { NavLink, useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import jwt from "jwt-decode";
+
 const Navigation = () => {
     // LOGOUT function
     const history = useHistory();
@@ -97,22 +97,21 @@ const Navigation = () => {
                                                     Help
                                                 </NavDropdown.Item>
 
-                                                <NavDropdown.Item href="# ">
-                                                    <button onClick={logOut}>
-                                                        <i className="fas fa-sign-out-alt"></i>
-                                                        Logout
-                                                    </button>
-                                                </NavDropdown.Item>
-                                            </NavDropdown>
-                                        </Nav>
-                                    </Navbar.Collapse>
-                                </Container>
-                            </Navbar>
-                        </div>
-                    </div>
+                                        <NavDropdown.Item href="# ">
+                                            <button onClick={logOut}>
+                                                <i className="fas fa-sign-out-alt"></i>
+                                                Logout
+                                            </button>
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
                 </div>
             </div>
-        </>
+        </div>
+</>
     );
 };
 

@@ -17,7 +17,7 @@
 .dataTables_info {
     margin-top: 10px;
 }
-.students {
+.Teacher-AllStudents {
     border: 1px solid #fff;
     border-radius: 10px;
     background-color: #fff;
@@ -40,28 +40,21 @@
     font-size: 20px;
 }
 
-td:not(:first-child) {
+.Teacher-AllStudents td:not(:first-child) {
     padding-top: 19px !important;
 }
-.students .BTNStyle {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.Teacher-AllStudents .BTNStyle {
     position: absolute;
     border-radius: 5px;
     background-color: #6673fc;
     color: #fff;
     padding: 5px;
-
     width: 6rem;
     margin-top: -4%;
     margin-left: 64%;
-    letter-spacing: 1px;
-    font-family: Poppins, sans-serif;
     font-weight: bold;
-    letter-spacing: 2px;
 }
-.students .BTNStyle:hover {
+.Teacher-AllStudents .BTNStyle:hover {
     background-color: #4b5afa;
 }
 

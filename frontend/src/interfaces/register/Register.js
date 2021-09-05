@@ -1,6 +1,5 @@
 import { React, useState } from "react";
 import "./Register.css";
-import { Form } from "react-bootstrap";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
@@ -39,6 +38,7 @@ const Register = () => {
     const handleRegisterStudent = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value });
     };
+    console.log(student);
     function validateEmail(email) {
         const re =
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -83,7 +83,7 @@ const Register = () => {
     };
     const handleSubmitRegisterTeacher = (e) => {
         if (teacher.code === "SchoolTeacher2021") {
-            if (teacher.subject == "") {
+            if (teacher.subject === "") {
                 alert("You can't Register with Empty Field");
             } else if (teacher.password.length < 8) {
                 alert("Password must be at least 8 characters  ");

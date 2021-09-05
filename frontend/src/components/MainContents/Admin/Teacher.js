@@ -13,7 +13,7 @@ const Teacher = () => {
     const [allclass, setAllClass] = useState([]);
 
     //Hooks For Adding Class to Tacher
-    const [addClass, setAddClass] = useState();
+    const [addClass, setAddClass] = useState("Choose Class");
 
     //Function To show Select Option in Card
     const showSelect = (e) => {
@@ -32,30 +32,28 @@ const Teacher = () => {
     //Function for Select change
     const selectChange = (e) => {
         setAddClass(e.target.value);
-        console.log(addClass);
     };
+
     //Onclick function to Add Class To Teacher
     /******************************************************************/
     const handleSubmit = (e) => {
         const id = e.currentTarget.value;
 
-        if (addClass !== undefined) {
-            setTeachers((teachers) =>
+        if (addClass !== "Choose Class") {
+            setTeachers(
                 teachers.map((teacher) => {
+                    const array = teacher.classToStudy;
                     if (teacher._id === id) {
-                        const array = teacher.classToStudy;
+                        console.log(array);
                         return {
                             ...teacher,
                             ...array.push({
                                 name: addClass,
                             }),
                         };
-                    }
-
-                    return teacher;
+                    } else return teacher;
                 })
             );
-            console.log(teachers);
             axios
                 .put(`http://localhost:5000/administration/addClass/${id}`, {
                     newclass: addClass,
@@ -167,7 +165,7 @@ const Teacher = () => {
     /**********************************************/
     const classList = allclass.map((classe, index) => {
         return (
-            <option key={index} value={classe.name}>
+            <option key={classe._id} value={classe.name}>
                 {classe.name}
             </option>
         );
@@ -187,7 +185,8 @@ const Teacher = () => {
                     <button
                         value={teacher._id}
                         className="close-circle"
-                        onClick={handleDelete}>
+                        onClick={handleDelete}
+                    >
                         <i class="far fa-times-circle"></i>
                     </button>
                 ) : null}
@@ -210,8 +209,9 @@ const Teacher = () => {
                                     marginBottom: "10px",
                                 }}
                                 onChange={selectChange}
-                                aria-label="Default select example">
-                                <option>Select Class</option>
+                                aria-label="Default select example"
+                            >
+                                <option>{addClass}</option>
                                 {classList}
                             </Form.Select>
                         ) : (
@@ -235,14 +235,16 @@ const Teacher = () => {
                             value={teacher._id}
                             variant="success"
                             className="btn-submit"
-                            onClick={handleSubmit}>
+                            onClick={handleSubmit}
+                        >
                             Submit
                         </Button>
                     ) : (
                         <Button
                             variant="danger"
                             value={teacher._id}
-                            onClick={showSelect}>
+                            onClick={showSelect}
+                        >
                             Edit
                         </Button>
                     )}

@@ -55,7 +55,10 @@ const Dashboard = () => {
                     </div>
                     <div className="timetable">
                         <span>Schedule</span>
-                        <img src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg" />
+                        <img
+                            src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg"
+                            alt="timeTable"
+                        />
                     </div>
                 </div>
                 <div className="header-right ">

@@ -1,3 +1,6 @@
+.Alldashboard-admin {
+    margin-left: -1%;
+}
 .all-cards {
     display: flex;
     justify-content: space-around;

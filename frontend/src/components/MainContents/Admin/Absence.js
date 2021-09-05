@@ -22,6 +22,7 @@ const Absence = () => {
 
     // All Situaions  Array Map To Shows In DataTable
     /**********************************************/
+    console.log(allSituation);
     const data_table = allSituation.map((Ssituation, index) => {
         const firstName = Ssituation.student.firstName;
         const lastName = Ssituation.student.lastName;

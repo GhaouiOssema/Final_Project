@@ -60,7 +60,7 @@ const Exam = () => {
 
     return (
         <>
-            {examDate.length > 0 ? (
+            {examDate.length === 0 ? (
                 <div className="calendar">
                     <FullCalendar
                         plugins={[

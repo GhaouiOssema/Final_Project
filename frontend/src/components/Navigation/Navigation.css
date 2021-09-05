@@ -48,7 +48,7 @@
     font-size: 18px;
     cursor: pointer;
 }
-input[type="text"] {
+.top-header-Content input[type="text"] {
     background-color: transparent;
     padding-left: 10px;
     border: 0;
