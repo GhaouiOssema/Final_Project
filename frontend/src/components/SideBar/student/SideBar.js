@@ -56,14 +56,6 @@ const SideBar = () => {
                         </span>
                         <span className="item">Exam Scores</span>
                     </NavLink>
-                </li>{" "}
-                <li>
-                    <NavLink className="nav-link" to="/student/profile">
-                        <span className="icon">
-                            <i className="far fa-clipboard"></i>
-                        </span>
-                        <span className="item">Profile</span>
-                    </NavLink>
                 </li>
             </ul>
         </div>
