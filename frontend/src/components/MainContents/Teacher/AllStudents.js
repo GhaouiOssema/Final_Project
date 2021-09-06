@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import jwt from "jwt-decode";
 import "./AllStudents.css";
 
-const AllStudents = () => {
+const AllStudents = ({ toggle }) => {
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const teacher_id = decoded_token.id;
@@ -257,7 +257,7 @@ const AllStudents = () => {
                     />
                     <button
                         type="submit"
-                        className="BTNStyle"
+                        className={toggle ? "BTNStyle" : "BTNStyle-closed"}
                         onClick={submitAll}
                     >
                         <i class="far fa-share-square"></i>

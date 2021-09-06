@@ -4,7 +4,7 @@ import axios from "axios";
 import { Form, FormControl } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import jwt from "jwt-decode";
-const Score = () => {
+const Score = ({ toggle }) => {
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const teacher_id = decoded_token.id;
@@ -42,14 +42,19 @@ const Score = () => {
         // eslint-disable-next-line
     }, []);
     useEffect(() => {
-        setClassFilter(
-            allStudents.filter((el) => el.classRoom === teacherClass[0].name)
-        );
+        if (teacherClass.length > 0) {
+            setClassFilter(
+                allStudents.filter(
+                    (el) => el.classRoom === teacherClass[0].name
+                )
+            );
+        }
         // eslint-disable-next-line
     }, [teacherClass]);
 
     // AllStudents Array Map To Shows In DataTable
     /**********************************************/
+
     const data_table = classfilter.map((student, index) => {
         const firstName = student.firstName;
         const lastName = student.lastName;
@@ -203,7 +208,7 @@ const Score = () => {
                     />
                     <button
                         type="submit"
-                        className="BTNStyle"
+                        className={toggle ? "BTNStyle" : "BTNStyle-closed"}
                         onClick={submitNote}
                     >
                         <i class="far fa-share-square"></i>

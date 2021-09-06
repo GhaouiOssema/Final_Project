@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 import "./SideBar.css";
 
-const SideBar = () => {
+const SideBar = ({ toggle }) => {
     return (
-        <div class="sidebar">
+        <div class={toggle ? "sidebar-menu" : "sidebar-menu close"}>
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img

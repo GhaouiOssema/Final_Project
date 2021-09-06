@@ -43,8 +43,7 @@ ol,
 ul {
     padding-left: 0rem !important;
 }
-.sidebar {
-    /* background: rgb(5, 68, 104); */
+.sidebar-admin {
     margin-top: 60px;
     position: fixed;
     top: 0;
@@ -52,10 +51,15 @@ ul {
     width: 17%;
     height: 100%;
     padding: 20px 0;
-    transition: all 0.5s ease;
+    transition: 0.4s ease all;
+    transform: translateX(0);
+}
+.sidebar-admin.close {
+    transform: translateX(-185%);
+    transition: 0.4s ease all;
 }
 
-.sidebar ul li .nav-link {
+.sidebar-admin ul li .nav-link {
     display: flex;
     align-items: center;
     padding: 20px 30px;
@@ -64,26 +68,26 @@ ul {
     position: relative;
 }
 
-.sidebar ul li i {
+.sidebar-admin ul li i {
     color: #444;
     width: 30px;
     font-size: 15px;
 }
 
-.sidebar ul li .nav-link:hover,
-.sidebar ul li .nav-link.active {
+.sidebar-admin ul li .nav-link:hover,
+.sidebar-admin ul li .nav-link.active {
     background-color: #f4f6f9;
     border-top-color: transparent;
     color: #4680ff;
 }
 
-.sidebar ul li .nav-link:hover i,
-.sidebar ul li .nav-link.active i {
+.sidebar-admin ul li .nav-link:hover i,
+.sidebar-admin ul li .nav-link.active i {
     color: #4680ff;
 }
 
-.sidebar ul li .nav-link:hover:before,
-.sidebar ul li .nav-link.active:before {
+.sidebar-admin ul li .nav-link:hover:before,
+.sidebar-admin ul li .nav-link.active:before {
     display: block;
 }
 
@@ -110,7 +114,7 @@ ul {
     color: #a2ecff;
 }
 
-body.active .sidebar {
+body.active .sidebar-admin {
     left: -17%;
 }
 

@@ -23,7 +23,7 @@
     background-color: #fff;
     padding: 20px;
     margin-left: 0.5%;
-    width: 1100px;
+    width: 98%;
 }
 .card-head {
     border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
@@ -51,13 +51,28 @@
     padding: 5px;
     width: 6rem;
     margin-top: -4%;
-    margin-left: 64%;
+    margin-left: 63%;
     font-weight: bold;
+    transition: 0.3s ease all;
 }
 .Teacher-AllStudents .BTNStyle:hover {
     background-color: #4b5afa;
 }
-
+.Teacher-AllStudents .BTNStyle-closed {
+    position: absolute;
+    border-radius: 5px;
+    background-color: #6673fc;
+    color: #fff;
+    padding: 5px;
+    width: 6rem;
+    margin-top: -3.9%;
+    margin-left: 77%;
+    font-weight: bold;
+    transition: 0.3s ease all;
+}
+.Teacher-AllStudents .BTNStyle-closed:hover {
+    background-color: #4b5afa;
+}
 .table-rows-design {
     width: 90px;
     width: 158px;

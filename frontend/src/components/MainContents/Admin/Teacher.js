@@ -5,7 +5,7 @@ import "./Teacher.css";
 import Swal from "sweetalert2";
 import Loader from "react-loader-spinner";
 
-const Teacher = () => {
+const Teacher = ({ toggle }) => {
     // Hooks for Teachers List
     const [teachers, setTeachers] = useState([]);
 
@@ -256,7 +256,9 @@ const Teacher = () => {
     return (
         <>
             {teachers.length > 0 ? (
-                <div className="teacher-view">
+                <div
+                    className={toggle ? "teacher-view" : "teacher-view-closed"}
+                >
                     {teachers.map((teacher, index) => {
                         return <Card teacher={teacher} key={index} />;
                     })}

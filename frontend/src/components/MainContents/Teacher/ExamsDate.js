@@ -19,7 +19,7 @@ import Modal from "react-modal";
 import { Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 
-const ExamsDate = () => {
+const ExamsDate = ({ toggle }) => {
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const id = decoded_token.id;
@@ -45,12 +45,7 @@ const ExamsDate = () => {
     };
     const modalShow = () => {
         const modal_container = document.getElementById("modal-container");
-        const teacher = document.getElementById("teacher");
         const examDate = document.getElementById("modal-body");
-        const topheader = document.getElementById("topheader");
-        teacher.style.padding = "20px 0 12px 20px";
-        teacher.style.minHeight = "540px";
-        topheader.style.position = "inherit";
         modal_container.classList.remove("out");
         modal_container.classList.add("one");
         examDate.classList.add("modal-active");
@@ -165,7 +160,11 @@ const ExamsDate = () => {
     return (
         <>
             {Exams.length > 0 ? (
-                <div className="calendar-teacher">
+                <div
+                    className={
+                        toggle ? "calendar-teacher" : "calendar-teacher close"
+                    }
+                >
                     <button className="btn-add-exam" onClick={modalShow}>
                         Add Exam
                     </button>
@@ -320,8 +319,12 @@ const ExamsDate = () => {
                     </div>
 
                     <div className="btn-edit-modal">
-                        <button onClick={handleEdit}>Edit</button>
-                        <button onClick={removeExam}>Delete</button>
+                        <button onClick={handleEdit} className="btn-edit">
+                            <span className="btn-editspan">Edit</span>
+                        </button>
+                        <button onClick={removeExam} className="btn-delete">
+                            <span className="btn-deletespan">Delete</span>
+                        </button>
                     </div>
                 </div>
             </Modal>

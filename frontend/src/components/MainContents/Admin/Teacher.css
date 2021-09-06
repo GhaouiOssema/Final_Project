@@ -1,9 +1,14 @@
 .teacher-view {
     display: flex;
     flex-wrap: wrap;
-
-    /* border: 1px solid black; */
     margin-left: -14%;
+    transition: 0.3s ease all;
+}
+.teacher-view-closed {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0%;
+    transition: 0.3s ease all;
 }
 .teacher-pic {
     padding: 3px;

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ toggle }) => {
     return (
-        <div className="page-footer">
+        <div className={toggle ? "page-footer" : "page-footer-toggle-closed"}>
             <div className="page-footer-inner">
                 {" "}
                 2021 © Smart School Theme By
