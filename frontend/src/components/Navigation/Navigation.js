@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useHistory, NavLink } from "react-router-dom";
 import jwt from "jwt-decode";
+<<<<<<< HEAD
 const Navigation = ({ sideBarOpen }) => {
+=======
+const Navigation = () => {
+>>>>>>> 1a4fc94f2a0a38a835a5bc16224d9fbe5ab46255
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const role = decoded_token.role;
@@ -14,7 +18,10 @@ const Navigation = ({ sideBarOpen }) => {
         history.push("/");
         history.go(0);
     };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a4fc94f2a0a38a835a5bc16224d9fbe5ab46255
     return (
         <div id="topheader" className="top-header">
             <div className="top-header-logo">
@@ -24,7 +31,11 @@ const Navigation = ({ sideBarOpen }) => {
 
             <div className="top-header-Content">
                 <div className="search-bars">
+<<<<<<< HEAD
                     <i className="fas fa-bars" onClick={sideBarOpen}></i>
+=======
+                    <i className="fas fa-bars"></i>
+>>>>>>> 1a4fc94f2a0a38a835a5bc16224d9fbe5ab46255
                     <div className="input-search">
                         <input type="text" placeholder="Search..." />
                         <i className="fas fa-search"></i>
