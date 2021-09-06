@@ -5,7 +5,7 @@ import "./SideBar.css";
 
 const SideBar = () => {
     return (
-        <div class="sidebar">
+        <div className="sidebar">
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img

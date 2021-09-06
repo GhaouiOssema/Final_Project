@@ -60,10 +60,13 @@ function App() {
 
                                     <>
                                         <Switch>
+                                            <Route path="/">
+                                                <Home />
+                                            </Route>
                                             <Route path="/register">
                                                 <Register />
                                             </Route>
-                                            <Route path="/">
+                                            <Route path="/login">
                                                 <Login />
                                             </Route>
                                         </Switch>

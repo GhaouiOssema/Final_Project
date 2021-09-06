@@ -1,4 +1,4 @@
-.absente-content {
+.student-absente-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,35 +42,35 @@
     padding: 120px;
     color: #3d4eff;
 }
-.absente-content i {
+.student-absente-content i {
     font-size: 100px;
     color: #3d4eff;
 }
-.table-container {
-    /* padding: 20px; */
+.student-table-container {
     border: 1px solid #ccc;
+    padding: 20px;
     margin-left: 5%;
     width: 1020px;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
-.table-header {
+.student-table-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 978px !important;
-    border: 1px solid #ccc;
+    margin-left: -2%;
+    width: 1017px !important;
     background-color: #fff;
 }
-.table-responsive {
+.student-table-responsive {
     width: 1120px;
     margin-left: -17%;
     height: 100%;
     background-color: #eaeef3;
 }
-.table-responsive label {
+.student-table-responsive label {
     margin-top: 40px;
     font-weight: bold;
     margin-left: 5px;
@@ -92,7 +92,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 17px;
+    padding-top: 26px;
 }
 
 .profImg {
@@ -110,7 +110,7 @@
     justify-content: center;
 }
 
-.absences-t-body {
+.student-absences-t-body {
     color: #333;
     font-weight: 900;
     letter-spacing: 1px;

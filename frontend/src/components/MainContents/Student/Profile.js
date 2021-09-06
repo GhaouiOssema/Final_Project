@@ -43,17 +43,8 @@ const Profile = () => {
     const ADRESS = profileInfo.PROFILE.adress;
     const EMAIL = profileInfo.PROFILE.email;
     // *************
-    const [showMark, setShowMark] = useState(false);
-    const showMarks = () => {
-        setShowMark(true);
-        const home = document.getElementById("home-tab");
-        const mark = document.getElementById("profile-tab");
-        home.classList.remove("active");
-        mark.classList.add("active");
-    };
 
     const showAbout = () => {
-        setShowMark(false);
         const home = document.getElementById("home-tab");
         const mark = document.getElementById("profile-tab");
         home.classList.add("active");
@@ -62,23 +53,27 @@ const Profile = () => {
     return (
         <div>
             {profileInfo.length !== 0 ? (
-                <div className="container emp-profile">
-                    <div className="form-profile">
+                <div className="Student-container PROFILE">
+                    <div className="Student-profile">
                         <div className="row">
                             <div className="col-md-4">
-                                <div className="profile-img">
+                                <div className="student-profile-img">
                                     <img
                                         src={AVATAR}
                                         alt="student_profile_image"
+                                        className="img"
                                     />
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <div className="profile-head">
-                                    <h5>{`${Fname} ${Lname}`}</h5>
-                                    <h6>Student At Smart School </h6>
-                                    <p className="proile-rating">
-                                        Rate : <span> 4.5 / 5</span>
+                                <div className="student-profile-head">
+                                    <h5 className="profile-header-title">{`${Fname} ${Lname}`}</h5>
+                                    <h6 className="profile-type">
+                                        Student At Smart School
+                                    </h6>
+                                    <p className="student-proile-rating">
+                                        Rate :
+                                        <span className="RATTING">4.5 / 5</span>
                                     </p>
                                     <ul
                                         className="nav nav-tabs"
@@ -97,145 +92,85 @@ const Profile = () => {
                                                 About
                                             </a>
                                         </li>
-                                        <li className="nav-item">
-                                            <button
-                                                className="nav-link"
-                                                id="profile-tab"
-                                                data-toggle="tab"
-                                                href="#profile"
-                                                role="tab"
-                                                aria-controls="profile"
-                                                aria-selected="false"
-                                                onClick={showMarks}>
-                                                School Details
-                                            </button>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         {/* About Part  */}
-                        {showMark === false ? (
-                            <div className="row">
-                                <div className="col-md-4">
-                                    <div className="profile-work">
-                                        <span>STUDENT HOBBIES</span>
-                                        <br />
-                                        <p>FootBall</p>
-                                        <p>Swim</p>
-                                        <p>Outdoor activities</p>
-                                        <p>Playing an instrument</p>
-                                        <p>Team or individual sports</p>
-                                    </div>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="profile-work">
+                                    <span>STUDENT HOBBIES</span>
+                                    <br />
+                                    <p>FootBall</p>
+                                    <p>Swim</p>
+                                    <p>Outdoor activities</p>
+                                    <p>Playing an instrument</p>
+                                    <p>Team or individual sports</p>
                                 </div>
-                                <div className="col-md-8">
+                            </div>
+                            <div className="col-md-8">
+                                <div
+                                    className="tab-content profile-tab"
+                                    id="myTabContent">
                                     <div
-                                        className="tab-content profile-tab"
-                                        id="myTabContent">
-                                        <div
-                                            className="tab-pane fade show active"
-                                            id="home"
-                                            role="tabpanel"
-                                            aria-labelledby="home-tab">
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Student Class</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{CLASSROOM}</p>
-                                                </div>
+                                        className="tab-pane fade show active"
+                                        id="home"
+                                        role="tabpanel"
+                                        aria-labelledby="home-tab">
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Student Class</label>
                                             </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Full Name</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{`${Fname} ${Lname}`}</p>
-                                                </div>
+                                            <div className="col-md-6">
+                                                <p>{CLASSROOM}</p>
                                             </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Age</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{`${AGE} Years Old`}</p>
-                                                </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Full Name</label>
                                             </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Email</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{EMAIL}</p>
-                                                </div>
+                                            <div className="col-md-6">
+                                                <p>{`${Fname} ${Lname}`}</p>
                                             </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Parent Phone</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{PARENTSphone}</p>
-                                                </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Age</label>
                                             </div>
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <label>Adress</label>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <p>{ADRESS}</p>
-                                                </div>
+                                            <div className="col-md-6">
+                                                <p>{`${AGE} Years Old`}</p>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <p>{EMAIL}</p>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Parent Phone</label>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <p>{PARENTSphone}</p>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <label>Adress</label>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <p>{ADRESS}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ) : (
-                            // Student Mark Part
-                            <div className="school-details">
-                                <div className="FULL-HEIGHT">
-                                    <label>
-                                        an educational institution designed to
-                                        provide learning spaces and learning
-                                        environments for the teaching of
-                                        students under the direction of
-                                        teachers.
-                                    </label>
-                                    <div className="details">
-                                        <div className="icons-field">
-                                            <i
-                                                className="fas fa-clock"
-                                                style={{
-                                                    color: "#9d46ff",
-                                                }}></i>
-                                            <span style={{ color: "#9d46ff" }}>
-                                                Always At Time
-                                            </span>
-                                        </div>
-                                        <div className="icons-field">
-                                            <i
-                                                className="fas fa-sort-amount-up"
-                                                style={{
-                                                    color: "#2e7d32",
-                                                }}></i>
-                                            <span style={{ color: "#2e7d32" }}>
-                                                Be motivated
-                                            </span>
-                                        </div>
-                                        <div className="icons-field">
-                                            <i
-                                                className="far fa-question-circle"
-                                                style={{
-                                                    color: "#a30000",
-                                                }}></i>
-                                            <span style={{ color: "#a30000" }}>
-                                                pay attantion
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             ) : (

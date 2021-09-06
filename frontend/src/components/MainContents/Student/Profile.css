@@ -1,30 +1,35 @@
-.emp-profile {
+.PROFILE {
     /* padding: 3%; */
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
 }
-.container {
+.Student-container {
     margin-left: -14% !important;
     width: 1070px !important;
 }
-.form-profile {
-    padding-top: 3%;
+.student-profile {
+    margin-top: 50px;
+    border: none;
 }
-.profile-img {
+.student-profile-img {
     text-align: center;
     margin-bottom: 30px;
 }
-.profile-img img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.student-profile-img .img {
+    margin-top: 10%;
+    width: 150px;
+    height: 150px;
+    padding: 3px;
+    border: 3px solid rgb(210, 214, 222);
+    border-radius: 50% 50% 50% 50%;
 }
 
-.profile-head h5 {
+.student-profile-head .profile-header-title {
+    padding-top: 30px;
     color: #333;
 }
-.profile-head h6 {
+.student-profile-head .profile-type {
     color: #0062cc;
 }
 .profile-edit-btn {
@@ -36,24 +41,24 @@
     color: #6c757d;
     cursor: pointer;
 }
-.proile-rating {
+.student-proile-rating {
     font-size: 12px;
     color: #818182;
     margin-top: 5%;
 }
-.proile-rating span {
+.student-proile-rating .RATTING {
     color: #495057;
     font-size: 15px;
     font-weight: 600;
 }
-.profile-head .nav-tabs {
+.student-profile-head .nav-tabs {
     margin-bottom: 5%;
 }
-.profile-head .nav-tabs .nav-link {
+.student-profile-head .nav-tabs .nav-link {
     font-weight: 600;
     border: none;
 }
-.profile-head .nav-tabs .nav-link.active {
+.student-profile-head .nav-tabs .nav-link.active {
     border: none;
     border-bottom: 2px solid #0062cc;
 }
@@ -82,51 +87,4 @@
 .profile-tab p {
     font-weight: 600;
     color: #0062cc;
-}
-.student-mark {
-    border: 1px solid #ccc;
-}
-.school-details {
-    padding: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.icons-field {
-    display: flex;
-    flex-direction: column;
-}
-.details {
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-.icons-field i {
-    font-size: 80px;
-}
-.icons-field span {
-    background-color: #eaeef3;
-    margin-top: 20px;
-    padding: 5px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
-}
-.fix {
-    padding-left: 25px !important;
-}
-.FULL-HEIGHT {
-    text-align: center;
-    flex-wrap: wrap;
-    height: 32vh;
-}
-.FULL-HEIGHT label {
-    background-color: #eaeef3;
-    border-radius: 13px;
-    padding: 10px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-family: Poppins, sans-serif;
 }

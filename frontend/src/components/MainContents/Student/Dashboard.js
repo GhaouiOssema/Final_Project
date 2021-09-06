@@ -54,10 +54,10 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <div className="timetable">
-                        <span>Schedule</span>
                         <img
                             src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg"
                             alt="timeTable"
+                            className="time-img"
                         />
                     </div>
                 </div>
@@ -65,7 +65,7 @@ const Dashboard = () => {
                     <Calendar
                         onChange={onChange}
                         value={value}
-                        className="calandar"
+                        className="CALENDAR"
                     />
                     <div className="chart-container">
                         <Line data={data} options={options} />

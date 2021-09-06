@@ -18,7 +18,7 @@ const Student = () => {
             <Router>
                 <Navigation />
                 <SideBar />
-                <div className="admin">
+                <div className="page-content">
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
                             <Route path="/dashboard" component={Dashboard} />
@@ -37,7 +37,9 @@ const Student = () => {
                         </div>
                     </Switch>
                 </div>
-                <Footer />
+                <div className="student-footer">
+                    <Footer />
+                </div>
             </Router>
         </div>
     );

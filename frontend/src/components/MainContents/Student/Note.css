@@ -22,24 +22,24 @@
         rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-.table-head,
-.table-body {
+.exams-table-head,
+.exams-table-body {
     background-color: #fff;
     padding: 0.5rem;
     letter-spacing: 1px;
 }
-.table-head {
+.exams-table-head {
     font-family: sans-serif;
     text-align: center;
     color: #6673fc;
     font-weight: 800;
     cursor: pointer;
 }
-.table-body {
+.exams-table-body {
     text-align: center;
     font-weight: lighter;
 }
-.table-body:hover {
+.exams-table-body:hover {
     color: #4680ff;
     cursor: pointer;
 }
@@ -54,5 +54,5 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 17px;
+    padding-top: 26px;
 }

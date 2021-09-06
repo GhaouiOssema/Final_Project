@@ -37,7 +37,6 @@ const Absence = () => {
     useEffect(() => {
         GetStudentAbsences();
     }, []);
-    console.log(allAbsences);
 
     // **End***
 
@@ -74,7 +73,7 @@ const Absence = () => {
                             <i className="fa fa-circle green"></i>
                         ) : Sitiuation === "Excluded" ? (
                             <i className="fa fa-circle yellow"></i>
-                        ) : Sitiuation === "Absent" ? (
+                        ) : Sitiuation === "Absente" ? (
                             <i className="fa fa-circle red"></i>
                         ) : null}
                     </div>
@@ -85,25 +84,25 @@ const Absence = () => {
     // *** End map here***
 
     return (
-        <div className="table-responsive someHigth">
+        <div className="student-table-responsive someHigth">
             {allAbsences != "" ? (
                 <>
-                    <div className="table-container">
+                    <div className="student-table-container">
                         <div className="icons">
                             <div>
                                 <i className="fa fa-circle green"></i>
                                 <span className="txtOnline">Present</span>
-                            </div>{" "}
+                            </div>
                             <div>
                                 <i className="fas fa-circle red"></i>
                                 <span className="txtOnline">Absent</span>
-                            </div>{" "}
+                            </div>
                             <div>
                                 <i className="fa fa-circle yellow"></i>
                                 <span className="txtOnline">excluded</span>
                             </div>
                         </div>
-                        <div className="table-header">
+                        <div className="student-table-header">
                             <table className="table table-checkable order-column">
                                 <thead>
                                     <tr>
@@ -123,7 +122,7 @@ const Absence = () => {
                                     </tr>
                                 </thead>
                                 {/* map function */}
-                                <tbody className="absences-t-body">
+                                <tbody className="student-absences-t-body">
                                     {absencesData}
                                 </tbody>
                             </table>
@@ -131,7 +130,7 @@ const Absence = () => {
                     </div>
                 </>
             ) : (
-                <div className="absente-content">
+                <div className="student-absente-content">
                     <h1 className="no-absente">
                         You Don't Have Any Absence Keep Going
                     </h1>

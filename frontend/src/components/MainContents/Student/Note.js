@@ -49,13 +49,13 @@ const Note = () => {
                 <td className="centerImg">
                     <img src={Avatar} width="30" className="profImg" />
                 </td>
-                <td className="table-body ">
+                <td className="exams-table-body">
                     <span className="EX-center-field">{Teacher}</span>
                 </td>
-                <td className="table-body">
+                <td className="exams-table-body">
                     <span className="EX-center-field">{Subject}</span>
                 </td>
-                <td className="table-body">
+                <td className="exams-table-body">
                     <span className="EX-center-field"> {Score}</span>
                 </td>
             </tr>
@@ -67,17 +67,25 @@ const Note = () => {
         <>
             <div className="Score">
                 <div className="exams-container">
-                    <div className="col-sm-11">
+                    <div className="col-sm-16">
                         {allNotes.Note.length !== "" ? (
                             <table
                                 className="table table-checkable order-column"
                                 style={{ width: "100%" }}>
                                 <thead>
                                     <tr>
-                                        <th className="table-head">Avatar</th>
-                                        <th className="table-head">Teacher</th>
-                                        <th className="table-head">Subject</th>
-                                        <th className="table-head">Score </th>
+                                        <th className="exams-table-head">
+                                            Avatar
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Teacher
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Subject
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Score{" "}
+                                        </th>
                                     </tr>
                                 </thead>
                                 {/* map function */}
