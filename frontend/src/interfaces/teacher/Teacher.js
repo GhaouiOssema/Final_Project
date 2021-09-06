@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 import "./Teacher.css";
-
 // components
 import SideBar from "../../components/SideBar/teacher/SideBar";
 import Navigation from "../../components/Navigation/Navigation";
@@ -12,38 +11,45 @@ import StudentsAbsences from "../../components/MainContents/Teacher/StudentsAbse
 import AllStudents from "../../components/MainContents/Teacher/AllStudents";
 import Profile from "../../components/MainContents/Teacher/Profile";
 import Footer from "../../components/Footer/Footer";
+import { useState } from "react";
 
-const Teacher = () => {
+const Teacher = ({ toggle, sideBarOpen }) => {
     return (
         <div>
             <Router>
-                <Navigation />
+                <Navigation sideBarOpen={sideBarOpen} />
                 <div className="teacher-page-content">
-                    <SideBar />
-                    <div id="teacher" className="teacher">
+                    <SideBar toggle={toggle} />
+                    <div
+                        id="teacher"
+                        className={
+                            toggle ? "teacher" : "teacher-sidebar-closed"
+                        }
+                    >
                         <Switch>
-                            <Route path="/dashboard" component={Dashboard} />
-                            <Route
-                                path="/teacher/ExamsDate"
-                                component={ExamsDate}
-                            />
-                            <Route
-                                path="/teacher/students"
-                                component={AllStudents}
-                            />
-                            <Route
-                                path="/teacher/absencesHistory"
-                                component={StudentsAbsences}
-                            />
-                            <Route path="/teacher/score" component={Score} />
-                            <Route
-                                path="/teacher/profile"
-                                component={Profile}
-                            />
+                            <Route path="/dashboard">
+                                <Dashboard />
+                            </Route>
+
+                            <Route path="/teacher/ExamsDate">
+                                <ExamsDate toggle={toggle} />
+                            </Route>
+                            <Route path="/teacher/students">
+                                <AllStudents toggle={toggle} />
+                            </Route>
+                            <Route path="/teacher/absencesHistory">
+                                <StudentsAbsences />
+                            </Route>
+                            <Route path="/teacher/score">
+                                <Score toggle={toggle} />
+                            </Route>
+                            <Route path="/teacher/profile">
+                                <Profile />
+                            </Route>
                         </Switch>
                     </div>
                 </div>
-                <Footer />
+                <Footer toggle={toggle} />
             </Router>
         </div>
     );

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import axios from "axios";
 import jwt from "jwt-decode";
-import { useParams } from "react-router";
 import "./absence.css";
-import { token } from "morgan";
 
 const Absence = () => {
     // get th student id from the localStorage

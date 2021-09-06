@@ -1,9 +1,9 @@
 import "./SideBar.css";
 import { NavLink } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({ toggle }) => {
     return (
-        <div class="sidebar">
+        <div class={toggle ? "sidebar-admin" : "sidebar-admin close"}>
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img

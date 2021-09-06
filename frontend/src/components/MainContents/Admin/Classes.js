@@ -3,7 +3,7 @@ import { Button, Modal, Form } from "react-bootstrap";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import "./Classes.css";
-const Classes = () => {
+const Classes = ({ toggle }) => {
     //Hooks For All Classes List
     const [studentsclass, setStudentsClass] = useState([]);
 
@@ -143,7 +143,11 @@ const Classes = () => {
                 </div>
             ) : (
                 <>
-                    <Button variant="primary" onClick={handleShow}>
+                    <Button
+                        className="btn-create-class"
+                        variant="primary"
+                        onClick={handleShow}
+                    >
                         Create New Class
                     </Button>
                     <div className="classes">

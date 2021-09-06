@@ -1,40 +1,21 @@
 import "./Navigation.css";
+import { useState } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useHistory, NavLink } from "react-router-dom";
 import jwt from "jwt-decode";
+const Navigation = ({ sideBarOpen }) => {
+    const token = localStorage.getItem("JWT");
+    const decoded_token = jwt(token);
+    const role = decoded_token.role;
 
-const Navigation = () => {
-    // LOGOUT function
     const history = useHistory();
     const logOut = () => {
         localStorage.clear();
         history.push("/");
         history.go(0);
     };
-    //login function and get role and id from the locale storage
-    const TOKEN = localStorage.getItem("JWT");
-    const isLoggedIn = () => {
-        if (TOKEN) {
-            return true;
-        }
-        return false;
-    };
-
-    const Role = () => {
-        if (TOKEN != "") {
-            return jwt(TOKEN).role;
-        }
-    };
-    let ROLE = Role();
-
-    // const ID = () => {
-    //     if (TOKEN != "") {
-    //         return jwt(TOKEN).id;
-    //     }
-    // };
-
     return (
-        <div className="top-header">
+        <div id="topheader" className="top-header">
             <div className="top-header-logo">
                 <i className="fas fa-graduation-cap fa-rotate-45"></i>
                 <span> Smart </span>
@@ -42,7 +23,7 @@ const Navigation = () => {
 
             <div className="top-header-Content">
                 <div className="search-bars">
-                    <i className="fas fa-bars"></i>
+                    <i className="fas fa-bars" onClick={sideBarOpen}></i>
                     <div className="input-search">
                         <input type="text" placeholder="Search..." />
                         <i className="fas fa-search"></i>
@@ -65,27 +46,21 @@ const Navigation = () => {
                                     <Nav>
                                         <NavDropdown
                                             id="nav-dropdown-dark-example"
-                                            title="Hatem Kthiri">
+                                            title="Hatem Kthiri"
+                                        >
                                             <NavDropdown.Item href="# ">
-                                                {isLoggedIn() && ROLE === 1 ? (
-                                                    <NavLink
-                                                        to={`/teacher/profile`}>
+                                                {role === 1 ? (
+                                                    <NavLink to="/teacher/profile">
                                                         <i className="far fa-user"></i>
                                                         Profile
                                                     </NavLink>
-                                                ) : isLoggedIn() &&
-                                                  ROLE === 2 ? (
+                                                ) : role === 2 ? (
                                                     <NavLink to="/student/profile">
                                                         <i className="far fa-user"></i>
                                                         Profile
                                                     </NavLink>
-                                                ) : (
-                                                    alert(
-                                                        "you are not Login in"
-                                                    )
-                                                )}
+                                                ) : null}
                                             </NavDropdown.Item>
-
                                             <NavDropdown.Item href="# ">
                                                 <i className="fas fa-cog"></i>
                                                 Settings
