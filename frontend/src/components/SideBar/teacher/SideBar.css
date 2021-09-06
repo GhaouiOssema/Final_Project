@@ -25,25 +25,12 @@
     margin-right: 5px;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-* {
-    list-style: none;
-    text-decoration: none !important;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-}
-
-body {
-    background: #f5f6fa;
-}
 ol,
 ul {
     padding-left: 0rem !important;
 }
-.sidebar {
-    /* background: rgb(5, 68, 104); */
+
+.sidebar-menu {
     margin-top: 60px;
     position: fixed;
     top: 0;
@@ -51,10 +38,14 @@ ul {
     width: 17%;
     height: 100%;
     padding: 20px 0;
-    transition: all 0.5s ease;
+    transition: 0.5s ease all;
+    transform: translateX(0);
 }
-
-.sidebar ul li .nav-link {
+.sidebar-menu.close {
+    transform: translateX(-185%);
+    transition: 0.5s ease all;
+}
+.sidebar-menu ul li .nav-link {
     display: flex;
     align-items: center;
     padding: 13px 30px;
@@ -63,26 +54,26 @@ ul {
     position: relative;
 }
 
-.sidebar ul li i {
+.sidebar-menu ul li i {
     color: #444;
     width: 30px;
     font-size: 15px;
 }
 
-.sidebar ul li .nav-link:hover,
-.sidebar ul li .nav-link.active {
+.sidebar-menu ul li .nav-link:hover,
+.sidebar-menu ul li .nav-link.active {
     background-color: #f4f6f9;
     border-top-color: transparent;
     color: #4680ff;
 }
 
-.sidebar ul li .nav-link:hover i,
-.sidebar ul li .nav-link.active i {
+.sidebar-menu ul li .nav-link:hover i,
+.sidebar-menu ul li .nav-link.active i {
     color: #4680ff;
 }
 
-.sidebar ul li .nav-link:hover:before,
-.sidebar ul li .nav-link.active:before {
+.sidebar-menu ul li .nav-link:hover:before,
+.sidebar-menu ul li .nav-link.active:before {
     display: block;
 }
 
@@ -109,7 +100,7 @@ ul {
     color: #a2ecff;
 }
 
-body.active .sidebar {
+body.active .sidebar-menu {
     left: -17%;
 }
 

@@ -192,9 +192,8 @@ router.get(
  */
 router.get(
     "/student/note/:id",
- 
     // verifyToken,
-     controllers.students.consultNote.GetNote
+    controllers.students.consultNote.GetNote
 );
 /**
  * @route GET /student/getExamDate

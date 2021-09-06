@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner";
 import "./Exam.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const Exam = () => {
+const Exam = ({ toggle }) => {
     const [examDate, setExamDate] = useState([]);
     // Function Axios Get All Exams Date
     /*************************************/
@@ -60,8 +60,8 @@ const Exam = () => {
 
     return (
         <>
-            {examDate.length === 0 ? (
-                <div className="calendar">
+            {examDate.length > 0 ? (
+                <div className={toggle ? "calendar" : "calendar close-admin"}>
                     <FullCalendar
                         plugins={[
                             dayGridPlugin,

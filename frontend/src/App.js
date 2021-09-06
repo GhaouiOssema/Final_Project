@@ -11,6 +11,7 @@ import {
     Redirect,
 } from "react-router-dom";
 import jwt from "jwt-decode";
+import { useState } from "react";
 function App() {
     const token = localStorage.getItem("JWT");
     const getrole = () => {
@@ -27,6 +28,10 @@ function App() {
         return false;
     };
     const role = getrole();
+    const [toggle, setToggle] = useState(true);
+    const sideBarOpen = () => {
+        setToggle(!toggle);
+    };
     return (
         <Router>
             <div className="App">
@@ -35,21 +40,30 @@ function App() {
                         <>
                             {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
-                                <Admin />
+                                <Admin
+                                    toggle={toggle}
+                                    sideBarOpen={sideBarOpen}
+                                />
                             </Route>
                         </>
                     ) : isLoggedIn() && role === 1 ? (
                         <>
                             {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
-                                <Teacher />
+                                <Teacher
+                                    toggle={toggle}
+                                    sideBarOpen={sideBarOpen}
+                                />
                             </Route>
                         </>
                     ) : isLoggedIn() && role === 2 ? (
                         <>
                             {/* <Redirect to="/dashboard" /> */}
                             <Route to="/dashboard">
-                                <Student />
+                                <Student
+                                    toggle={toggle}
+                                    sideBarOpen={sideBarOpen}
+                                />
                             </Route>
                         </>
                     ) : (

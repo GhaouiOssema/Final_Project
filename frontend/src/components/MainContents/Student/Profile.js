@@ -63,7 +63,7 @@ const Profile = () => {
         <div>
             {profileInfo.length !== 0 ? (
                 <div className="container emp-profile">
-                    <div className="form-profile">
+                    <div className="form-profile-student">
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="profile-img">
@@ -83,7 +83,8 @@ const Profile = () => {
                                     <ul
                                         className="nav nav-tabs"
                                         id="myTab"
-                                        role="tablist">
+                                        role="tablist"
+                                    >
                                         <li className="nav-item">
                                             <a
                                                 className="nav-link active"
@@ -93,7 +94,8 @@ const Profile = () => {
                                                 role="tab"
                                                 aria-controls="home"
                                                 aria-selected="true"
-                                                onClick={showAbout}>
+                                                onClick={showAbout}
+                                            >
                                                 About
                                             </a>
                                         </li>
@@ -106,7 +108,8 @@ const Profile = () => {
                                                 role="tab"
                                                 aria-controls="profile"
                                                 aria-selected="false"
-                                                onClick={showMarks}>
+                                                onClick={showMarks}
+                                            >
                                                 School Details
                                             </button>
                                         </li>
@@ -132,12 +135,14 @@ const Profile = () => {
                                 <div className="col-md-8">
                                     <div
                                         className="tab-content profile-tab"
-                                        id="myTabContent">
+                                        id="myTabContent"
+                                    >
                                         <div
                                             className="tab-pane fade show active"
                                             id="home"
                                             role="tabpanel"
-                                            aria-labelledby="home-tab">
+                                            aria-labelledby="home-tab"
+                                        >
                                             <div className="row">
                                                 <div className="col-md-6">
                                                     <label>Student Class</label>
@@ -207,7 +212,8 @@ const Profile = () => {
                                                 className="fas fa-clock"
                                                 style={{
                                                     color: "#9d46ff",
-                                                }}></i>
+                                                }}
+                                            ></i>
                                             <span style={{ color: "#9d46ff" }}>
                                                 Always At Time
                                             </span>
@@ -217,7 +223,8 @@ const Profile = () => {
                                                 className="fas fa-sort-amount-up"
                                                 style={{
                                                     color: "#2e7d32",
-                                                }}></i>
+                                                }}
+                                            ></i>
                                             <span style={{ color: "#2e7d32" }}>
                                                 Be motivated
                                             </span>
@@ -227,7 +234,8 @@ const Profile = () => {
                                                 className="far fa-question-circle"
                                                 style={{
                                                     color: "#a30000",
-                                                }}></i>
+                                                }}
+                                            ></i>
                                             <span style={{ color: "#a30000" }}>
                                                 pay attantion
                                             </span>
