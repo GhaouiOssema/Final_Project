@@ -1,8 +1,18 @@
-.page-content {
+.Student {
     margin-left: 17%;
     padding: 80px 0 12px 20px;
-    /* height: 100%; */
-    /* width: 100%; */
     min-height: 600px;
     background-color: #eaeef3;
+    transition: 0.3s ease all;
+}
+.foooter {
+    width: 1120px;
+    margin-left: 17%;
+}
+.student-sidebar-closed {
+    margin-left: 0%;
+    padding: 80px 0 12px 20px;
+    min-height: 600px;
+    background-color: #eaeef3;
+    transition: 0.3s ease all;
 }

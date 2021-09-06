@@ -14,9 +14,12 @@
 .icons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
+    width: 1019px;
+    margin-left: -2.1%;
+    margin-top: -2%;
+    padding: 6px 0 0 0;
 }
 .icons > div {
     margin-left: 10px;
@@ -36,6 +39,10 @@
     color: rgb(255, 238, 0);
     margin-right: 3px;
     font-size: 12px;
+}
+.CIRCLE {
+    border: 3px solid rgb(210, 214, 222);
+    border-radius: 50% 50% 50% 50%;
 }
 
 .no-absente {
@@ -122,5 +129,13 @@
     text-align: center;
     color: #6673fc;
     font-weight: 800;
+    cursor: pointer;
+}
+.txtOnline {
+    letter-spacing: 1px;
+    line-height: 2px;
+    font-family: Poppins, sans-serif;
+}
+.student__Absences__icons {
     cursor: pointer;
 }

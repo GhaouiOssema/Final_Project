@@ -17,14 +17,10 @@ const Note = () => {
     // function for getting the student absences
     const GetExamsNote = async () => {
         try {
-            await axios
-                .get(`http://localhost:5000/student/note/${id}`)
-                .then((res) => {
-                    setAllNotes({ Note: res.data.data });
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            const StudentNote = await axios.get(
+                `http://localhost:5000/student/note/${id}`
+            );
+            setAllNotes({ Note: StudentNote.data.data });
         } catch (err) {
             console.log(err);
         }

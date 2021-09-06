@@ -1,22 +1,26 @@
-import React, { useSate } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
+import jwt from "jwt-decode";
 
 import "./SideBar.css";
 
-const SideBar = () => {
+const SideBar = ({ toggle, student_fullName, student_avatar }) => {
+    // get the token from the locale storage
+    const TOKEN = localStorage.getItem("JWT");
+    const role = jwt(TOKEN).role;
     return (
-        <div className="sidebar">
+        <div className={toggle ? "student-sidebar" : "student-sidebar close"}>
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
+                        src={role === 2 ? student_avatar : null}
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
                         height="75px"
                     />
                     <div className="user-panel-info">
-                        <p> Hatem Kthiri</p>
+                        <p> {role === 2 ? student_fullName : null} </p>
                         <div>
                             <i className="fa fa-circle user-online"></i>
                             <span className="txtOnline">Online</span>

@@ -13,19 +13,22 @@ import Profile from "../../components/MainContents/Teacher/Profile";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 
-const Teacher = ({ toggle, sideBarOpen }) => {
+const Teacher = ({ toggle, sideBarOpen, teacher_fullName, teacher_avatar }) => {
     return (
         <div>
             <Router>
                 <Navigation sideBarOpen={sideBarOpen} />
                 <div className="teacher-page-content">
-                    <SideBar toggle={toggle} />
+                    <SideBar
+                        toggle={toggle}
+                        teacher_fullName={teacher_fullName}
+                        teacher_avatar={teacher_avatar}
+                    />
                     <div
                         id="teacher"
                         className={
                             toggle ? "teacher" : "teacher-sidebar-closed"
-                        }
-                    >
+                        }>
                         <Switch>
                             <Route path="/dashboard">
                                 <Dashboard />

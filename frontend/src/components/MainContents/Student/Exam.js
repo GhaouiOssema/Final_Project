@@ -20,14 +20,10 @@ const Exam = () => {
     // axios function to getting the Exams Date
     const GetStudentExamsDate = async () => {
         try {
-            await axios
-                .get(`http://localhost:5000/student/getExamDate/${ID}`)
-                .then((res) => {
-                    setCalendarEvent({ calendar: res.data.data });
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            const CALENDAR = await axios.get(
+                `http://localhost:5000/student/getExamDate/${ID}`
+            );
+            setCalendarEvent({ calendar: CALENDAR.data.data });
         } catch (err) {
             console.log(err);
         }

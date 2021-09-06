@@ -18,12 +18,10 @@ const Profile = () => {
     // *** Start ***
     const StudenProfile = async () => {
         try {
-            await axios
-                .get(`http://localhost:5000/student/profile/${id}`)
-                .then((res) => {
-                    setProfilInfo({ PROFILE: res.data.data });
-                })
-                .catch((err) => console.log(err));
+            const StudentProfile = await axios.get(
+                `http://localhost:5000/student/profile/${id}`
+            );
+            setProfilInfo({ PROFILE: StudentProfile.data.data });
         } catch (err) {
             console.log(err);
         }

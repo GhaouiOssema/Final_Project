@@ -12,13 +12,21 @@ import Note from "../../components/MainContents/Student/Note";
 import Footer from "../../components/Footer/Footer";
 import Profile from "../../components/MainContents/Student/Profile";
 
-const Student = () => {
+const Student = ({ toggle, sideBarOpen, student_fullName, student_avatar }) => {
     return (
         <div>
             <Router>
-                <Navigation />
-                <SideBar />
-                <div className="page-content">
+                <Navigation
+                    sideBarOpen={sideBarOpen}
+                    student_fullName={student_fullName}
+                    student_avatar={student_avatar}
+                />
+                <SideBar
+                    toggle={toggle}
+                    student_fullName={student_fullName}
+                    student_avatar={student_avatar}
+                />
+                <div className={toggle ? "Student" : "student-sidebar-closed"}>
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
                             <Route path="/dashboard" component={Dashboard} />
@@ -37,7 +45,7 @@ const Student = () => {
                         </div>
                     </Switch>
                 </div>
-                <div className="student-footer">
+                <div className="foooter">
                     <Footer />
                 </div>
             </Router>

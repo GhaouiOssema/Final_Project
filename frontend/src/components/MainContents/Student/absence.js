@@ -18,14 +18,10 @@ const Absence = () => {
 
     const GetStudentAbsences = async () => {
         try {
-            await axios
-                .get(`http://localhost:5000/student/absence/${id}`)
-                .then((res) => {
-                    setAllabsences({ StudentABS: res.data.data });
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            const studentABS = await axios.get(
+                `http://localhost:5000/student/absence/${id}`
+            );
+            setAllabsences({ StudentABS: studentABS.data.data });
         } catch (err) {
             console.log(err);
         }
@@ -67,11 +63,11 @@ const Absence = () => {
                 <td className="center">
                     <div className="indcate center-field">
                         {Sitiuation === "Present" ? (
-                            <i className="fa fa-circle green"></i>
+                            <i className="fa fa-circle CIRCLE green"></i>
                         ) : Sitiuation === "Excluded" ? (
-                            <i className="fa fa-circle yellow"></i>
+                            <i className="fa fa-circle CIRCLE yellow"></i>
                         ) : Sitiuation === "Absente" ? (
-                            <i className="fa fa-circle red"></i>
+                            <i className="fa fa-circle CIRCLE red"></i>
                         ) : null}
                     </div>
                 </td>
@@ -80,23 +76,53 @@ const Absence = () => {
     });
     // *** End map here***
 
+    // filter the table by the icons field type
+
+    // *** presente ***
+    const filttringPresente = () => {
+        absencesData.filter((situation) => situation === "Absente");
+    };
+
+    // *** absente ***
+    const filttringAbsente = () => {
+        absencesData.filter((situation) => situation === "Absente");
+    };
+    console.log(filttringAbsente);
+
+    // *** excluded ***
+    const filttringExcluded = () => {
+        absencesData.filter((situation) => situation === "Absente");
+    };
+
     return (
         <div className="student-table-responsive someHigth">
             {allAbsences != "" ? (
                 <>
                     <div className="student-table-container">
                         <div className="icons">
-                            <div>
-                                <i className="fa fa-circle green"></i>
-                                <span className="txtOnline">Present</span>
+                            <div
+                                className="student__Absences__icons"
+                                onClick={filttringPresente}>
+                                <i className="fa fa-circle green CIRCLE"></i>
+                                <span className="txtOnline">
+                                    <b>Present</b>
+                                </span>
                             </div>
-                            <div>
-                                <i className="fas fa-circle red"></i>
-                                <span className="txtOnline">Absent</span>
+                            <div
+                                className="student__Absences__icons"
+                                onClick={filttringAbsente}>
+                                <i className="fas fa-circle red CIRCLE"></i>
+                                <span className="txtOnline">
+                                    <b>Absent</b>
+                                </span>
                             </div>
-                            <div>
-                                <i className="fa fa-circle yellow"></i>
-                                <span className="txtOnline">excluded</span>
+                            <div
+                                className="student__Absences__icons"
+                                onClick={filttringExcluded}>
+                                <i className="fa fa-circle yellow CIRCLE"></i>
+                                <span className="txtOnline">
+                                    <b>excluded</b>
+                                </span>
                             </div>
                         </div>
                         <div className="student-table-header">

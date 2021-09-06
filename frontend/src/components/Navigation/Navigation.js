@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useHistory, NavLink } from "react-router-dom";
 import jwt from "jwt-decode";
-const Navigation = ({ sideBarOpen }) => {
+const Navigation = ({ sideBarOpen, student_fullName, student_avatar }) => {
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const role = decoded_token.role;
@@ -46,8 +46,7 @@ const Navigation = ({ sideBarOpen }) => {
                                     <Nav>
                                         <NavDropdown
                                             id="nav-dropdown-dark-example"
-                                            title="Hatem Kthiri"
-                                        >
+                                            title="Hatem Kthiri">
                                             <NavDropdown.Item href="# ">
                                                 {role === 1 ? (
                                                     <NavLink to="/teacher/profile">

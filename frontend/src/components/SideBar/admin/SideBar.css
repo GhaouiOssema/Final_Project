@@ -43,7 +43,7 @@ ol,
 ul {
     padding-left: 0rem !important;
 }
-.sidebar-admin {
+.student-sidebar{
     margin-top: 60px;
     position: fixed;
     top: 0;
@@ -54,12 +54,12 @@ ul {
     transition: 0.4s ease all;
     transform: translateX(0);
 }
-.sidebar-admin.close {
+.student-sidebar.close {
     transform: translateX(-185%);
     transition: 0.4s ease all;
 }
 
-.sidebar-admin ul li .nav-link {
+.student-sidebar ul li .nav-link {
     display: flex;
     align-items: center;
     padding: 20px 30px;
@@ -68,26 +68,26 @@ ul {
     position: relative;
 }
 
-.sidebar-admin ul li i {
+.student-sidebar ul li i {
     color: #444;
     width: 30px;
     font-size: 15px;
 }
 
-.sidebar-admin ul li .nav-link:hover,
-.sidebar-admin ul li .nav-link.active {
+.student-sidebar ul li .nav-link:hover,
+.student-sidebar ul li .nav-link.active {
     background-color: #f4f6f9;
     border-top-color: transparent;
     color: #4680ff;
 }
 
-.sidebar-admin ul li .nav-link:hover i,
-.sidebar-admin ul li .nav-link.active i {
+.student-sidebar ul li .nav-link:hover i,
+.student-sidebar ul li .nav-link.active i {
     color: #4680ff;
 }
 
-.sidebar-admin ul li .nav-link:hover:before,
-.sidebar-admin ul li .nav-link.active:before {
+.student-sidebar ul li .nav-link:hover:before,
+.student-sidebar ul li .nav-link.active:before {
     display: block;
 }
 

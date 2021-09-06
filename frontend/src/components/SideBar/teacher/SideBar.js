@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import jwt from "jwt-decode";
+import axios from "axios";
 
 import "./SideBar.css";
 
-const SideBar = ({ toggle }) => {
+const SideBar = ({ toggle, teacher_fullName, teacher_avatar }) => {
     return (
         <div class={toggle ? "sidebar-menu" : "sidebar-menu close"}>
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
+                        src={teacher_avatar}
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
                         height="75px"
                     />
                     <div className="user-panel-info">
-                        <p> Hatem Kthiri</p>
+                        <p>{teacher_fullName}</p>
                         <div>
                             <i className="fa fa-circle user-online"></i>
                             <span className="txtOnline">Online</span>
