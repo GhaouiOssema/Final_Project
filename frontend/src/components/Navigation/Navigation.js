@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useHistory, NavLink } from "react-router-dom";
 import jwt from "jwt-decode";
-const Navigation = ({ sideBarOpen, student_fullName, student_avatar }) => {
+const Navigation = ({ sideBarOpen, teacher, student }) => {
     const token = localStorage.getItem("JWT");
     const decoded_token = jwt(token);
     const role = decoded_token.role;
@@ -14,6 +14,16 @@ const Navigation = ({ sideBarOpen, student_fullName, student_avatar }) => {
         history.push("/");
         history.go(0);
     };
+    var profile = {
+        avatar: process.env.PUBLIC_URL + "/assets/admin.png",
+        firstName: "Administrateur",
+    };
+    if (role === 1) {
+        profile = teacher;
+    } else if (role === 2) {
+        profile = student;
+    }
+
     return (
         <div id="topheader" className="top-header">
             <div className="top-header-logo">
@@ -24,17 +34,21 @@ const Navigation = ({ sideBarOpen, student_fullName, student_avatar }) => {
             <div className="top-header-Content">
                 <div className="search-bars">
                     <i className="fas fa-bars" onClick={sideBarOpen}></i>
-                    <div className="input-search">
+                    {/* <div className="input-search">
                         <input type="text" placeholder="Search..." />
                         <i className="fas fa-search"></i>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="right-content">
                     <i className="fas fa-expand-arrows-alt"></i>
                     <i className="far fa-bell"></i>
                     <div className="right-content-profile">
                         <img
-                            src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
+                            src={
+                                role === 0
+                                    ? `${profile.avatar}`
+                                    : profile.avatar
+                            }
                             width="29px"
                             height="29px"
                             alt="profile"
@@ -46,7 +60,12 @@ const Navigation = ({ sideBarOpen, student_fullName, student_avatar }) => {
                                     <Nav>
                                         <NavDropdown
                                             id="nav-dropdown-dark-example"
-                                            title="Hatem Kthiri">
+                                            title={
+                                                role === 0
+                                                    ? `${profile.firstName}`
+                                                    : `${profile.firstName} ${profile.lastName}`
+                                            }
+                                        >
                                             <NavDropdown.Item href="# ">
                                                 {role === 1 ? (
                                                     <NavLink to="/teacher/profile">

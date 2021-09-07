@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, BrowserRouter as Router } from "react-router-dom";
-import "./Home.css";
+import "./home.css";
 const Home = () => {
     return (
         <div className="HOME__PAGE">
@@ -16,12 +16,14 @@ const Home = () => {
                                 <li className="navbar__list__items">
                                     <NavLink
                                         to="/login"
-                                        className="navbar__link">
+                                        className="navbar__link"
+                                    >
                                         <span
                                             style={{
                                                 color: "#fff",
                                                 fontSize: 20,
-                                            }}>
+                                            }}
+                                        >
                                             Sign In
                                         </span>
                                     </NavLink>
@@ -29,12 +31,14 @@ const Home = () => {
                                 <li className="navbar__list__items">
                                     <NavLink
                                         to="/register"
-                                        className="navbar__link">
+                                        className="navbar__link"
+                                    >
                                         <span
                                             style={{
                                                 color: "#fff",
                                                 fontSize: 20,
-                                            }}>
+                                            }}
+                                        >
                                             Sign Up
                                         </span>
                                     </NavLink>
@@ -46,11 +50,13 @@ const Home = () => {
                                 <svg
                                     role="img"
                                     xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512">
+                                    viewBox="0 0 448 512"
+                                >
                                     <path
                                         fill="currentColor"
                                         d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-                                        class=""></path>
+                                        class=""
+                                    ></path>
                                 </svg>
                             </a>
                         </div>
@@ -66,7 +72,8 @@ const Home = () => {
                         <div className="hero__content">
                             <div
                                 className="hero__content__inner"
-                                id="navConverter">
+                                id="navConverter"
+                            >
                                 <h1 className="hero__title">
                                     A production-ready theme for your projects
                                 </h1>
@@ -79,12 +86,14 @@ const Home = () => {
                                 </p>
                                 <a
                                     href="#"
-                                    className="home__button button__accent">
+                                    className="home__button button__accent"
+                                >
                                     Download Evie
                                 </a>
                                 <div
                                     className="home__button hero__button"
-                                    style={{ borderColor: "#333" }}>
+                                    style={{ borderColor: "#333" }}
+                                >
                                     <span style={{ color: "#333" }}>
                                         Learn more
                                     </span>
@@ -254,7 +263,8 @@ const Home = () => {
                                     <a
                                         href="https://undraw.co"
                                         target="_blank"
-                                        className="footer__link">
+                                        className="footer__link"
+                                    >
                                         <span className="footer__span__item">
                                             School Manegment
                                         </span>

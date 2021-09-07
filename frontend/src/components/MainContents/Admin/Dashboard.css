@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-left: -13%;
+    margin-left: -14%;
 }
 .one-card {
     display: flex;
@@ -62,7 +62,8 @@
 .charts-admin-dashboard {
     /* display: flex; */
     /* justify-content: space-evenly; */
-    margin-left: -11.5%;
+    margin-left: 0%;
+    width: 90%;
 }
 .Bar-charts {
     width: 99%;

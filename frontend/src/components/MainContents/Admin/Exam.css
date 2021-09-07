@@ -6,13 +6,13 @@
     width: 800px;
 } */
 
-.loader {
+.loader-exam-admin {
     margin-top: -8%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 585px;
-    width: 85%;
+    width: 90%;
 }
 .calendar {
     border: 1px solid #fff;

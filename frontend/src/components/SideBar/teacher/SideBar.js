@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import jwt from "jwt-decode";
-import axios from "axios";
-
 import "./SideBar.css";
 
-const SideBar = ({ toggle, teacher_fullName, teacher_avatar }) => {
+const SideBar = ({ toggle, teacher }) => {
     return (
         <div class={toggle ? "sidebar-menu" : "sidebar-menu close"}>
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src={teacher_avatar}
+                        src={teacher.avatar}
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
                         height="75px"
                     />
                     <div className="user-panel-info">
-                        <p>{teacher_fullName}</p>
-                        <div>
+                        <p>{`${teacher.firstName} ${teacher.lastName}`}</p>
+                        <div className="online-user">
                             <i className="fa fa-circle user-online"></i>
                             <span className="txtOnline">Online</span>
                         </div>

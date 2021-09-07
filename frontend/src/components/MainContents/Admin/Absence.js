@@ -129,7 +129,7 @@ const Absence = () => {
                     />
                 </div>
             ) : (
-                <div className="loader">
+                <div className="loader-admin-absence">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"
