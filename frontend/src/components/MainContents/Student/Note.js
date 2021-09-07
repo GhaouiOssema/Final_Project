@@ -63,7 +63,7 @@ const Note = () => {
         <>
             <div className="Score">
                 <div className="exams-container">
-                    <div className="col-sm-16">
+                    <div className="col-sm-15 full-Width">
                         {allNotes.Note.length !== "" ? (
                             <table
                                 className="table table-checkable order-column"

@@ -21,7 +21,10 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
-
+.full-Width {
+    width: 1050px;
+    margin-left: -2%;
+}
 .exams-table-head,
 .exams-table-body {
     background-color: #fff;
