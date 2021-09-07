@@ -7,14 +7,14 @@ const SideBar = ({ toggle }) => {
             <div className="sidebar-user-panel">
                 <div className="user-panel">
                     <img
-                        src="https://radixtouch.com/templates/admin/smart/source/assets/img/dp.jpg"
+                        src={process.env.PUBLIC_URL + "/assets/admin.png"}
                         className="user-img-circle"
                         alt="User_Image"
                         width="75px"
                         height="75px"
                     />
                     <div className="user-panel-info">
-                        <p> Hatem Kthiri</p>
+                        <p>Administrateur</p>
                         <div>
                             <i className="fa fa-circle user-online"></i>
                             <span className="txtOnline">Online</span>

@@ -264,7 +264,7 @@ const Teacher = ({ toggle }) => {
                     })}
                 </div>
             ) : (
-                <div className="loader">
+                <div className="loader-admin-teacher">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"

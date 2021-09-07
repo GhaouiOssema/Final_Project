@@ -55,3 +55,11 @@
 th:nth-child(7) {
     padding-left: 6px !important;
 }
+.loader-admin-absence {
+    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 585px;
+    width: 90%;
+}

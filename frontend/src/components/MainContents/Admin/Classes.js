@@ -82,7 +82,7 @@ const Classes = ({ toggle }) => {
         setAppear(false);
     }, 9000);
     return (
-        <>
+        <div className={toggle ? "admin-class" : "admin-class-closed"}>
             {studentsclass.length > 0 ? (
                 <>
                     <Button variant="primary" onClick={handleShow}>
@@ -133,7 +133,7 @@ const Classes = ({ toggle }) => {
                     </div>{" "}
                 </>
             ) : appear ? (
-                <div className="loader">
+                <div className="loader-admin-class">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"
@@ -198,7 +198,7 @@ const Classes = ({ toggle }) => {
                     </div>
                 </>
             )}
-        </>
+        </div>
     );
 };
 

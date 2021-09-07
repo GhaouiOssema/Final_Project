@@ -91,3 +91,11 @@ a {
 .fa-trash:hover {
     color: #ff5688;
 }
+.loader-admin-student {
+    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 585px;
+    width: 90%;
+}

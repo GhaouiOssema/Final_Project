@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import "./Register.css";
 import { useHistory, NavLink } from "react-router-dom";
 import axios from "axios";
+
 const Register = () => {
     const history = useHistory();
     const [student, setStudent] = useState({
@@ -167,11 +168,12 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterTeacher}>
+                            onClick={handleSubmitRegisterTeacher}
+                        >
                             Sign Up
                         </button>
                         <button className="to-login">
-                            <NavLink to="/">
+                            <NavLink to="/login">
                                 <span>Already Have Account !</span>{" "}
                             </NavLink>
                         </button>
@@ -253,11 +255,12 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterStudent}>
+                            onClick={handleSubmitRegisterStudent}
+                        >
                             Sign Up
                         </button>
                         <button className="to-login">
-                            <NavLink to="/">
+                            <NavLink to="/login">
                                 <span>Already Have Account !</span>{" "}
                             </NavLink>
                         </button>
@@ -274,7 +277,8 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signinButton}>
+                                onClick={signinButton}
+                            >
                                 Sign Up As Student
                             </button>
                         </div>
@@ -287,7 +291,8 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signupButton}>
+                                onClick={signupButton}
+                            >
                                 Sign Up As Teacher
                             </button>
                         </div>

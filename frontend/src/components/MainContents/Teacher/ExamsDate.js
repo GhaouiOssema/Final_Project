@@ -16,7 +16,7 @@ import jwt from "jwt-decode";
 import Loader from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-modal";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 
 const ExamsDate = ({ toggle }) => {
@@ -319,12 +319,12 @@ const ExamsDate = ({ toggle }) => {
                     </div>
 
                     <div className="btn-edit-modal">
-                        <button onClick={handleEdit} className="btn-edit">
-                            <span className="btn-editspan">Edit</span>
-                        </button>
-                        <button onClick={removeExam} className="btn-delete">
-                            <span className="btn-deletespan">Delete</span>
-                        </button>
+                        <Button onClick={handleEdit} variant="success">
+                            <span>EDIT</span>
+                        </Button>
+                        <Button onClick={removeExam} variant="secondary">
+                            <span>DELETE</span>
+                        </Button>
                     </div>
                 </div>
             </Modal>

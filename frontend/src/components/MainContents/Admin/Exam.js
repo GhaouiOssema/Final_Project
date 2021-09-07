@@ -78,7 +78,7 @@ const Exam = ({ toggle }) => {
                     />
                 </div>
             ) : (
-                <div className="loader">
+                <div className="loader-exam-admin">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"

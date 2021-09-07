@@ -296,41 +296,34 @@
     line-height: 1.5;
     border-radius: 0.25em;
 }
-.btn-edit {
-    background-image: linear-gradient(to right, #006175 0%, #00a950 100%);
-    border-radius: 40px;
-    box-sizing: border-box;
-    color: #00a84f;
-    display: block;
-    height: 40px;
-    font-size: 1.4em;
-    padding: 4px;
-    position: relative;
-    text-decoration: none;
-    width: 4em;
-    z-index: 2;
+.btn-edit-modal .btn-success {
+    margin-top: 10px;
+    height: 40px !important;
+    background-color: #65657b !important;
+    border: none !important;
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
 }
-.btn-delete {
-    background-image: linear-gradient(to right, #9752f1 0%, #f55d49 100%);
-    border-radius: 40px;
-    box-sizing: border-box;
-    color: #a8002a;
-    display: block;
-    height: 40px;
-    font-size: 1.4em;
-    padding: 4px;
-    position: relative;
-    text-decoration: none;
-    width: 4em;
-    z-index: 2;
+.btn-edit-modal .btn-success:hover {
+    background-color: #a4a4b9 !important;
 }
-.btn-edit:hover {
-    color: #fff;
+.btn-edit-modal .btn-secondary {
+    margin-top: 10px;
+    height: 40px !important;
+    background-color: #1b2d3f !important;
+    border: none !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    width: 100px !important;
+    letter-spacing: 2px !important;
+}
+.btn-edit-modal .btn-secondary:hover {
+    background-color: #29445f !important;
 }
 .btn-edit .btn-editspan {
     align-items: center;
-    background: #15172b;
-    border-radius: 40px;
+    background: linear-gradient(to right, #bdc3c7 0%, #2c3e50 100%);
+    /* border-radius: 40px; */
     display: flex;
     justify-content: center;
     height: 100%;
@@ -339,7 +332,7 @@
 }
 
 .btn-edit:hover .btn-editspan {
-    background: transparent;
+    background: linear-gradient(to right, #d5dce0 0%, #405b75 100%);
 }
 .btn-delete .btn-deletespan {
     align-items: center;

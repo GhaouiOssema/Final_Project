@@ -292,7 +292,7 @@ const Student = () => {
                     {/* Component DataTable*/}
                 </div>
             ) : (
-                <div className="loader">
+                <div className="loader-admin-student">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"

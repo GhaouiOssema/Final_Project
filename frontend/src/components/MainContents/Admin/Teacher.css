@@ -21,7 +21,14 @@
     font-size: 22px;
     text-align: center;
 }
-
+.loader-admin-teacher {
+    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 585px;
+    width: 90%;
+}
 .card {
     width: 344px;
     height: 344px;

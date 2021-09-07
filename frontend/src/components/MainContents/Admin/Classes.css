@@ -11,8 +11,13 @@
     font-size: 100px;
     color: #3d4eff;
 }
-.btn-primary {
-    margin-left: 350px;
+.admin-class .btn-primary {
+    margin-left: 340px;
+    transition: 0.3s all ease-in-out;
+}
+.admin-class-closed .btn-primary {
+    margin-left: 420px;
+    transition: 0.3s all ease-in-out;
 }
 .classes {
     padding-top: 10px;
@@ -52,4 +57,12 @@
 button {
     background: none;
     border: none;
+}
+.loader-admin-class {
+    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 585px;
+    width: 90%;
 }
