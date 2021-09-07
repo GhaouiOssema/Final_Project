@@ -100,27 +100,21 @@ const Absence = () => {
                 <>
                     <div className="student-table-container">
                         <div className="icons">
-                            <div
-                                className="student__Absences__icons"
-                                onClick={filttringPresente}>
+                            <div className="student__Absences__icons">
                                 <i className="fa fa-circle green CIRCLE"></i>
-                                <span className="txtOnline">
+                                <span className="icon-txtOnline">
                                     <b>Present</b>
                                 </span>
                             </div>
-                            <div
-                                className="student__Absences__icons"
-                                onClick={filttringAbsente}>
+                            <div className="student__Absences__icons">
                                 <i className="fas fa-circle red CIRCLE"></i>
-                                <span className="txtOnline">
+                                <span className="icon-txtOnline">
                                     <b>Absent</b>
                                 </span>
                             </div>
-                            <div
-                                className="student__Absences__icons"
-                                onClick={filttringExcluded}>
+                            <div className="student__Absences__icons">
                                 <i className="fa fa-circle yellow CIRCLE"></i>
-                                <span className="txtOnline">
+                                <span className="icon-txtOnline">
                                     <b>excluded</b>
                                 </span>
                             </div>

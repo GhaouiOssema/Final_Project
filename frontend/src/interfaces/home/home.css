@@ -46,11 +46,10 @@ center-align {
     color: #111;
 }
 .FULL-HIEGTH {
-    background: linear-gradient(to right, #6c63ff, #4641ff);
+    background: #6c63ff;
 }
 .navbar__container {
-    width: 100%;
-    max-width: 1080px;
+    width: 1000px;
     margin: 0 auto;
     position: relative;
 }
@@ -59,7 +58,7 @@ center-align {
     padding: 0;
     /* width: 100%; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
     background-color: #333c44;
     color: #fff;
@@ -107,9 +106,9 @@ center-align {
     height: 60px;
     color: #fff;
     transition: 0.7s;
+    margin-left: -1%;
     height: 60px;
-    margin-left: -10%;
-    width: 1150px;
+    width: 1000px;
 }
 .navbar__logo {
     font-size: 1.325rem;
@@ -180,11 +179,10 @@ center-align {
     position: relative;
     width: 100%;
     /* background-image: url("../images/evie_default_bg.jpeg"); */
-    box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    color: #ffffff;
+    color: #333;
 }
 .hero__inner {
     position: relative;
@@ -201,7 +199,7 @@ center-align {
 }
 
 .hero__overlay--gradient {
-    background: linear-gradient(to right, #6c63ff, #4641ff);
+    background: #eaeef3;
 }
 
 .hero__overlay--gradientVertical {
@@ -365,15 +363,15 @@ center-align {
 }
 
 .button__accent {
-    background-color: #06d19c;
-    border-color: #06d19c;
-    color: #fff;
+    background: #6c63ff;
+    border-color: #6c63ff;
+    color: #333;
 }
 @media (min-width: 992px) {
     .button__accent:hover {
-        background-color: #05bd8d;
-        border-color: #05bd8d;
-        color: #fff;
+        background: #6c63ff;
+        border-color: #6c63ff;
+        color: #333;
     }
 }
 
@@ -576,37 +574,6 @@ center-align {
     position: relative;
 }
 
-.cta {
-    background: linear-gradient(to right, #6c63ff, #4641ff);
-    color: #fff;
-    padding: 48pt 0;
-    text-align: center;
-}
-
-.cta--reverse {
-    background: linear-gradient(to left, #6c63ff, #4641ff);
-}
-
-.cta--plain {
-    background: #6c63ff;
-}
-
-.cta--secondary {
-    background: #4641ff;
-}
-
-.cta__title {
-    color: inherit;
-}
-
-.cta__sub {
-    opacity: 0.85;
-    max-width: 58ch;
-    margin: 16pt auto 24pt auto;
-}
-.cta__sub--center {
-    text-align: center;
-}
 .footer__container {
     width: 88%;
     max-width: 1080px;
@@ -623,7 +590,13 @@ center-align {
     -js-display: flex;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    /* border: 2px solid #fff; */
+    border-radius: 10px;
+    width: 1250px;
+    margin-left: -8%;
+    padding-left: 20px;
 }
 @media (min-width: 600px) {
     .footer__inner {
@@ -654,11 +627,13 @@ center-align {
 }
 
 .footer__data {
+    height: 11vh;
     -js-display: flex;
     display: flex;
     flex-grow: 1;
-    justify-content: space-between;
-    padding-top: 0.25rem;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem;
     flex-wrap: wrap;
     flex-direction: column;
     font-size: 0.9rem;
@@ -672,7 +647,7 @@ center-align {
 
 .footer__data__item {
     padding-bottom: 0.5rem;
-    display: inline-block;
+    display: flex;
     margin-bottom: 8pt;
 }
 
@@ -692,6 +667,9 @@ center-align {
     margin-bottom: 8pt;
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    width: 300px;
 }
 
 /*--- Modifiers---*/

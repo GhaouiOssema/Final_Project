@@ -43,6 +43,7 @@
 .CIRCLE {
     border: 3px solid rgb(210, 214, 222);
     border-radius: 50% 50% 50% 50%;
+    padding: 2px;
 }
 
 .no-absente {
@@ -131,7 +132,7 @@
     font-weight: 800;
     cursor: pointer;
 }
-.txtOnline {
+.icon-txtOnline {
     letter-spacing: 1px;
     line-height: 2px;
     font-family: Poppins, sans-serif;
