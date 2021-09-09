@@ -195,10 +195,14 @@ const Score = ({ toggle }) => {
                 <div className="card-head">
                     <header>All Students Exams Score</header>
                 </div>
-                <select onChange={selectChange}>
-                    <option value="">- Choose Class -</option>
-                    {classes}
-                </select>
+                <div
+                    className={toggle ? "select-class" : "select-class-closed"}
+                >
+                    <select onChange={selectChange}>
+                        <option value="">- Choose Class -</option>
+                        {classes}
+                    </select>
+                </div>
                 <Form>
                     <MDBDataTable
                         entriesOptions={[10, 20, 30]}

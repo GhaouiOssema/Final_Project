@@ -244,10 +244,14 @@ const AllStudents = ({ toggle }) => {
                     <header>All Students List</header>
                 </div>
                 {/* Component DataTable */}
-                <select onChange={selectChange}>
-                    <option value="">- Choose Class -</option>
-                    {classes}
-                </select>
+                <div
+                    className={toggle ? "select-class" : "select-class-closed"}
+                >
+                    <select onChange={selectChange}>
+                        <option value="">- Choose Class -</option>
+                        {classes}
+                    </select>
+                </div>
                 <Form>
                     <MDBDataTable
                         entriesOptions={[10, 20, 30]}
