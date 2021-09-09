@@ -19,14 +19,12 @@ const Home = () => {
                                         className="navbar__link"
                                         style={{
                                             color: "#fff",
-                                        }}
-                                    >
+                                        }}>
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover"
-                                        >
+                                            className="links-hover">
                                             Sign In
                                         </span>
                                     </NavLink>
@@ -34,35 +32,18 @@ const Home = () => {
                                 <li className="navbar__list__items">
                                     <NavLink
                                         to="/register"
-                                        className="navbar__link"
-                                    >
+                                        className="navbar__link">
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover"
-                                        >
+                                            className="links-hover">
                                             Sign Up
                                         </span>
                                     </NavLink>
                                 </li>
                             </ul>
                         </nav>
-                        <div className="navbar__menu-mob">
-                            <a id="toggle">
-                                <svg
-                                    role="img"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512"
-                                >
-                                    <path
-                                        fill="currentColor"
-                                        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-                                        class=""
-                                    ></path>
-                                </svg>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -81,8 +62,7 @@ const Home = () => {
                             </div>
                             <div
                                 className="hero__content__inner"
-                                id="navConverter"
-                            >
+                                id="navConverter">
                                 <h1 className="hero__title">
                                     A production-ready theme for your projects
                                 </h1>
@@ -93,20 +73,6 @@ const Home = () => {
                                     customizable and works perfectly on modern
                                     browsers.
                                 </p>
-                                <a
-                                    href="#"
-                                    className="home__button button__accent"
-                                >
-                                    Download Evie
-                                </a>
-                                <div
-                                    className="home__button hero__button"
-                                    style={{ borderColor: "#333" }}
-                                >
-                                    <span style={{ color: "#333" }}>
-                                        Learn more
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -272,47 +238,13 @@ const Home = () => {
                                     <a
                                         href="https://undraw.co"
                                         target="_blank"
-                                        className="footer__link"
-                                    >
+                                        className="footer__link">
                                         <span className="footer__span__item">
                                             School Manegment
                                         </span>
                                     </a>
                                 </div>
                             </div>
-                            {/* <div className="footer__data__item">
-                                <div className="footer__row">
-                                    <a
-                                        href="https://github.com/anges244/evie"
-                                        target="_blank"
-                                        className="footer__link">
-                                        GitHub
-                                    </a>
-                                </div>
-                                <div className="footer__row">
-                                    <a
-                                        href="https://twitter.com/undraw_co"
-                                        target="_blank"
-                                        className="footer__link">
-                                        Twitter
-                                    </a>
-                                </div>
-                                <div className="footer__row">
-                                    <a
-                                        href="https://www.facebook.com/undraw.co/"
-                                        target="_blank"
-                                        className="footer__link">
-                                        Facebook
-                                    </a>
-                                </div>
-                                <div className="footer__row">
-                                    <a
-                                        href="./additional.html"
-                                        className="footer__link">
-                                        MIT license
-                                    </a>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>

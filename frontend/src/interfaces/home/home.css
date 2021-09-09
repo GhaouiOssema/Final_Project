@@ -270,10 +270,6 @@
     font-family: Poppins, sans-serif;
 }
 
-.hero .home__button {
-    margin: 12pt 8pt;
-}
-
 .hero__button {
     color: #ffffff;
     border-color: #ffffff;
@@ -324,54 +320,11 @@
     position: relative;
 }
 
-.home__button {
-    overflow: visible;
-    text-transform: none;
-    -webkit-appearance: button;
-}
-
-.home__button::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-}
-.home__button:-moz-focusring,
-[type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
-}
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     /* 1 */
     font: inherit;
     /* 2 */
-}
-
-.home__button {
-    display: inline-block;
-    padding: 6pt 20pt;
-    line-height: 1.7;
-    border: 1px solid #6c63ff;
-    color: #6c63ff;
-    font-weight: 400;
-    transition: 0.7s;
-    white-space: nowrap;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 30px;
-    margin-bottom: 1.3em;
-    transition: 0.7s;
-    text-align: center;
-    text-decoration: none;
-}
-
-.home__button:hover,
-.home__button:focus {
-    outline: 0;
-}
-@media (min-width: 992px) {
-    .home__button:hover {
-        border-color: #463aff;
-        color: #463aff;
-    }
 }
 
 .button__primary {
