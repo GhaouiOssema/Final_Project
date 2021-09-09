@@ -10,6 +10,13 @@ const Profile = ({ toggle }) => {
     // hooks for Profile INformation
     const [profileInfo, setProfilInfo] = useState({ PROFILE: [] });
 
+    // hook for appearing data
+    const [appear, setAppear] = useState(true);
+
+    setTimeout(() => {
+        setAppear(false);
+    }, 5000);
+
     // get the student id from the locale storage
     const TOKEN = localStorage.getItem("JWT");
     const id = jwt(TOKEN).id;
@@ -50,14 +57,22 @@ const Profile = ({ toggle }) => {
     };
     return (
         <div>
-            {profileInfo.length !== 0 ? (
+            {appear ? (
+                <div className="profile_s_loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
+            ) : profileInfo.length !== 0 ? (
                 <div
                     className={
                         toggle
                             ? "Student-container PROFILE"
                             : "profile-class-closed"
-                    }
-                >
+                    }>
                     <div className="Student-profile">
                         <div className="row">
                             <div className="col-md-4">
@@ -82,8 +97,7 @@ const Profile = ({ toggle }) => {
                                     <ul
                                         className="nav nav-tabs"
                                         id="myTab"
-                                        role="tablist"
-                                    >
+                                        role="tablist">
                                         <li className="nav-item">
                                             <a
                                                 className="nav-link active"
@@ -93,8 +107,7 @@ const Profile = ({ toggle }) => {
                                                 role="tab"
                                                 aria-controls="home"
                                                 aria-selected="true"
-                                                onClick={showAbout}
-                                            >
+                                                onClick={showAbout}>
                                                 About
                                             </a>
                                         </li>
@@ -119,14 +132,12 @@ const Profile = ({ toggle }) => {
                             <div className="col-md-8">
                                 <div
                                     className="tab-content profile-tab"
-                                    id="myTabContent"
-                                >
+                                    id="myTabContent">
                                     <div
                                         className="tab-pane fade show active"
                                         id="home"
                                         role="tabpanel"
-                                        aria-labelledby="home-tab"
-                                    >
+                                        aria-labelledby="home-tab">
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <label>Student Class</label>
@@ -181,16 +192,7 @@ const Profile = ({ toggle }) => {
                         </div>
                     </div>
                 </div>
-            ) : (
-                <div className="loader">
-                    <Loader
-                        type="ThreeDots"
-                        color="#00BFFF"
-                        height={150}
-                        width={150}
-                    />
-                </div>
-            )}
+            ) : null}
         </div>
     );
 };

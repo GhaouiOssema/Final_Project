@@ -2,9 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 80px;
+    margin-left: 50px;
     height: 100%;
     transition: 0.3s ease all;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 7%;
 }
 .header {
     display: flex;
@@ -62,10 +69,43 @@
 }
 
 .no-absente {
-    padding: 120px;
+    padding: 60px;
+    color: #3d4eff;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.closed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    height: 100%;
+    transition: 0.3s ease all;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 7%;
+}
+.closed .abs-icon {
+    font-size: 100px;
     color: #3d4eff;
 }
-.student-absente-content i {
+.closed .no-absente {
+    padding: 60px;
+    color: #3d4eff;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.student-absente-content .abs-icon {
     font-size: 100px;
     color: #3d4eff;
 }
@@ -79,16 +119,7 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
-/* .student-container-closed {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-left: 8%;
-    width: 1190px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-} */
+
 .student-table-header {
     /* margin-left: -2%; */
     /* width: 100% !important; */
@@ -176,4 +207,12 @@
 }
 .student__Absences__icons {
     cursor: pointer;
+}
+.abs__loader {
+    width: 100%;
+    margin-left: -1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

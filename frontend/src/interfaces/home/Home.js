@@ -64,14 +64,17 @@ const Home = () => {
                                 className="hero__content__inner"
                                 id="navConverter">
                                 <h1 className="hero__title">
-                                    A production-ready theme for your projects
+                                    Each year brings positive change
                                 </h1>
                                 <p className="hero__text">
-                                    Evie is an MIT licensed template bundled
-                                    with a minimal style guide to build websites
-                                    faster. It is extemely lightweight,
-                                    customizable and works perfectly on modern
-                                    browsers.
+                                    Welcome back Students! We are ready to
+                                    imporove the word! Please know as you walk
+                                    through the hallway of your school that you
+                                    are surrounded by people who deeply acre
+                                    about you , who are guided by a passion for
+                                    helping you to reach your potential , and
+                                    who wholeheartedly believe in you...every
+                                    day...always.
                                 </p>
                             </div>
                         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import jwt from "jwt-decode";
 import "./absence.css";
+import Loader from "react-loader-spinner";
 
 const Absence = ({ toggle }) => {
     // get th student id from the localStorage
@@ -12,6 +13,13 @@ const Absence = ({ toggle }) => {
     const [allAbsences, setAllabsences] = useState({
         StudentABS: [],
     });
+
+    // hook for appearing data
+    const [appear, setAppear] = useState(true);
+
+    setTimeout(() => {
+        setAppear(false);
+    }, 10000);
 
     // useEffect with axios function for getting student Situation
     // *** Start ***
@@ -75,79 +83,78 @@ const Absence = ({ toggle }) => {
         );
     });
     // *** End map here***
-
-    // filter the table by the icons field type
-
+    // filtring the the situation by "Absente"
+    const total = allAbsences.StudentABS.filter((StudentABS) => {
+        return StudentABS.situation === "Absente";
+    });
+    const totalAbs = total.length;
     return (
         <div
             className={
                 toggle
                     ? "student-table-responsive someHigth"
                     : "student-table-responsive-closed someHigth"
-            }
-        >
-            {allAbsences != "" ? (
-                <>
-                    <div className="student-table-container">
-                        <div className={toggle ? "icons" : "icons-closed"}>
-                            <div className="student__Absences__icons">
-                                <i className="fa fa-circle green CIRCLE"></i>
-                                <span className="icon-txtOnline">
-                                    <b>Present</b>
-                                </span>
-                            </div>
-                            <div className="student__Absences__icons">
-                                <i className="fas fa-circle red CIRCLE"></i>
-                                <span className="icon-txtOnline">
-                                    <b>Absent</b>
-                                </span>
-                            </div>
-                            <div className="student__Absences__icons">
-                                <i className="fa fa-circle yellow CIRCLE"></i>
-                                <span className="icon-txtOnline">
-                                    <b>excluded</b>
-                                </span>
-                            </div>
+            }>
+            {allAbsences.StudentABS.length > 0 ? (
+                <div className="student-table-container">
+                    <div className={toggle ? "icons" : "icons-closed"}>
+                        <div className="student__Absences__icons">
+                            <i className="fa fa-circle green CIRCLE"></i>
+                            <span className="icon-txtOnline">
+                                <b>Present</b>
+                            </span>
                         </div>
-                        <div
-                            className={
-                                toggle
-                                    ? "student-table-header"
-                                    : "student-table-header-closed"
-                            }
-                        >
-                            <table className="table table-checkable order-column">
-                                <thead>
-                                    <tr>
-                                        <th className="center Color">
-                                            Picture
-                                        </th>
-                                        <th className="center Color">
-                                            Professor
-                                        </th>
-                                        <th className="center Color">
-                                            Subject
-                                        </th>
-                                        <th className="center Color">Date</th>
-                                        <th className="center Color">
-                                            Situation
-                                        </th>
-                                    </tr>
-                                </thead>
-                                {/* map function */}
-                                <tbody className="student-absences-t-body">
-                                    {absencesData}
-                                </tbody>
-                            </table>
+                        <div className="student__Absences__icons">
+                            <i className="fas fa-circle red CIRCLE"></i>
+                            <span className="icon-txtOnline">
+                                <b>Absent</b>
+                            </span>
+                        </div>
+                        <div className="student__Absences__icons">
+                            <i className="fa fa-circle yellow CIRCLE"></i>
+                            <span className="icon-txtOnline">
+                                <b>excluded</b>
+                            </span>
                         </div>
                     </div>
-                </>
+                    <div
+                        className={
+                            toggle
+                                ? "student-table-header"
+                                : "student-table-header-closed"
+                        }>
+                        <table className="table table-checkable order-column">
+                            <thead>
+                                <tr>
+                                    <th className="center Color">Picture</th>
+                                    <th className="center Color">Professor</th>
+                                    <th className="center Color">Subject</th>
+                                    <th className="center Color">Date</th>
+                                    <th className="center Color">Situation</th>
+                                </tr>
+                            </thead>
+                            {/* map function */}
+                            <tbody className="student-absences-t-body">
+                                {absencesData}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            ) : appear ? (
+                <div className="abs__loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
             ) : (
-                <div className="student-absente-content">
+                <div className={toggle ? "student-absente-content" : "closed"}>
                     <h1 className="no-absente">
                         You Don't Have Any Absence Keep Going
                     </h1>
-                    <i className="far fa-thumbs-up"></i>
+                    <i className="fas fa-thumbs-up abs-icon"></i>
                 </div>
             )}
         </div>

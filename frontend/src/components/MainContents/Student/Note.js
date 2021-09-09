@@ -1,14 +1,21 @@
 import axios from "axios";
 import { token } from "morgan";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import jwt from "jwt-decode";
+import Loader from "react-loader-spinner";
 
 import "./Note.css";
 
 const Note = ({ toggle }) => {
     // hooks for Student note
     const [allNotes, setAllNotes] = useState({ Note: [] });
+
+    // hook for appearing data
+    const [appear, setAppear] = useState(true);
+
+    setTimeout(() => {
+        setAppear(false);
+    }, 5000);
 
     // get th student id from the localStorage
     const TOKEN = localStorage.getItem("JWT");
@@ -61,48 +68,63 @@ const Note = ({ toggle }) => {
 
     return (
         <>
-            <div className="Score">
-                <div
-                    className={
-                        toggle ? "exams-container" : "Exams-class-closed"
-                    }>
+            {appear ? (
+                <div className="dash__loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
+            ) : (
+                <div className="Score">
                     <div
                         className={
-                            toggle
-                                ? "col-sm-15 full-Width"
-                                : "full-closed-Width"
+                            toggle ? "exams-container" : "Exams-class-closed"
                         }>
-                        {allNotes.Note.length !== "" ? (
-                            <table
-                                className="table table-checkable order-column"
-                                style={{ width: "100%" }}>
-                                <thead>
-                                    <tr>
-                                        <th className="exams-table-head">
-                                            Avatar
-                                        </th>
-                                        <th className="exams-table-head">
-                                            Teacher
-                                        </th>
-                                        <th className="exams-table-head">
-                                            Subject
-                                        </th>
-                                        <th className="exams-table-head">
-                                            Score{" "}
-                                        </th>
-                                    </tr>
-                                </thead>
-                                {/* map function */}
-                                <tbody className="exmas-t-body ">{table}</tbody>
-                            </table>
-                        ) : (
-                            <div>
-                                <h1>ss</h1>
-                            </div>
-                        )}
+                        <div
+                            className={
+                                toggle
+                                    ? "col-sm-15 full-Width"
+                                    : "full-closed-Width"
+                            }>
+                            {allNotes.note.lenght ? (
+                                <table
+                                    className="table table-checkable order-column"
+                                    style={{ width: "100%" }}>
+                                    <thead>
+                                        <tr>
+                                            <th className="exams-table-head">
+                                                Avatar
+                                            </th>
+                                            <th className="exams-table-head">
+                                                Teacher
+                                            </th>
+                                            <th className="exams-table-head">
+                                                Subject
+                                            </th>
+                                            <th className="exams-table-head">
+                                                Score
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    {/* map function */}
+                                    <tbody className="exmas-t-body ">
+                                        {table}
+                                    </tbody>
+                                </table>
+                            ) : (
+                                <>
+                                    <h1 className="note-no-absente">
+                                        You Don't Have Any Exma Score
+                                    </h1>
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
     );
 };

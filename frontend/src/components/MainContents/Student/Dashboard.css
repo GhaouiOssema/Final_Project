@@ -108,3 +108,10 @@
     width: 45rem;
     height: 20rem;
 }
+.dash__loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -12%;
+}
