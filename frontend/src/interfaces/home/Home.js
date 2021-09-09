@@ -13,9 +13,9 @@ const Home = () => {
                                 style={{
                                     color: "#fff",
                                     fontWeight: 600,
-                                    lettreSpacing: 1.2,
-                                }}
-                            >
+                                    lettreSpacing: "2px",
+                                    fontFamily: "Poppins, sans-serif",
+                                }}>
                                 SMART SCHOOL
                             </span>
                         </a>
@@ -27,14 +27,12 @@ const Home = () => {
                                         className="navbar__link"
                                         style={{
                                             color: "#fff",
-                                        }}
-                                    >
+                                        }}>
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover"
-                                        >
+                                            className="links-hover">
                                             Sign In
                                         </span>
                                     </NavLink>
@@ -42,14 +40,12 @@ const Home = () => {
                                 <li className="navbar__list__items">
                                     <NavLink
                                         to="/register"
-                                        className="navbar__link"
-                                    >
+                                        className="navbar__link">
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover"
-                                        >
+                                            className="links-hover">
                                             Sign Up
                                         </span>
                                     </NavLink>
@@ -68,14 +64,16 @@ const Home = () => {
                         <div className="hero__content">
                             <div className="hello__container">
                                 <img
-                                    src="/assets/undraw_hello_aeia.svg"
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        "/assets/undraw_hello_aeia.svg"
+                                    }
                                     className="hello__image"
                                 />
                             </div>
                             <div
                                 className="hero__content__inner"
-                                id="navConverter"
-                            >
+                                id="navConverter">
                                 <h1 className="hero__title">
                                     Each year brings positive change
                                 </h1>
@@ -108,7 +106,10 @@ const Home = () => {
                         <div className="step">
                             <div className="step__media">
                                 <img
-                                    src="/assets/undraw_hello_aeia.svg"
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        "/assets/undraw_hello_aeia.svg"
+                                    }
                                     className="step__image"
                                 />
                             </div>
@@ -121,7 +122,10 @@ const Home = () => {
                         <div className="step">
                             <div className="step__media">
                                 <img
-                                    src="/assets/undraw_responsive.svg"
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        "/assets/undraw_responsive.svg"
+                                    }
                                     className="step__image"
                                 />
                             </div>
@@ -134,7 +138,10 @@ const Home = () => {
                         <div className="step">
                             <div className="step__media">
                                 <img
-                                    src="/assets/undraw_creation.svg"
+                                    src={
+                                        process.env.PUBLIC_URL +
+                                        "/assets/undraw_creation.svg"
+                                    }
                                     className="step__image"
                                 />
                             </div>
@@ -156,7 +163,10 @@ const Home = () => {
                     <div className="expanded__inner">
                         <div className="expanded__media">
                             <img
-                                src="/assets/undraw_browser.svg"
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    "/assets/ESL-classboard.svg"
+                                }
                                 className="expanded__image"
                             />
                         </div>
@@ -181,7 +191,10 @@ const Home = () => {
                     <div className="expanded__inner">
                         <div className="expanded__media">
                             <img
-                                src="/assets/undraw_frameworks.svg"
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    "/assets/1428425476.svg"
+                                }
                                 className="expanded__image"
                             />
                         </div>
@@ -205,7 +218,9 @@ const Home = () => {
                     <div className="expanded__inner">
                         <div className="expanded__media">
                             <img
-                                src="/assets/together.svg"
+                                src={
+                                    process.env.PUBLIC_URL + "/assets/hefte.svg"
+                                }
                                 className="expanded__image"
                             />
                         </div>
@@ -230,7 +245,16 @@ const Home = () => {
             <div className="footer footer--dark">
                 <div className="footer__container">
                     <div className="footer__inner">
-                        <label className="footer__textLogo">Smart School</label>
+                        <label
+                            className="footer__textLogo"
+                            style={{
+                                color: "#fff",
+                                fontWeight: 600,
+                                lettreSpacing: "2px",
+                                fontFamily: "Poppins, sans-serif",
+                            }}>
+                            Smart School
+                        </label>
                         <div className="footer__data">
                             <div className="footer__data__item">
                                 <div className="footer__row">
@@ -254,8 +278,7 @@ const Home = () => {
                                     <a
                                         href="https://undraw.co"
                                         target="_blank"
-                                        className="footer__link"
-                                    >
+                                        className="footer__link">
                                         <span className="footer__span__item">
                                             School Manegment
                                         </span>

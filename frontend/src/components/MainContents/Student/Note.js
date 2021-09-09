@@ -106,7 +106,7 @@ const Note = ({ toggle }) => {
                     </div>
                 </div>
             ) : appear ? (
-                <div className="dash__loader">
+                <div className="s_note__loader">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"
@@ -115,11 +115,11 @@ const Note = ({ toggle }) => {
                     />
                 </div>
             ) : (
-                <>
+                <div>
                     <h1 className="note-no-absente">
                         You Don't Have Any Exma Score
                     </h1>
-                </>
+                </div>
             )}
         </>
     );

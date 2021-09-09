@@ -14,13 +14,6 @@ const Exam = ({ toggle }) => {
     // hoook for the calendar events
     const [calendarEvents, setCalendarEvent] = useState({ calendar: [] });
 
-    // hook for appearing data
-    const [appear, setAppear] = useState(true);
-
-    setTimeout(() => {
-        setAppear(false);
-    }, 1000);
-
     // get the student id from the localStorage
     const TOKEN = localStorage.getItem("JWT");
     const ID = jwt(TOKEN).id;
@@ -82,23 +75,14 @@ const Exam = ({ toggle }) => {
                         events={events}
                     />
                 </div>
-            ) : appear ? (
-                <div className="abs__loader">
+            ) : (
+                <div className="ex__loader">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"
                         height={150}
                         width={150}
                     />
-                </div>
-            ) : (
-                <div
-                    className={
-                        toggle ? "student-EXAMS-content" : "exam_closed"
-                    }>
-                    <h1 className="exa-no-absente">
-                        You Don't Have Any exams date yeat!
-                    </h1>
                 </div>
             )}
         </>

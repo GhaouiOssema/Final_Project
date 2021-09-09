@@ -83,6 +83,7 @@
     justify-content: center;
     align-items: center;
     margin-left: -12%;
+    margin-top: 15%;
 }
 .note-no-absente {
     padding: 60px;
@@ -92,4 +93,11 @@
     font-weight: 400;
     width: 100%;
     text-align: center;
+    background-color: #fff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    border: 3px solid rgb(210, 214, 222);
+    transition: 0.3s all ease-in-out;
+    margin-left: -10%;
+    border-radius: 12px;
 }
