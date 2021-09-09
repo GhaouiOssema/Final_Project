@@ -7,15 +7,16 @@
 }
 
 .Student-container {
-    margin-left: -14% !important;
-    width: 1070px !important;
+    margin-left: -10% !important;
+    width: 104% !important;
+    transition: 0.3s ease all;
 }
 .profile-class-closed {
     transition: 0.3s ease all;
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
-    width: 1070px !important;
+    width: 90% !important;
 }
 .student-profile {
     margin-top: 50px;

@@ -61,7 +61,7 @@ const Absence = ({ toggle }) => {
                     <span className="center-field">{AbsenteDate}</span>
                 </td>
                 <td className="center">
-                    <div className="indcate center-field">
+                    <div className="indicate center-field">
                         {Sitiuation === "Present" ? (
                             <i className="fa fa-circle CIRCLE green"></i>
                         ) : Sitiuation === "Excluded" ? (
@@ -78,32 +78,17 @@ const Absence = ({ toggle }) => {
 
     // filter the table by the icons field type
 
-    // *** presente ***
-    const filttringPresente = () => {
-        absencesData.filter((situation) => situation === "Absente");
-    };
-
-    // *** absente ***
-    const filttringAbsente = () => {
-        absencesData.filter((situation) => situation === "Absente");
-    };
-    console.log(filttringAbsente);
-
-    // *** excluded ***
-    const filttringExcluded = () => {
-        absencesData.filter((situation) => situation === "Absente");
-    };
-
     return (
-        <div className="student-table-responsive someHigth">
+        <div
+            className={
+                toggle
+                    ? "student-table-responsive someHigth"
+                    : "student-table-responsive-closed someHigth"
+            }
+        >
             {allAbsences != "" ? (
                 <>
-                    <div
-                        className={
-                            toggle
-                                ? "student-table-container"
-                                : "student-container-closed"
-                        }>
+                    <div className="student-table-container">
                         <div className={toggle ? "icons" : "icons-closed"}>
                             <div className="student__Absences__icons">
                                 <i className="fa fa-circle green CIRCLE"></i>
@@ -129,7 +114,8 @@ const Absence = ({ toggle }) => {
                                 toggle
                                     ? "student-table-header"
                                     : "student-table-header-closed"
-                            }>
+                            }
+                        >
                             <table className="table table-checkable order-column">
                                 <thead>
                                     <tr>

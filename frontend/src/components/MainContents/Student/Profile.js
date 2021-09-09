@@ -56,7 +56,8 @@ const Profile = ({ toggle }) => {
                         toggle
                             ? "Student-container PROFILE"
                             : "profile-class-closed"
-                    }>
+                    }
+                >
                     <div className="Student-profile">
                         <div className="row">
                             <div className="col-md-4">
@@ -81,7 +82,8 @@ const Profile = ({ toggle }) => {
                                     <ul
                                         className="nav nav-tabs"
                                         id="myTab"
-                                        role="tablist">
+                                        role="tablist"
+                                    >
                                         <li className="nav-item">
                                             <a
                                                 className="nav-link active"
@@ -91,7 +93,8 @@ const Profile = ({ toggle }) => {
                                                 role="tab"
                                                 aria-controls="home"
                                                 aria-selected="true"
-                                                onClick={showAbout}>
+                                                onClick={showAbout}
+                                            >
                                                 About
                                             </a>
                                         </li>
@@ -116,12 +119,14 @@ const Profile = ({ toggle }) => {
                             <div className="col-md-8">
                                 <div
                                     className="tab-content profile-tab"
-                                    id="myTabContent">
+                                    id="myTabContent"
+                                >
                                     <div
                                         className="tab-pane fade show active"
                                         id="home"
                                         role="tabpanel"
-                                        aria-labelledby="home-tab">
+                                        aria-labelledby="home-tab"
+                                    >
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <label>Student Class</label>
