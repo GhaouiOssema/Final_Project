@@ -188,7 +188,7 @@ const ExamsDate = ({ toggle }) => {
                     />
                 </div>
             ) : appear ? (
-                <div className="loader">
+                <div className="loader-teacher-exams">
                     <Loader
                         type="ThreeDots"
                         color="#00BFFF"

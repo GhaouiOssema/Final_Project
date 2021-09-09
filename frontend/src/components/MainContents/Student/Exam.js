@@ -54,8 +54,7 @@ const Exam = ({ toggle }) => {
     });
     console.log(events);
     return (
-        <div
-            className={toggle ? "calendar-student" : "calendar-student-closed"}>
+        <div className={toggle ? "calendar-student" : "calendar-student-close"}>
             <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 headerToolbar={{

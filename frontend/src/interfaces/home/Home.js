@@ -9,7 +9,15 @@ const Home = () => {
                 <div className="navbar__container">
                     <div className="navbar__inner">
                         <a className="navbar__logo">
-                            <span style={{ color: "#fff" }}>Smart Shcool</span>
+                            <span
+                                style={{
+                                    color: "#fff",
+                                    fontWeight: 600,
+                                    lettreSpacing: 1.2,
+                                }}
+                            >
+                                SMART SCHOOL
+                            </span>
                         </a>
                         <nav className="navbar__menu">
                             <ul className="home__navbar__list">
@@ -19,12 +27,14 @@ const Home = () => {
                                         className="navbar__link"
                                         style={{
                                             color: "#fff",
-                                        }}>
+                                        }}
+                                    >
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover">
+                                            className="links-hover"
+                                        >
                                             Sign In
                                         </span>
                                     </NavLink>
@@ -32,12 +42,14 @@ const Home = () => {
                                 <li className="navbar__list__items">
                                     <NavLink
                                         to="/register"
-                                        className="navbar__link">
+                                        className="navbar__link"
+                                    >
                                         <span
                                             style={{
                                                 fontSize: 18,
                                             }}
-                                            className="links-hover">
+                                            className="links-hover"
+                                        >
                                             Sign Up
                                         </span>
                                     </NavLink>
@@ -62,7 +74,8 @@ const Home = () => {
                             </div>
                             <div
                                 className="hero__content__inner"
-                                id="navConverter">
+                                id="navConverter"
+                            >
                                 <h1 className="hero__title">
                                     A production-ready theme for your projects
                                 </h1>
@@ -238,7 +251,8 @@ const Home = () => {
                                     <a
                                         href="https://undraw.co"
                                         target="_blank"
-                                        className="footer__link">
+                                        className="footer__link"
+                                    >
                                         <span className="footer__span__item">
                                             School Manegment
                                         </span>
