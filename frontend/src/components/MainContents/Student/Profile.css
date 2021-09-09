@@ -3,9 +3,18 @@
     margin-bottom: 3%;
     border-radius: 0.5rem;
     background: #fff;
+    height: 100%;
 }
+
 .Student-container {
     margin-left: -14% !important;
+    width: 1070px !important;
+}
+.profile-class-closed {
+    transition: 0.3s ease all;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
     width: 1070px !important;
 }
 .student-profile {

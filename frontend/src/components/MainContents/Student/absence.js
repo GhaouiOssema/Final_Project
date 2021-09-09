@@ -3,7 +3,7 @@ import axios from "axios";
 import jwt from "jwt-decode";
 import "./absence.css";
 
-const Absence = () => {
+const Absence = ({ toggle }) => {
     // get th student id from the localStorage
     const TOKEN = localStorage.getItem("JWT");
     const id = jwt(TOKEN).id;
@@ -98,8 +98,13 @@ const Absence = () => {
         <div className="student-table-responsive someHigth">
             {allAbsences != "" ? (
                 <>
-                    <div className="student-table-container">
-                        <div className="icons">
+                    <div
+                        className={
+                            toggle
+                                ? "student-table-container"
+                                : "student-container-closed"
+                        }>
+                        <div className={toggle ? "icons" : "icons-closed"}>
                             <div className="student__Absences__icons">
                                 <i className="fa fa-circle green CIRCLE"></i>
                                 <span className="icon-txtOnline">
@@ -119,7 +124,12 @@ const Absence = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="student-table-header">
+                        <div
+                            className={
+                                toggle
+                                    ? "student-table-header"
+                                    : "student-table-header-closed"
+                            }>
                             <table className="table table-checkable order-column">
                                 <thead>
                                     <tr>

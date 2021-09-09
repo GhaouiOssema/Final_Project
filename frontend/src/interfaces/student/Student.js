@@ -21,18 +21,20 @@ const Student = ({ toggle, sideBarOpen, student }) => {
                 <div className={toggle ? "Student" : "student-sidebar-closed"}>
                     <Switch>
                         <div style={{ marginLeft: "13%" }}>
-                            <Route path="/dashboard" component={Dashboard} />
+                            <Route path="/dashboard">
+                                <Dashboard toggle={toggle} />
+                            </Route>
                             <Route path="/student/exam">
-                                <Exam />
+                                <Exam toggle={toggle} />
                             </Route>
                             <Route path="/student/absence">
-                                <Absence />
+                                <Absence toggle={toggle} />
                             </Route>
                             <Route path="/student/note">
-                                <Note />
+                                <Note toggle={toggle} />
                             </Route>
                             <Route path="/student/profile">
-                                <Profile />
+                                <Profile toggle={toggle} />
                             </Route>
                         </div>
                     </Switch>

@@ -168,13 +168,12 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterTeacher}
-                        >
+                            onClick={handleSubmitRegisterTeacher}>
                             Sign Up
                         </button>
                         <button className="to-login">
                             <NavLink to="/login">
-                                <span>Already Have Account !</span>{" "}
+                                Already Have Account !
                             </NavLink>
                         </button>
                     </div>
@@ -182,7 +181,6 @@ const Register = () => {
                 <div class="form-contaiiner sign-in-contaiiner">
                     <div className="form-student">
                         <h1 className="sign-up-header">Sign Up As Student</h1>
-
                         <div className="fullname">
                             <input
                                 className="input"
@@ -255,8 +253,7 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterStudent}
-                        >
+                            onClick={handleSubmitRegisterStudent}>
                             Sign Up
                         </button>
                         <button className="to-login">
@@ -277,8 +274,7 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signinButton}
-                            >
+                                onClick={signinButton}>
                                 Sign Up As Student
                             </button>
                         </div>
@@ -291,8 +287,7 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signupButton}
-                            >
+                                onClick={signupButton}>
                                 Sign Up As Teacher
                             </button>
                         </div>

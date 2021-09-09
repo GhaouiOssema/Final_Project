@@ -6,7 +6,7 @@ import jwt from "jwt-decode";
 
 import "./Note.css";
 
-const Note = () => {
+const Note = ({ toggle }) => {
     // hooks for Student note
     const [allNotes, setAllNotes] = useState({ Note: [] });
 
@@ -62,8 +62,16 @@ const Note = () => {
     return (
         <>
             <div className="Score">
-                <div className="exams-container">
-                    <div className="col-sm-15 full-Width">
+                <div
+                    className={
+                        toggle ? "exams-container" : "Exams-class-closed"
+                    }>
+                    <div
+                        className={
+                            toggle
+                                ? "col-sm-15 full-Width"
+                                : "full-closed-Width"
+                        }>
                         {allNotes.Note.length !== "" ? (
                             <table
                                 className="table table-checkable order-column"

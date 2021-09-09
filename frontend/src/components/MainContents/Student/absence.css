@@ -21,7 +21,19 @@
     margin-top: -2%;
     padding: 6px 0 0 0;
 }
+.icons-closed {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -1%;
+    padding: 6px 0 0 0;
+    width: 100%;
+}
 .icons > div {
+    margin-left: 10px;
+}
+.icons-closed > div {
     margin-left: 10px;
 }
 .green {
@@ -64,12 +76,30 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
         rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
+.student-container-closed {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-left: 8%;
+    width: 1190px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
 .student-table-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: -2%;
     width: 1017px !important;
+    background-color: #fff;
+}
+.student-table-header-closed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -2%;
+    width: 1190px !important;
     background-color: #fff;
 }
 .student-table-responsive {

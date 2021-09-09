@@ -9,7 +9,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-const Exam = () => {
+const Exam = ({ toggle }) => {
     // hoook for the calendar events
     const [calendarEvents, setCalendarEvent] = useState({ calendar: [] });
 
@@ -54,7 +54,8 @@ const Exam = () => {
     });
     console.log(events);
     return (
-        <div className="calendar-student">
+        <div
+            className={toggle ? "calendar-student" : "calendar-student-closed"}>
             <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 headerToolbar={{

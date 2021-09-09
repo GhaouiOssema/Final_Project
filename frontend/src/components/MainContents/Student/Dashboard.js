@@ -107,14 +107,18 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="card-content">
-                            <i class="fas fa-school"></i>{" "}
+                            <i class="fas fa-school"></i>
                             <div>
                                 <label>school Name</label>
                                 <span>Class Room : {CLASSROOM} </span>
                             </div>
                         </div>
                     </div>
-                    <div className="timetable">
+                    <div
+                        className="timetable"
+                        style={{
+                            height: 391,
+                        }}>
                         <img
                             src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg"
                             alt="timeTable"

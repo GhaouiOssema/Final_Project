@@ -64,8 +64,7 @@ const Navigation = ({ sideBarOpen, teacher, student }) => {
                                                 role === 0
                                                     ? `${profile.firstName}`
                                                     : `${profile.firstName} ${profile.lastName}`
-                                            }
-                                        >
+                                            }>
                                             <NavDropdown.Item href="# ">
                                                 {role === 1 ? (
                                                     <NavLink to="/teacher/profile">

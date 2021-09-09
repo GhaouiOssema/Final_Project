@@ -6,33 +6,6 @@ import axios from "axios";
 import "./SideBar.css";
 
 const SideBar = ({ toggle, student }) => {
-    // const token = localStorage.getItem("JWT");
-
-    // const getID = () => {
-    //     if (token !== null) {
-    //         const decoded_token = jwt(token);
-    //         return decoded_token.id;
-    //     }
-    // };
-    // // hook for student profile
-    // const [studentProfile, setStudentProfile] = useState();
-    // const id = getID();
-    // // axios function to get the student profile
-    // const getStudentProfile = async () => {
-    //     try {
-    //         const StudentProfile = await axios.get(
-    //             `http://localhost:5000/student/profile/${id}`
-    //         );
-    //         setStudentProfile(StudentProfile.data.data);
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-    // };
-    // useEffect(() => {
-    //     getStudentProfile();
-    // }, []);
-
-    // console.log(studentProfile);
     return (
         <div className={toggle ? "student-sidebar" : "student-sidebar close"}>
             <div className="sidebar-user-panel">

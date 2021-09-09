@@ -47,8 +47,7 @@ const Login = () => {
                             </div>
                             <button
                                 class="button login__submit"
-                                onClick={Login}
-                            >
+                                onClick={Login}>
                                 <span class="button__text">Log In Now</span>
                                 <i class="button__icon fas fa-chevron-right"></i>
                             </button>

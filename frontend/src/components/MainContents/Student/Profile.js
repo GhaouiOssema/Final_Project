@@ -6,7 +6,7 @@ import Loader from "react-loader-spinner";
 
 import "./Profile.css";
 
-const Profile = () => {
+const Profile = ({ toggle }) => {
     // hooks for Profile INformation
     const [profileInfo, setProfilInfo] = useState({ PROFILE: [] });
 
@@ -51,7 +51,12 @@ const Profile = () => {
     return (
         <div>
             {profileInfo.length !== 0 ? (
-                <div className="Student-container PROFILE">
+                <div
+                    className={
+                        toggle
+                            ? "Student-container PROFILE"
+                            : "profile-class-closed"
+                    }>
                     <div className="Student-profile">
                         <div className="row">
                             <div className="col-md-4">
