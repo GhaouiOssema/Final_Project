@@ -10,13 +10,6 @@ const Profile = ({ toggle }) => {
     // hooks for Profile INformation
     const [profileInfo, setProfilInfo] = useState({ PROFILE: [] });
 
-    // hook for appearing data
-    const [appear, setAppear] = useState(true);
-
-    setTimeout(() => {
-        setAppear(false);
-    }, 5000);
-
     // get the student id from the locale storage
     const TOKEN = localStorage.getItem("JWT");
     const id = jwt(TOKEN).id;
@@ -57,16 +50,7 @@ const Profile = ({ toggle }) => {
     };
     return (
         <div>
-            {appear ? (
-                <div className="profile_s_loader">
-                    <Loader
-                        type="ThreeDots"
-                        color="#00BFFF"
-                        height={150}
-                        width={150}
-                    />
-                </div>
-            ) : profileInfo.length !== 0 ? (
+            {profileInfo.PROFILE.length !== 0 ? (
                 <div
                     className={
                         toggle
@@ -192,7 +176,16 @@ const Profile = ({ toggle }) => {
                         </div>
                     </div>
                 </div>
-            ) : null}
+            ) : (
+                <div className="profile_s_loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -102,62 +102,49 @@ const Dashboard = () => {
     // ************
 
     return (
-        <>
-            {appear ? (
-                <div className="dash__loader">
-                    <Loader
-                        type="ThreeDots"
-                        color="#00BFFF"
-                        height={150}
-                        width={150}
-                    />
-                </div>
-            ) : (
-                <div className="dachborard-container">
-                    <div className="dachborard-header">
-                        <div className="header-left">
-                            <div className="header-card">
-                                <div className="card-content">
-                                    <i class="fas fa-user-slash"></i>
-                                    <div>
-                                        <label>Total Absences</label>
-                                        <span>{totalAbs}</span>
-                                    </div>
-                                </div>
-                                <div className="card-content">
-                                    <i class="fas fa-school"></i>
-                                    <div>
-                                        <label>school Name</label>
-                                        <span>Class Room : {CLASSROOM} </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                className="timetable"
-                                style={{
-                                    height: 391,
-                                }}>
-                                <img
-                                    src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg"
-                                    alt="timeTable"
-                                    className="time-img"
-                                />
+        <div className="dachborard-container">
+            <div className="dachborard-header">
+                <div className="header-left">
+                    <div className="header-card">
+                        <div className="card-content">
+                            <i class="fas fa-user-slash"></i>
+                            <div>
+                                <label>Total Absences</label>
+                                <span>{totalAbs}</span>
                             </div>
                         </div>
-                        <div className="header-right ">
-                            <Calendar
-                                onChange={onChange}
-                                value={value}
-                                className="CALENDAR"
-                            />
-                            <div className="chart-container">
-                                <Line data={data} options={options} />
+                        <div className="card-content">
+                            <i class="fas fa-school"></i>
+                            <div>
+                                <label>school Name</label>
+                                <span>Class Room : {CLASSROOM} </span>
                             </div>
                         </div>
                     </div>
+                    <div
+                        className="timetable"
+                        style={{
+                            height: 391,
+                        }}>
+                        <img
+                            src="https://webetab.ac-bordeaux.fr/college-lavardac/typo3temp/pics/d748d145ab.jpg"
+                            alt="timeTable"
+                            className="time-img"
+                        />
+                    </div>
                 </div>
-            )}
-        </>
+                <div className="header-right ">
+                    <Calendar
+                        onChange={onChange}
+                        value={value}
+                        className="CALENDAR"
+                    />
+                    <div className="chart-container">
+                        <Line data={data} options={options} />
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

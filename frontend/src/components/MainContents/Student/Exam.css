@@ -84,3 +84,52 @@
 .calendar-student-close .fc-daygrid-day-frame {
     height: 90px;
 }
+.student-EXAMS-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    transition: 0.3s ease all;
+    width: 100%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 7%;
+    margin-left: -10%;
+}
+.exa-no-absente {
+    padding: 60px;
+    color: #3d4eff;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.exam_closed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    transition: 0.3s ease all;
+    width: 70%;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+        rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-top: 7%;
+    margin-left: -20%;
+}
+
+.exam_closed .exa-no-absente {
+    padding: 60px;
+    color: #3d4eff;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}

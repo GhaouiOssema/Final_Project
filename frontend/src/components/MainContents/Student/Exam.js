@@ -3,6 +3,7 @@ import "./Exam.css";
 import { useState, useEffect } from "react";
 import jwt from "jwt-decode";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
@@ -12,6 +13,13 @@ import interactionPlugin from "@fullcalendar/interaction";
 const Exam = ({ toggle }) => {
     // hoook for the calendar events
     const [calendarEvents, setCalendarEvent] = useState({ calendar: [] });
+
+    // hook for appearing data
+    const [appear, setAppear] = useState(true);
+
+    setTimeout(() => {
+        setAppear(false);
+    }, 1000);
 
     // get the student id from the localStorage
     const TOKEN = localStorage.getItem("JWT");
@@ -52,20 +60,48 @@ const Exam = ({ toggle }) => {
         };
         return data;
     });
-    console.log(events);
     return (
-        <div className={toggle ? "calendar-student" : "calendar-student-close"}>
-            <FullCalendar
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-                headerToolbar={{
-                    left: "prev,next today",
-                    center: "title",
-                    right: "dayGridMonth,timeGridDay",
-                }}
-                initialView="dayGridMonth"
-                events={events}
-            />
-        </div>
+        <>
+            {calendarEvents.calendar.length !== 0 ? (
+                <div
+                    className={
+                        toggle ? "calendar-student" : "calendar-student-close"
+                    }>
+                    <FullCalendar
+                        plugins={[
+                            dayGridPlugin,
+                            timeGridPlugin,
+                            interactionPlugin,
+                        ]}
+                        headerToolbar={{
+                            left: "prev,next today",
+                            center: "title",
+                            right: "dayGridMonth,timeGridDay",
+                        }}
+                        initialView="dayGridMonth"
+                        events={events}
+                    />
+                </div>
+            ) : appear ? (
+                <div className="abs__loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
+            ) : (
+                <div
+                    className={
+                        toggle ? "student-EXAMS-content" : "exam_closed"
+                    }>
+                    <h1 className="exa-no-absente">
+                        You Don't Have Any exams date yeat!
+                    </h1>
+                </div>
+            )}
+        </>
     );
 };
 

@@ -15,7 +15,7 @@ const Note = ({ toggle }) => {
 
     setTimeout(() => {
         setAppear(false);
-    }, 5000);
+    }, 10000);
 
     // get th student id from the localStorage
     const TOKEN = localStorage.getItem("JWT");
@@ -68,16 +68,7 @@ const Note = ({ toggle }) => {
 
     return (
         <>
-            {appear ? (
-                <div className="dash__loader">
-                    <Loader
-                        type="ThreeDots"
-                        color="#00BFFF"
-                        height={150}
-                        width={150}
-                    />
-                </div>
-            ) : (
+            {allNotes.Note.length > 0 ? (
                 <div className="Score">
                     <div
                         className={
@@ -89,41 +80,46 @@ const Note = ({ toggle }) => {
                                     ? "col-sm-15 full-Width"
                                     : "full-closed-Width"
                             }>
-                            {allNotes.note.lenght ? (
-                                <table
-                                    className="table table-checkable order-column"
-                                    style={{ width: "100%" }}>
-                                    <thead>
-                                        <tr>
-                                            <th className="exams-table-head">
-                                                Avatar
-                                            </th>
-                                            <th className="exams-table-head">
-                                                Teacher
-                                            </th>
-                                            <th className="exams-table-head">
-                                                Subject
-                                            </th>
-                                            <th className="exams-table-head">
-                                                Score
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    {/* map function */}
-                                    <tbody className="exmas-t-body ">
-                                        {table}
-                                    </tbody>
-                                </table>
-                            ) : (
-                                <>
-                                    <h1 className="note-no-absente">
-                                        You Don't Have Any Exma Score
-                                    </h1>
-                                </>
-                            )}
+                            <table
+                                className="table table-checkable order-column"
+                                style={{ width: "100%" }}>
+                                <thead>
+                                    <tr>
+                                        <th className="exams-table-head">
+                                            Avatar
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Teacher
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Subject
+                                        </th>
+                                        <th className="exams-table-head">
+                                            Score
+                                        </th>
+                                    </tr>
+                                </thead>
+                                {/* map function */}
+                                <tbody className="exmas-t-body ">{table}</tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+            ) : appear ? (
+                <div className="dash__loader">
+                    <Loader
+                        type="ThreeDots"
+                        color="#00BFFF"
+                        height={150}
+                        width={150}
+                    />
+                </div>
+            ) : (
+                <>
+                    <h1 className="note-no-absente">
+                        You Don't Have Any Exma Score
+                    </h1>
+                </>
             )}
         </>
     );
