@@ -40,7 +40,7 @@ const Navigation = ({ sideBarOpen, teacher, student }) => {
                     </div> */}
                 </div>
                 <div className="right-content">
-                    <i className="fas fa-expand-arrows-alt"></i>
+                    {/* <i className="fas fa-expand-arrows-alt"></i> */}
                     <i className="far fa-bell"></i>
                     <div className="right-content-profile">
                         <img
@@ -64,7 +64,8 @@ const Navigation = ({ sideBarOpen, teacher, student }) => {
                                                 role === 0
                                                     ? `${profile.firstName}`
                                                     : `${profile.firstName} ${profile.lastName}`
-                                            }>
+                                            }
+                                        >
                                             <NavDropdown.Item href="# ">
                                                 {role === 1 ? (
                                                     <NavLink to="/teacher/profile">

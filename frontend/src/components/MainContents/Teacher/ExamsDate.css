@@ -461,3 +461,12 @@
         margin-left: 0rem;
     }
 }
+.loader-teacher-exams {
+    margin-top: -8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    height: 585px;
+    width: 90%;
+}
