@@ -67,7 +67,7 @@ const Register = () => {
                     .then((res) => {
                         console.log("Status: ", res.status);
                         console.log("Data: ", res.data);
-                        history.push("/loginlogin");
+                        history.push("/login");
                     })
                     .catch((err) => {
                         console.log("Error in Create Student!", err);
@@ -168,8 +168,7 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterTeacher}
-                        >
+                            onClick={handleSubmitRegisterTeacher}>
                             Sign Up
                         </button>
                         <button className="to-login">
@@ -254,8 +253,7 @@ const Register = () => {
                         />
                         <button
                             className="sign-up-button"
-                            onClick={handleSubmitRegisterStudent}
-                        >
+                            onClick={handleSubmitRegisterStudent}>
                             Sign Up
                         </button>
                         <button className="to-login">
@@ -276,8 +274,7 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signinButton}
-                            >
+                                onClick={signinButton}>
                                 Sign Up As Student
                             </button>
                         </div>
@@ -290,8 +287,7 @@ const Register = () => {
                             </p>
                             <button
                                 className="sign-up-button ghost"
-                                onClick={signupButton}
-                            >
+                                onClick={signupButton}>
                                 Sign Up As Teacher
                             </button>
                         </div>

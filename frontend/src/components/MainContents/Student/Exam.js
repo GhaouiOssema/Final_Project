@@ -41,7 +41,7 @@ const Exam = ({ toggle }) => {
         const firstName = calendar.addedBy.firstName;
         const lastName = calendar.addedBy.lastName;
         const subject = calendar.addedBy.subject;
-        const classroom = calendar.classroom;
+        const classroom = calendar.classRoom;
         const examStart = calendar.from;
         const examEnd = calendar.to;
         const data = {
@@ -53,6 +53,9 @@ const Exam = ({ toggle }) => {
         };
         return data;
     });
+    
+    console.log(events);
+
     return (
         <>
             {calendarEvents.calendar.length !== 0 ? (

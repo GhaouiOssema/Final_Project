@@ -6,7 +6,10 @@ module.exports = {
             const { id } = req.params;
             const student = await Student.findById(id);
             const classRoom = student.classRoom;
-            const examdate = await ExamsDate.find({ classRoom });
+            const examdate = await ExamsDate.find({ classRoom }).populate(
+                "addedBy",
+                "firstName lastName subject -_id"
+            );
 
             res.status(201).json({
                 status: true,
