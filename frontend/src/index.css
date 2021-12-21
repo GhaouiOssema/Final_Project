@@ -1,5 +1,24 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--color-ligth: #fff;
+	--color-brand: #6673fc;
+	--color-border-ligth: #bdbdbd;
+	--color-footer-black: #222c3c;
+	--color-font-ligth: #98a6ba;
+	--color-background-ligth: #eaeef3;
+
+	/* Sizes */
+	--min-height: 600px;
+	--screen-padding: 80px 0 12px 20px;
+	--screen-margin-left: 17%;
+
+	/* Shadow */
+	--color-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+
+	/* Transition */
+	--ease-all: 0.3s ease all;
 }

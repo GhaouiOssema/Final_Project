@@ -1,92 +1,92 @@
 .calendar-student {
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
-    background: #fff;
-    width: 1000px;
-    height: 500px;
-    margin-left: -9%;
-    transition: 0.3s ease all;
+	border: 1px solid var(--color-ligth);
+	border-radius: 10px;
+	padding: 20px;
+	background: var(--color-ligth);
+	width: 1000px;
+	height: 500px;
+	margin-left: -9%;
+	transition: 0.3s ease all;
 }
 
 .calendar-student-close {
-    border: 1px solid #fff;
-    border-radius: 10px;
-    padding: 20px;
-    background: #fff;
-    width: 1000px;
-    height: 500px;
-    margin-left: 0%;
-    transition: 0.3s ease all;
+	border: 1px solid var(--color-ligth);
+	border-radius: 10px;
+	padding: 20px;
+	background: var(--color-ligth);
+	width: 1000px;
+	height: 500px;
+	margin-left: 0%;
+	transition: 0.3s ease all;
 }
 /*********************/
 
 .calendar-student .fc-scroller {
-    /* overflow: hidden !important; */
+	/* overflow: hidden !important; */
 }
 .calendar-student .fc-scroller::-webkit-scrollbar {
-    width: 10px;
-    /* margin-left: -10px; */
+	width: 10px;
+	/* margin-left: -10px; */
 }
 .calendar-student .fc-daygrid-body,
 .calendar-student .fc-col-header {
-    margin-left: -10px;
+	margin-left: -10px;
 }
 .calendar-student .fc-scroller::-webkit-scrollbar-track {
-    background-color: rgb(197, 190, 190);
+	background-color: rgb(197, 190, 190);
 }
 .calendar-student .fc-scroller::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .calendar-student .fc-scroller {
-    scrollbar-width: thin;
+	scrollbar-width: thin;
 }
 
 .calendar-student .fc-view-harness {
-    height: 394px !important;
+	height: 394px !important;
 }
 .calendar-student .fc-scrollgrid-sync-table,
 .calendar-student .fc-col-header {
-    width: 956px !important;
+	width: 956px !important;
 }
 .calendar-student .fc-daygrid-day-frame {
-    height: 90px;
+	height: 90px;
 }
 
 .calendar-student-close .fc-scroller {
-    /* overflow: hidden !important; */
+	/* overflow: hidden !important; */
 }
 .calendar-student-close .fc-scroller::-webkit-scrollbar {
-    width: 10px;
-    /* margin-left: -10px; */
+	width: 10px;
+	/* margin-left: -10px; */
 }
 .calendar-student-close .fc-daygrid-body,
 .calendar-student-close .fc-col-header {
-    margin-left: -10px;
+	margin-left: -10px;
 }
 .calendar-student-close .fc-scroller::-webkit-scrollbar-track {
-    background-color: rgb(197, 190, 190);
+	background-color: rgb(197, 190, 190);
 }
 .calendar-student-close .fc-scroller::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .calendar-student-close .fc-scroller {
-    scrollbar-width: thin;
+	scrollbar-width: thin;
 }
 
 .calendar-student-close .fc-view-harness {
-    height: 394px !important;
+	height: 394px !important;
 }
 .calendar-student-close .fc-scrollgrid-sync-table,
 .calendar-student-close .fc-col-header {
-    width: 956px !important;
+	width: 956px !important;
 }
 .calendar-student-close .fc-daygrid-day-frame {
-    height: 90px;
+	height: 90px;
 }
 .ex__loader {
-    display: flex;
-    justify-content: center;
-    margin-left: -20%;
-    margin-top: 15%;
+	display: flex;
+	justify-content: center;
+	margin-left: -20%;
+	margin-top: 15%;
 }

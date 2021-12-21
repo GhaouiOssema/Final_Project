@@ -6,7 +6,7 @@
 }
 
 .user-img-circle {
-    background: #fff;
+    background: var(--color-ligth);
     border: 1px solid rgba(52, 73, 94, 0.44);
     padding: 2px;
     border-radius: 50%;
