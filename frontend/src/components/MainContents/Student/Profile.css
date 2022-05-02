@@ -1,3 +1,11 @@
+.header-student-profile {
+	margin-top: -10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dotted #ccc;
+	font-size: 28px;
+	font-weight: 500;
+	padding-left: 15px;
+}
 .PROFILE {
 	margin-bottom: 3%;
 	border-radius: 0.5rem;
